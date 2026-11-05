@@ -43,11 +43,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .tagline{position:fixed;left:clamp(16px,4vw,44px);bottom:7vh;z-index:10;max-width:300px;font-size:15px;line-height:1.55;color:var(--mu);pointer-events:none}
 .tagline b{color:var(--ink)}
 #workHead{align-items:flex-start;padding-top:15vh}
+#workHead>div{transition:opacity .25s}#workHead.hid>div{opacity:0}
 #workHead h2{font:700 clamp(22px,2.6vw,34px)/1.1 Unbounded,sans-serif;letter-spacing:-.02em;text-align:center}
 #workHead p{color:var(--mu);text-align:center;margin-top:8px;font-size:14px}
-#caption{position:fixed;left:50%;top:calc(15vh + 78px);transform:translateX(-50%);z-index:11;pointer-events:none;text-align:center;opacity:0;transition:opacity .3s;max-width:min(560px,90vw)}
-#caption b{display:block;font:700 18px/1.2 Unbounded,sans-serif}
-#caption span{color:var(--mu);font-size:14px}
+#caption{position:fixed;left:50%;top:15vh;transform:translateX(-50%);z-index:11;pointer-events:none;text-align:center;opacity:0;transition:opacity .25s;width:min(620px,90vw)}
+#caption b{display:block;font:700 clamp(22px,2.6vw,34px)/1.1 Unbounded,sans-serif;letter-spacing:-.02em}
+#caption span{display:block;color:var(--mu);font-size:14px;margin-top:8px}
 .blinds{position:fixed;inset:0;z-index:20;pointer-events:none;display:flex;flex-direction:column}
 .blinds i{flex:1;background:var(--dk);transform:scaleY(0);transform-origin:top;margin-bottom:-2px;will-change:transform}
 
@@ -351,9 +352,9 @@ function layout(){
   isPhone=vw<720;
   const visH=2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2))*camera.position.z, visW=visH*camera.aspect;
   const cols=isPhone?3:(camera.aspect>1.45?6:4), rows=Math.ceil(N/cols);
-  const areaW=visW*(isPhone?.94:.86), areaH=visH*(isPhone?.6:.66);
+  const areaW=visW*(isPhone?.94:.86), areaH=visH*(isPhone?.56:.6);
   const s=Math.min(areaW/(cols*SW*1.12),areaH/(rows*SH*1.12));
-  gridPos=sheets.map((m,i)=>{const c=i%cols,r=Math.floor(i/cols);return {x:(c-(cols-1)/2)*SW*1.12*s,y:-((r-(rows-1)/2)*SH*1.12*s)-visH*.06,s}});
+  gridPos=sheets.map((m,i)=>{const c=i%cols,r=Math.floor(i/cols);return {x:(c-(cols-1)/2)*SW*1.12*s,y:-((r-(rows-1)/2)*SH*1.12*s)-visH*.1,s}});
   sphereR=isPhone?3.3:5.2;
   backdrop.scale.setScalar(Math.max(1,visW/20));
 }
@@ -427,9 +428,9 @@ function frame(now){
   let hit=-1;
   if(gridOn&&mouse.x<5){ray.setFromCamera(mouse,camera);const hs=ray.intersectObjects(sheets,false);if(hs.length){hit=hs[0].object.userData.i;hs[0].object.material.uniforms.uMouse.value.copy(hs[0].uv)}}
   if(hit!==hovered){hovered=hit;if(hit>=0){$('capT').textContent=JOBS[hit][0];$('capS').textContent=JOBS[hit][1]}}
-  cap.style.opacity=hovered>=0?1:0;
+  cap.style.opacity=hovered>=0?1:0;workHead.classList.toggle('hid',hovered>=0);
   canvas.style.cursor=hovered>=0?'pointer':'';
-  if(hovered>=0&&!reduce){drawCard(prevCtx,hovered,'preview',t);prevTex.needsUpdate=true}
+  if(hovered>=0&&(!reduce||prevCtx._i!==hovered)){drawCard(prevCtx,hovered,'preview',reduce?Math.PI*.5/1.4*0:t);prevCtx._i=hovered;prevTex.needsUpdate=true}
 
   sheets.forEach((m,i)=>{
     const u=m.material.uniforms,d=m.userData;
