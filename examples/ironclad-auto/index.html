@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ironclad Auto Repair · Sample website by Sitemind</title>
+<meta name="description" content="Diagnostics, brakes, engines and everyday maintenance, with photos of every problem we find.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1012;--sf:#17191c;--ink:#f1f2f4;--mu:#9aa0a8;--ac:#e23b2e;--ac2:#24272c;--aci:#ffffff;--r:4px;
+--cr:4px;--hf:'Oswald', sans-serif;--bf:'Inter', sans-serif;--a:#e23b2e;--b:#2c3036;--line:color-mix(in srgb,var(--ink) 12%,transparent);--soft:color-mix(in srgb,var(--ink) 5%,transparent)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--bf);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,90vw);margin:0 auto}
+h1,h2,h3,.logo b,.art-name,.price,.num,.st b{font-family:var(--hf);text-transform:uppercase;letter-spacing:0.01em}
+.ic{width:26px;height:26px}.sm{width:15px;height:15px;flex:none}.big{width:64px;height:64px}
+.ribbon{background:#0b0b0d;color:#cfd2d8;font:500 12.5px/1.4 Inter,system-ui,sans-serif;text-align:center;padding:9px 16px}
+.ribbon a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;color:var(--ink)}.logo .lg{width:36px;height:36px;border-radius:min(var(--r),12px);background:var(--ac);color:var(--aci);display:grid;place-items:center}
+.logo .lg svg{width:20px;height:20px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:15px;color:var(--mu)}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:var(--r);font-weight:600;font-size:15px;transition:transform .15s,box-shadow .2s,background .2s;border:2px solid transparent;cursor:pointer;font-family:var(--bf)}
+.btn.solid{background:var(--ac);color:var(--aci)}.btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb,var(--ac) 35%,transparent)}
+.btn.ghost{border-color:var(--line);color:var(--ink)}.btn.ghost:hover{border-color:var(--ink)}
+.btn:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid color-mix(in srgb,var(--ac) 60%,transparent);outline-offset:2px}
+.hero{padding:72px 0 64px;position:relative;overflow:hidden}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--ac);background:color-mix(in srgb,var(--ac) 12%,transparent);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(40px,6vw,80px);line-height:1.02;font-weight:700}
+.lead{font-size:clamp(16px,1.6vw,19px);color:var(--mu);margin:20px 0 30px;max-width:540px}
+.htext.c{text-align:center}.htext.c .lead{margin-left:auto;margin-right:auto}.htext.c .ctas{justify-content:center}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.phone{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;color:var(--mu)}.phone:hover{color:var(--ac)}
+.htext.c .phone{justify-content:center;width:100%}
+.art{position:relative;aspect-ratio:1/1;max-width:480px;width:100%;justify-self:center}
+.banner{margin-top:52px}.banner .art{aspect-ratio:16/7;max-width:none}
+.blob{position:absolute;border-radius:var(--r);filter:saturate(1.1)}
+.b1{inset:4% 14% 18% 0;background:var(--a)}.b2{inset:30% 0 0 26%;background:var(--b);opacity:.9}
+.banner .b1{inset:0 40% 10% 0}.banner .b2{inset:15% 0 0 45%}
+.art-card{position:absolute;inset:22% 20% 24% 16%;background:var(--sf);border-radius:var(--cr);box-shadow:0 30px 60px rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--ac);border:1px solid var(--line)}
+.banner .art-card{inset:14% 32% 14% 32%}
+.art-name{font-size:26px;color:var(--ink)}
+.art-lines{width:60%;display:grid;gap:7px}.art-lines i{height:7px;border-radius:9px;background:var(--soft);display:block}
+.chip{position:absolute;background:var(--sf);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;display:flex;gap:6px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.14);white-space:nowrap}
+.chip span{font-weight:500;color:var(--mu)}.chip svg{color:var(--ac)}
+.c1{top:8%;right:0}.c2{bottom:12%;left:-2%}
+.banner .c1{top:10%;right:18%}.banner .c2{bottom:10%;left:16%}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--sf)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.st{padding:26px 10px;text-align:center}.st+.st{border-left:1px solid var(--line)}
+.st b{display:block;font-size:28px;color:var(--ac)}.st span{color:var(--mu);font-size:14px}
+section.s{padding:88px 0}
+.kicker{color:var(--ac);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.08;margin-bottom:36px;font-weight:700}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.svcs.n4{grid-template-columns:repeat(4,1fr)}
+.svc{background:var(--sf);border:1px solid var(--line);border-radius:var(--cr);padding:26px;transition:transform .2s,border-color .2s}
+.svc:hover{transform:translateY(-4px);border-color:var(--ac)}
+.svc-ic{width:50px;height:50px;border-radius:var(--cr);background:color-mix(in srgb,var(--ac) 13%,transparent);color:var(--ac);display:grid;place-items:center;margin-bottom:16px}
+.svc h3{font-size:20px;margin-bottom:6px}.svc p{color:var(--mu);font-size:15px}
+.menu{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 48px}
+.menu li{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
+.mi{color:var(--ac);align-self:center}.mn{font-weight:600}.dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}.mp{font-family:var(--hf);color:var(--ac);font-size:20px;white-space:nowrap}
+.alt{background:var(--sf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{padding:30px;border-radius:var(--cr);background:var(--bg);border:1px solid var(--line)}
+.num{font-size:42px;color:var(--ac);line-height:1;margin-bottom:14px}.step h3{font-size:21px;margin-bottom:6px}.step p{color:var(--mu)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{position:relative;padding:32px;border-radius:var(--cr);background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.plan.pop{border:2px solid var(--ac);transform:translateY(-8px)}
+.plan .tag{position:absolute;top:-13px;left:24px;background:var(--ac);color:var(--aci);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.plan h3{font-size:22px}.price{font-size:40px;color:var(--ac)}.plan p{color:var(--mu);flex:1}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.hours table{width:100%;border-collapse:collapse;font-size:18px}.hours th{text-align:left;font-weight:600;padding:16px 0;border-bottom:1px solid var(--line)}.hours td{text-align:right;color:var(--mu);border-bottom:1px solid var(--line)}
+.mapcard{position:relative;aspect-ratio:4/3;border-radius:var(--cr);overflow:hidden;background:color-mix(in srgb,var(--ac) 8%,var(--bg));border:1px solid var(--line)}
+.mapcard .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;transform:rotate(-8deg) scale(1.3)}
+.pinwrap{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);color:var(--ac)}.addr{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);background:var(--sf);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap}
+.book{max-width:640px;background:var(--bg);border:1px solid var(--line);border-radius:var(--cr);padding:30px;display:grid;gap:18px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.book label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mu)}
+.book select,.book input{font:inherit;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--sf);color:var(--ink)}
+.flabel{font-size:13px;font-weight:600;color:var(--mu)}.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{font:inherit;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--sf);color:var(--ink);cursor:pointer}.slot.on{background:var(--ac);color:var(--aci);border-color:var(--ac)}
+.wide{width:100%}.note{text-align:center;font-size:12.5px;color:var(--mu)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--sf);border:1px solid var(--line);border-radius:var(--cr);padding:28px}
+.stars{display:flex;gap:2px;color:var(--ac);margin-bottom:14px}.stars svg{fill:currentColor}
+blockquote{font-size:18px;line-height:1.5;margin-bottom:16px}figcaption{font-weight:600}figcaption span{font-weight:400;color:var(--mu);font-size:13px}
+.cta{padding:88px 0}.cta .box{background:var(--ac);color:var(--aci);border-radius:var(--cr);padding:56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta .box::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:color-mix(in srgb,var(--aci) 12%,transparent)}
+.cta h2{margin:0 0 8px;font-size:clamp(28px,3.6vw,44px)}.cta p{opacity:.85;font-size:17px}
+.cta .btn{background:var(--aci);color:var(--ac);position:relative;z-index:1}
+footer{border-top:1px solid var(--line);padding:40px 0 100px;color:var(--mu);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}footer b{color:var(--ink)}
+.callbar{display:none}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+@media (max-width:900px){.hgrid,.hours{grid-template-columns:1fr}.links{display:none}nav .btn{margin-left:auto}.svcs,.svcs.n4,.steps,.plans,.revs{grid-template-columns:1fr 1fr}.menu{grid-template-columns:1fr}.plan.pop{transform:none}}
+@media (max-width:600px){.svcs,.svcs.n4,.steps,.plans,.revs,.frow{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr}.st+.st{border-left:0;border-top:1px solid var(--line)}.hero{padding:48px 0}section.s,.cta{padding:60px 0}.cta .box{padding:36px 26px}.banner .art{aspect-ratio:4/3}.banner .art-card{inset:18% 18%}nav .btn{padding:10px 14px;font-size:14px}
+.callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}.callbar a{flex:1;padding:14px;border-radius:999px;text-align:center;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25)}.callbar .c{background:var(--ac);color:var(--aci)}.callbar .d{background:var(--sf);color:var(--ink);border:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<div class="ribbon">Sample website by <a href="/">Sitemind</a> · Ironclad Auto Repair is a fictional business · <a href="/examples/">See all examples</a></div>
+<nav><div class="wrap"><a href="#" class="logo"><span class="lg"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 8l2 5v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M3 13h18"/></svg></span><b>Ironclad</b></a>
+<div class="links"><a href="#services">Services</a><a href="#more">How we work</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+<a href="#contact" class="btn solid">Book service</a></div></nav>
+<section class="hero split"><div class="wrap hgrid"><div class="htext"><div class="eyebrow">ASE certified · 2-year warranty</div>
+<h1>Honest repair. Fair price.</h1><p class="lead">Diagnostics, brakes, engines and everyday maintenance, with photos of every problem we find.</p>
+<div class="ctas"><a href="#contact" class="btn solid">Book service</a><a href="#services" class="btn ghost">Call the shop</a></div>
+<a class="phone" href="tel:+14795550176"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> (479) 555-0176</a></div><div class="art" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="art-card">
+    <div class="art-ic"><svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 8l2 5v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M3 13h18"/></svg></div>
+    <div class="art-name">Ironclad</div>
+    <div class="art-lines"><i></i><i></i><i style="width:55%"></i></div>
+  </div>
+  <div class="chip c1"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg> 2 yr <span>warranty on work</span></div>
+  <div class="chip c2"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> Free <span>estimates</span></div>
+</div></div></section>
+<div class="stats"><div class="wrap"><div class="st"><b>2 yr</b><span>warranty on work</span></div><div class="st"><b>Free</b><span>estimates</span></div><div class="st"><b>Same day</b><span>most repairs</span></div></div></div>
+<section class="s" id="services"><div class="wrap"><div class="kicker">Auto</div><h2>Services</h2><div class="svcs n6"><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 13l4-4"/></svg></div><h3>Diagnostics</h3><p>Check-engine light? We&#x27;ll find out why.</p></div><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13l2-5a2 2 0 0 1 2-1.4h10A2 2 0 0 1 19 8l2 5v4a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1z"/><path d="M3 13h18"/></svg></div><h3>Brakes &amp; tires</h3><p>Pads, rotors, alignments and rotations.</p></div><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Engine &amp; transmission</h3><p>From tune-ups to rebuilds.</p></div><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></svg></div><h3>Oil &amp; fluids</h3><p>Quick oil changes from $49.</p></div><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></div><h3>A/C &amp; heating</h3><p>Recharge, repair and diagnostics.</p></div><div class="svc rv"><div class="svc-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Inspections</h3><p>Pre-purchase and road-trip checks.</p></div></div></div></section>
+<section class="s alt" id="more"><div class="wrap"><h2>How we work</h2><div class="steps"><div class="step rv"><div class="num">01</div><h3>Inspect</h3><p>We check it and text you photos of what we find.</p></div><div class="step rv"><div class="num">02</div><h3>Approve</h3><p>You see the price first. Nothing gets done without your OK.</p></div><div class="step rv"><div class="num">03</div><h3>Drive</h3><p>Done right, backed by a 2-year warranty.</p></div></div></div></section>
+<section class="s" id="reviews"><div class="wrap"><h2>What customers say</h2><div class="revs"><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“They sent pictures of my brakes. Never had a shop do that.”</blockquote><figcaption>Kevin O. <span>· sample review</span></figcaption></figure><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“Fixed what the dealer couldn&#x27;t, for half the price.”</blockquote><figcaption>Sara N. <span>· sample review</span></figcaption></figure><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“Straight shooters. My new shop for good.”</blockquote><figcaption>Luis M. <span>· sample review</span></figcaption></figure></div></div></section>
+<section class="cta" id="contact"><div class="wrap"><div class="box"><div><h2>Check engine light on?</h2><p>Book online or call, and we&#x27;ll fit you in today when we can.</p></div><a class="btn" href="tel:+14795550176"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> (479) 555-0176</a></div></div></section>
+<footer><div class="wrap"><div><b>Ironclad Auto Repair</b><br>Springdale, AR · (479) 555-0176<br>Mon–Fri 7:30a–6p · Sat 8a–1p</div><div style="text-align:right">© 2026 Ironclad Auto Repair (sample)<br>Website by <a href="/" style="text-decoration:underline">Sitemind</a></div></div></footer>
+<div class="callbar"><a class="c" href="tel:+14795550176">Call now</a><a class="d" href="#contact">Call the shop</a></div>
+<div class="toast" id="toast">This is a demo, so nothing was sent</div>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.slot').forEach(b=>b.onclick=()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+function demo(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+</script>
+</body></html>

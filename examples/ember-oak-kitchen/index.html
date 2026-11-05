@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ember &amp; Oak Kitchen · Sample website by Sitemind</title>
+<meta name="description" content="Seasonal plates cooked over oak, with ingredients from farms within an hour of our door.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#15100c;--sf:#1e1712;--ink:#f4e9dc;--mu:#b29f8b;--ac:#e0773a;--ac2:#2a2019;--aci:#160d06;--r:10px;
+--cr:10px;--hf:'Playfair Display', serif;--bf:'Lato', sans-serif;--a:#e0773a;--b:#5a2e18;--line:color-mix(in srgb,var(--ink) 12%,transparent);--soft:color-mix(in srgb,var(--ink) 5%,transparent)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--bf);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1140px,90vw);margin:0 auto}
+h1,h2,h3,.logo b,.art-name,.price,.num,.st b{font-family:var(--hf);text-transform:none;letter-spacing:-0.01em}
+.ic{width:26px;height:26px}.sm{width:15px;height:15px;flex:none}.big{width:64px;height:64px}
+.ribbon{background:#0b0b0d;color:#cfd2d8;font:500 12.5px/1.4 Inter,system-ui,sans-serif;text-align:center;padding:9px 16px}
+.ribbon a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;color:var(--ink)}.logo .lg{width:36px;height:36px;border-radius:min(var(--r),12px);background:var(--ac);color:var(--aci);display:grid;place-items:center}
+.logo .lg svg{width:20px;height:20px}
+.links{display:flex;gap:24px;margin-left:auto;font-size:15px;color:var(--mu)}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:var(--r);font-weight:600;font-size:15px;transition:transform .15s,box-shadow .2s,background .2s;border:2px solid transparent;cursor:pointer;font-family:var(--bf)}
+.btn.solid{background:var(--ac);color:var(--aci)}.btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb,var(--ac) 35%,transparent)}
+.btn.ghost{border-color:var(--line);color:var(--ink)}.btn.ghost:hover{border-color:var(--ink)}
+.btn:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid color-mix(in srgb,var(--ac) 60%,transparent);outline-offset:2px}
+.hero{padding:72px 0 64px;position:relative;overflow:hidden}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--ac);background:color-mix(in srgb,var(--ac) 12%,transparent);padding:6px 12px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.02;font-weight:700}
+.lead{font-size:clamp(16px,1.6vw,19px);color:var(--mu);margin:20px 0 30px;max-width:540px}
+.htext.c{text-align:center}.htext.c .lead{margin-left:auto;margin-right:auto}.htext.c .ctas{justify-content:center}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.phone{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-weight:600;color:var(--mu)}.phone:hover{color:var(--ac)}
+.htext.c .phone{justify-content:center;width:100%}
+.art{position:relative;aspect-ratio:1/1;max-width:480px;width:100%;justify-self:center}
+.banner{margin-top:52px}.banner .art{aspect-ratio:16/7;max-width:none}
+.blob{position:absolute;border-radius:var(--r);filter:saturate(1.1)}
+.b1{inset:4% 14% 18% 0;background:var(--a)}.b2{inset:30% 0 0 26%;background:var(--b);opacity:.9}
+.banner .b1{inset:0 40% 10% 0}.banner .b2{inset:15% 0 0 45%}
+.art-card{position:absolute;inset:22% 20% 24% 16%;background:var(--sf);border-radius:var(--cr);box-shadow:0 30px 60px rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--ac);border:1px solid var(--line)}
+.banner .art-card{inset:14% 32% 14% 32%}
+.art-name{font-size:26px;color:var(--ink)}
+.art-lines{width:60%;display:grid;gap:7px}.art-lines i{height:7px;border-radius:9px;background:var(--soft);display:block}
+.chip{position:absolute;background:var(--sf);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;display:flex;gap:6px;align-items:center;box-shadow:0 12px 30px rgba(0,0,0,.14);white-space:nowrap}
+.chip span{font-weight:500;color:var(--mu)}.chip svg{color:var(--ac)}
+.c1{top:8%;right:0}.c2{bottom:12%;left:-2%}
+.banner .c1{top:10%;right:18%}.banner .c2{bottom:10%;left:16%}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--sf)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.st{padding:26px 10px;text-align:center}.st+.st{border-left:1px solid var(--line)}
+.st b{display:block;font-size:28px;color:var(--ac)}.st span{color:var(--mu);font-size:14px}
+section.s{padding:88px 0}
+.kicker{color:var(--ac);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.08;margin-bottom:36px;font-weight:700}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.svcs.n4{grid-template-columns:repeat(4,1fr)}
+.svc{background:var(--sf);border:1px solid var(--line);border-radius:var(--cr);padding:26px;transition:transform .2s,border-color .2s}
+.svc:hover{transform:translateY(-4px);border-color:var(--ac)}
+.svc-ic{width:50px;height:50px;border-radius:var(--cr);background:color-mix(in srgb,var(--ac) 13%,transparent);color:var(--ac);display:grid;place-items:center;margin-bottom:16px}
+.svc h3{font-size:20px;margin-bottom:6px}.svc p{color:var(--mu);font-size:15px}
+.menu{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px 48px}
+.menu li{display:flex;align-items:baseline;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:18px}
+.mi{color:var(--ac);align-self:center}.mn{font-weight:600}.dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px)}.mp{font-family:var(--hf);color:var(--ac);font-size:20px;white-space:nowrap}
+.alt{background:var(--sf);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{padding:30px;border-radius:var(--cr);background:var(--bg);border:1px solid var(--line)}
+.num{font-size:42px;color:var(--ac);line-height:1;margin-bottom:14px}.step h3{font-size:21px;margin-bottom:6px}.step p{color:var(--mu)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{position:relative;padding:32px;border-radius:var(--cr);background:var(--bg);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.plan.pop{border:2px solid var(--ac);transform:translateY(-8px)}
+.plan .tag{position:absolute;top:-13px;left:24px;background:var(--ac);color:var(--aci);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.plan h3{font-size:22px}.price{font-size:40px;color:var(--ac)}.plan p{color:var(--mu);flex:1}
+.hours{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.hours table{width:100%;border-collapse:collapse;font-size:18px}.hours th{text-align:left;font-weight:600;padding:16px 0;border-bottom:1px solid var(--line)}.hours td{text-align:right;color:var(--mu);border-bottom:1px solid var(--line)}
+.mapcard{position:relative;aspect-ratio:4/3;border-radius:var(--cr);overflow:hidden;background:color-mix(in srgb,var(--ac) 8%,var(--bg));border:1px solid var(--line)}
+.mapcard .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;transform:rotate(-8deg) scale(1.3)}
+.pinwrap{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);color:var(--ac)}.addr{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);background:var(--sf);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap}
+.book{max-width:640px;background:var(--bg);border:1px solid var(--line);border-radius:var(--cr);padding:30px;display:grid;gap:18px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.book label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mu)}
+.book select,.book input{font:inherit;font-size:15px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--sf);color:var(--ink)}
+.flabel{font-size:13px;font-weight:600;color:var(--mu)}.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{font:inherit;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--sf);color:var(--ink);cursor:pointer}.slot.on{background:var(--ac);color:var(--aci);border-color:var(--ac)}
+.wide{width:100%}.note{text-align:center;font-size:12.5px;color:var(--mu)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--sf);border:1px solid var(--line);border-radius:var(--cr);padding:28px}
+.stars{display:flex;gap:2px;color:var(--ac);margin-bottom:14px}.stars svg{fill:currentColor}
+blockquote{font-size:18px;line-height:1.5;margin-bottom:16px}figcaption{font-weight:600}figcaption span{font-weight:400;color:var(--mu);font-size:13px}
+.cta{padding:88px 0}.cta .box{background:var(--ac);color:var(--aci);border-radius:var(--cr);padding:56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta .box::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:color-mix(in srgb,var(--aci) 12%,transparent)}
+.cta h2{margin:0 0 8px;font-size:clamp(28px,3.6vw,44px)}.cta p{opacity:.85;font-size:17px}
+.cta .btn{background:var(--aci);color:var(--ac);position:relative;z-index:1}
+footer{border-top:1px solid var(--line);padding:40px 0 100px;color:var(--mu);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}footer b{color:var(--ink)}
+.callbar{display:none}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:600;font-size:14px;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translateX(-50%)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.rv.in{opacity:1;transform:none}
+@media (max-width:900px){.hgrid,.hours{grid-template-columns:1fr}.links{display:none}nav .btn{margin-left:auto}.svcs,.svcs.n4,.steps,.plans,.revs{grid-template-columns:1fr 1fr}.menu{grid-template-columns:1fr}.plan.pop{transform:none}}
+@media (max-width:600px){.svcs,.svcs.n4,.steps,.plans,.revs,.frow{grid-template-columns:1fr}.stats .wrap{grid-template-columns:1fr}.st+.st{border-left:0;border-top:1px solid var(--line)}.hero{padding:48px 0}section.s,.cta{padding:60px 0}.cta .box{padding:36px 26px}.banner .art{aspect-ratio:4/3}.banner .art-card{inset:18% 18%}nav .btn{padding:10px 14px;font-size:14px}
+.callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}.callbar a{flex:1;padding:14px;border-radius:999px;text-align:center;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25)}.callbar .c{background:var(--ac);color:var(--aci)}.callbar .d{background:var(--sf);color:var(--ink);border:1px solid var(--line)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style></head>
+<body>
+<div class="ribbon">Sample website by <a href="/">Sitemind</a> · Ember &amp; Oak Kitchen is a fictional business · <a href="/examples/">See all examples</a></div>
+<nav><div class="wrap"><a href="#" class="logo"><span class="lg"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></span><b>Ember &amp; Oak</b></a>
+<div class="links"><a href="#services">Tonight&#x27;s menu</a><a href="#more">Hours</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+<a href="#contact" class="btn solid">Reserve a table</a></div></nav>
+<section class="hero split"><div class="wrap hgrid"><div class="htext"><div class="eyebrow">Wood-fired · Local · Seasonal</div>
+<h1>Wood-fired food, made right here.</h1><p class="lead">Seasonal plates cooked over oak, with ingredients from farms within an hour of our door.</p>
+<div class="ctas"><a href="#contact" class="btn solid">Reserve a table</a><a href="#services" class="btn ghost">See the menu</a></div>
+<a class="phone" href="tel:+14795550130"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> (479) 555-0130</a></div><div class="art" aria-hidden="true">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="art-card">
+    <div class="art-ic"><svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></div>
+    <div class="art-name">Ember &amp; Oak</div>
+    <div class="art-lines"><i></i><i></i><i style="width:55%"></i></div>
+  </div>
+  <div class="chip c1"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg> Oak <span>fired daily</span></div>
+  <div class="chip c2"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> Local <span>farms</span></div>
+</div></div></section>
+<div class="stats"><div class="wrap"><div class="st"><b>Oak</b><span>fired daily</span></div><div class="st"><b>Local</b><span>farms</span></div><div class="st"><b>Tue–Sun</b><span>from 4 p.m.</span></div></div></div>
+<section class="s" id="services"><div class="wrap"><div class="kicker">Food &amp; drink</div><h2>Tonight&#x27;s menu</h2><ul class="menu"><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></span><span class="mn">Oak-grilled ribeye</span><span class="dots"></span><span class="mp">$38</span></li><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg></span><span class="mn">Smoked half chicken</span><span class="dots"></span><span class="mp">$24</span></li><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></svg></span><span class="mn">Charred market greens</span><span class="dots"></span><span class="mp">$12</span></li><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/></svg></span><span class="mn">Wood-fired flatbread</span><span class="dots"></span><span class="mp">$16</span></li><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg></span><span class="mn">Ember potatoes</span><span class="dots"></span><span class="mp">$9</span></li><li class="rv"><span class="mi"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span><span class="mn">Skillet cobbler</span><span class="dots"></span><span class="mp">$10</span></li></ul></div></section>
+<section class="s alt" id="more"><div class="wrap"><h2>Hours</h2><div class="hours rv"><table><tr><th>Tue–Thu</th><td>4:00p – 9:30p</td></tr><tr><th>Fri–Sat</th><td>4:00p – 10:30p</td></tr><tr><th>Sunday</th><td>4:00p – 9:00p</td></tr></table>
+<div class="mapcard" aria-hidden="true"><div class="grid"></div><div class="pinwrap"><svg class="big" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div class="addr">Rogers, AR</div></div></div></div></section>
+<section class="s" id="reviews"><div class="wrap"><h2>What customers say</h2><div class="revs"><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“The ribeye is worth the drive alone.”</blockquote><figcaption>Dana F. <span>· sample review</span></figcaption></figure><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“Cozy, warm, and the staff knew the menu cold.”</blockquote><figcaption>Rob H. <span>· sample review</span></figcaption></figure><figure class="rev rv"><div class="stars"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></div><blockquote>“Best date night spot we&#x27;ve found.”</blockquote><figcaption>Ellie &amp; Sam <span>· sample review</span></figcaption></figure></div></div></section>
+<section class="cta" id="contact"><div class="wrap"><div class="box"><div><h2>Saturday fills up fast.</h2><p>Reserve online, or call for parties of 8 or more.</p></div><a class="btn" href="tel:+14795550130"><svg class="sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg> (479) 555-0130</a></div></div></section>
+<footer><div class="wrap"><div><b>Ember &amp; Oak Kitchen</b><br>Rogers, AR · (479) 555-0130<br>Tue–Sun 4p–10p</div><div style="text-align:right">© 2026 Ember &amp; Oak Kitchen (sample)<br>Website by <a href="/" style="text-decoration:underline">Sitemind</a></div></div></footer>
+<div class="callbar"><a class="c" href="tel:+14795550130">Call now</a><a class="d" href="#contact">See the menu</a></div>
+<div class="toast" id="toast">This is a demo, so nothing was sent</div>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.slot').forEach(b=>b.onclick=()=>{document.querySelectorAll('.slot').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+function demo(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+</script>
+</body></html>
