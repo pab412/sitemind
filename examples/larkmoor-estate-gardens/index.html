@@ -291,17 +291,6 @@ footer{padding:64px 0 96px;border-top:1px solid rgba(228,221,208,.1);font-size:1
  <div class="scene" aria-hidden="true">
   <div class="cam" id="cam">
    <div class="photo"></div>
-   <div class="pool"></div>
-   <!-- one garden light far down the path, then uplights along both hedges, far to near -->
-   <i class="light lantern" style="--x:47.6%;--y:52.5%"></i>
-   <i class="light" style="--x:44%;--y:56%;--w:5%;--o:.8"></i>
-   <i class="light" style="--x:55.5%;--y:58.6%;--w:6%;--o:.85"></i>
-   <i class="light" style="--x:38%;--y:60%;--w:8%"></i>
-   <i class="light" style="--x:62%;--y:64%;--w:9%"></i>
-   <i class="light" style="--x:29%;--y:67%;--w:11%"></i>
-   <i class="light" style="--x:71%;--y:71%;--w:12%"></i>
-   <i class="light" style="--x:18%;--y:77%;--w:15%"></i>
-   <i class="light" style="--x:84%;--y:81%;--w:16%"></i>
   </div>
  </div>
  <div class="veil"></div>
@@ -491,13 +480,8 @@ const hero=$('.hero'),lights=$$('.light'),nav=$('#nav'),cam=$('#cam');
 async function opening(){
  if(RM){hero.classList.add('dusk','lit','named','ready');lights.forEach(l=>l.classList.add('on'));nav.classList.add('on');return}
  await wait(500);
- lights[0].classList.add('on');           // a single garden light warms on
- await wait(1300);
  hero.classList.add('dusk');cam.classList.add('glide'); // the garden appears, camera begins to glide
- await wait(900);
- for(let i=1;i<lights.length;i++){lights[i].classList.add('on');await wait(380)}
- hero.classList.add('lit');
- await wait(300);
+ await wait(2200);
  hero.classList.add('named');
  await wait(1500);
  hero.classList.add('ready');nav.classList.add('on');
