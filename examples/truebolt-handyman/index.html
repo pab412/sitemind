@@ -50,7 +50,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .blinds{position:fixed;inset:0;z-index:20;pointer-events:none;display:flex;flex-direction:column}
 .blinds i{flex:1;background:var(--dk);transform:scaleY(0);transform-origin:top;margin-bottom:-2px;will-change:transform}
 
-.track{height:800vh;position:relative;z-index:1}
+.track{height:360vh;position:relative;z-index:1}
 
 /* dark section (normal flow) */
 .dark{position:relative;z-index:5;color:var(--dkink)}
@@ -395,7 +395,7 @@ function frame(){
   const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
   const track=$('track').offsetHeight-vh;
   const target=clamp(scrollY/track);
-  sp+=(target-sp)*(reduce?1:Math.min(1,dt*7));
+  sp+=(target-sp)*(reduce?1:Math.min(1,dt*11));
   vel+=((sp-lastSp)/Math.max(dt,.001)-vel)*.15;lastSp=sp;
   const dark=document.documentElement.dataset.theme==='dark';
 
