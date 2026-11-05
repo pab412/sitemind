@@ -12,6 +12,7 @@
 :root{--bg:#f3f0ea;--ink:#141414;--mu:#6b6862;--line:rgba(20,20,20,.12);--card:rgba(255,255,255,.7);--ac:#ff5a1f;--dk:#0b0b0d;--dkink:#f2efe9}
 html[data-theme="dark"]{--bg:#0e0e10;--ink:#f2efe9;--mu:#9a968f;--line:rgba(255,255,255,.12);--card:rgba(24,24,27,.7)}
 *{box-sizing:border-box;margin:0;padding:0}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
 html,body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;transition:background .5s,color .5s}
 a{color:inherit;text-decoration:none}
 #gl{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0}
@@ -94,6 +95,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media (max-width:480px){.brand span.nm{display:none}.cta{padding:10px 14px;font-size:13px}}
 @media (prefers-reduced-motion:reduce){.kick i{animation:none}}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
 </head>
 <body>
@@ -253,7 +255,7 @@ function drawCard(ctx,i,mode,t){ // mode: 'static' | 'preview'
 const canvas=$('gl');
 let renderer;
 try{renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'})}catch(e){document.documentElement.classList.add('nogl');throw e}
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
 renderer.toneMapping=THREE.ACESFilmicToneMapping;
 const scene=new THREE.Scene();
 const camera=new THREE.PerspectiveCamera(38,1,.1,200);camera.position.set(0,0,12);
@@ -375,14 +377,16 @@ const ray=new THREE.Raycaster();
 
 /* blinds */
 const blinds=$('blinds');for(let i=0;i<12;i++)blinds.appendChild(document.createElement('i'));
-const strips=[...blinds.children];
+const strips=[...blinds.children];const setS=(el,k,v)=>{if(el._c===undefined)el._c={};if(el._c[k]!==v){el._c[k]=v;el.style[k]=v}};
 
 /* nav "Work" jumps to grid */
-document.querySelector('[data-go]').addEventListener('click',e=>{e.preventDefault();const tr=$('track');scrollTo({top:(tr.offsetHeight-vh)*.62,behavior:reduce?'auto':'smooth'})});
+document.querySelector('[data-go]').addEventListener('click',e=>{e.preventDefault();const tr=$('track'),y=(tr.offsetHeight-vh)*.62;lenis?lenis.scrollTo(y):scrollTo(0,y)});
 
 /* ---------- loop ---------- */
 let sp=0,lastSp=0,vel=0,hovered=-1;
 const clock=new THREE.Clock();
+const lenis=(!reduce&&window.Lenis)?new Lenis({duration:1.05,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true,wheelMultiplier:1.15,touchMultiplier:1.4,autoRaf:false}):null;
+document.querySelectorAll('a[href^="#"]').forEach(a=>{if(a.dataset.go)return;a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length<2)return;const el=document.querySelector(id);if(!el)return;e.preventDefault();lenis?lenis.scrollTo(el,{offset:-70}):el.scrollIntoView()})});
 const tmp=new THREE.Vector3(),tan=new THREE.Vector3(),look=new THREE.Vector3();
 const hdr=$('hdr'),brand=$('brand'),w1=$('w1'),w2=$('w2'),heroText=$('heroText'),kick=$('kick'),tagline=$('tagline'),workHead=$('workHead'),cap=$('caption'),split=$('split');
 const logoTarget=new THREE.Vector3();
@@ -391,11 +395,13 @@ function slotWorld(){ // world position of header logo slot at the logo's depth
   ndc.unproject(camera);const dir=ndc.sub(camera.position).normalize();const t=(0-camera.position.z)/dir.z;return logoTarget.copy(camera.position).add(dir.multiplyScalar(t));
 }
 
-function frame(){
+let trackH=1;const measure=()=>{trackH=$('track').offsetHeight-innerHeight};addEventListener('resize',measure);measure();
+function frame(now){
+  if(lenis)lenis.raf(now);
   const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
-  const track=$('track').offsetHeight-vh;
-  const target=clamp(scrollY/track);
-  sp+=(target-sp)*(reduce?1:Math.min(1,dt*11));
+  const y=lenis?lenis.scroll:scrollY;
+  const target=clamp(y/trackH);
+  sp=lenis?target:sp+(target-sp)*(reduce?1:Math.min(1,dt*12));
   vel+=((sp-lastSp)/Math.max(dt,.001)-vel)*.15;lastSp=sp;
   const dark=document.documentElement.dataset.theme==='dark';
 
@@ -411,13 +417,13 @@ function frame(){
 
   /* 2. headline slides in from the edges */
   const hi=easeOut(map(sp,.05,.13)),ho=map(sp,.24,.31);
-  w1.style.transform=`translateX(${(1-hi)*-60}vw)`;w2.style.transform=`translateX(${(1-hi)*60}vw)`;
-  heroText.style.opacity=hi*(1-ho);kick.style.opacity=1-map(sp,0,.04);tagline.style.opacity=(1-map(sp,.08,.16));
+  setS(w1,'transform',`translate3d(${((1-hi)*-60).toFixed(2)}vw,0,0)`);setS(w2,'transform',`translate3d(${((1-hi)*60).toFixed(2)}vw,0,0)`);
+  setS(heroText,'opacity',(hi*(1-ho)).toFixed(3));setS(kick,'opacity',(1-map(sp,0,.04)).toFixed(3));setS(tagline,'opacity',(1-map(sp,.08,.16)).toFixed(3));
 
   /* 3-5. sheets: ribbon → fly-in grid → sphere */
   const rib=map(sp,.06,.42), fly=map(sp,.42,.52), sph=sp>.885?1:0;
   const gridOn=fly>=1&&sp<.84;
-  workHead.style.opacity=map(sp,.47,.53)*(1-map(sp,.82,.85));
+  setS(workHead,'opacity',(map(sp,.47,.53)*(1-map(sp,.82,.85))).toFixed(3));
   let hit=-1;
   if(gridOn&&mouse.x<5){ray.setFromCamera(mouse,camera);const hs=ray.intersectObjects(sheets,false);if(hs.length){hit=hs[0].object.userData.i;hs[0].object.material.uniforms.uMouse.value.copy(hs[0].uv)}}
   if(hit!==hovered){hovered=hit;if(hit>=0){$('capT').textContent=JOBS[hit][0];$('capS').textContent=JOBS[hit][1]}}
@@ -471,18 +477,18 @@ function frame(){
 
   /* 6. blinds close into the dark section, then open */
   const bc=map(sp,.84,.885),bo=map(sp,.89,.935);
-  strips.forEach((s,i)=>{const k=clamp(bc*1.6-i*.05),o=clamp(bo*1.6-(11-i)*.05);s.style.transformOrigin=bo>0?'bottom':'top';s.style.transform=`scaleY(${bo>0?1-easeOut(o):easeOut(k)})`});
+  strips.forEach((s,i)=>{const k=clamp(bc*1.6-i*.05),o=clamp(bo*1.6-(11-i)*.05);setS(s,'transformOrigin',bo>0?'bottom':'top');setS(s,'transform',`scaleY(${(bo>0?1-easeOut(o):easeOut(k)).toFixed(4)})`)});
   const inDark=sp>.885;
   renderer.setClearColor(inDark?0x0b0b0d:(dark?0x0e0e10:0xf3f0ea),inDark?1:0);
   hdr.classList.toggle('ondark',inDark||dark);
 
   /* headline chromatic split on fast cursor jerks */
-  jerk*=.9;split.style.setProperty('--sx',(jerk*14).toFixed(1)+'px');
+  jerk*=.9;const sx=(jerk*14).toFixed(1)+'px';if(split._sx!==sx){split._sx=sx;split.style.setProperty('--sx',sx)}
 
   renderer.render(scene,camera);
   requestAnimationFrame(frame);
 }
-frame();
+requestAnimationFrame(frame);
 </script>
 <noscript><style>#gl,.blinds{display:none}</style></noscript>
 </body>
