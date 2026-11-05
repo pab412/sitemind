@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Halcyon · Rare Fragrance &amp; Objects (Sitemind sample)</title>
+<meta name="description" content="Sample website by Sitemind for a specialty retailer: a boutique house of rare fragrance and objects.">
+<meta name="theme-color" content="#07060f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --midnight:#07060f; --ink:#0d0b1c; --violet:#5b2bd9; --plum:#2a1257; --teal:#0fb5a8; --abyss:#06303a;
+ --text:#ecebf5; --muted:#9a97b3; --line:rgba(236,235,245,.1);
+ --sans:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif; --serif:'Instrument Serif',Georgia,serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+ --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--midnight);color:var(--text);font:400 17px/1.6 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:1.5px solid var(--teal);outline-offset:3px;border-radius:6px}
+.ph{text-decoration:underline dotted rgba(15,181,168,.6);text-underline-offset:4px}
+.wrap{width:min(1240px,100% - 48px);margin:0 auto}
+.eyebrow{font:400 11.5px/1 var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.eyebrow b{color:var(--teal);font-weight:400}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.035em;line-height:.95}
+.serif{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em}
+
+/* ---- living backdrop ---- */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#120d2b 0%,var(--midnight) 60%)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;mix-blend-mode:screen;will-change:transform}
+.b1{width:62vmax;height:62vmax;left:-14vmax;top:-18vmax;background:radial-gradient(circle,#5b2bd9 0%,rgba(91,43,217,0) 68%);animation:d1 38s ease-in-out infinite alternate}
+.b2{width:56vmax;height:56vmax;right:-16vmax;top:6vmax;background:radial-gradient(circle,#0b8f88 0%,rgba(11,143,136,0) 66%);animation:d2 46s ease-in-out infinite alternate;opacity:.42}
+.b3{width:70vmax;height:70vmax;left:18vmax;bottom:-40vmax;background:radial-gradient(circle,#1c1660 0%,rgba(28,22,96,0) 68%);animation:d3 52s ease-in-out infinite alternate;opacity:.7}
+.b4{width:34vmax;height:34vmax;left:40vmax;top:20vmax;background:radial-gradient(circle,#8a3ad6 0%,rgba(138,58,214,0) 66%);animation:d4 30s ease-in-out infinite alternate;opacity:.28}
+@keyframes d1{to{transform:translate(18vmax,14vmax) scale(1.15)}}
+@keyframes d2{to{transform:translate(-20vmax,16vmax) scale(.9)}}
+@keyframes d3{to{transform:translate(-14vmax,-12vmax) scale(1.1)}}
+@keyframes d4{0%{transform:translate(0,0)}50%{transform:translate(-16vmax,10vmax) scale(1.3)}100%{transform:translate(10vmax,-6vmax) scale(.9)}}
+.spot{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px circle at var(--mx,50%) var(--my,30%),rgba(15,181,168,.07),transparent 60%)}
+.grain{position:fixed;inset:-50%;z-index:-1;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}}
+.vignette{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(130% 100% at 50% 40%,transparent 55%,rgba(3,2,8,.75))}
+
+/* ---- chrome ---- */
+.ribbon{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:rgba(10,8,22,.7);border:1px solid var(--line);padding:9px 14px;border-radius:99px;backdrop-filter:blur(10px);white-space:nowrap}
+.ribbon b{color:var(--teal);font-weight:400}
+.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;width:min(1240px,100% - 32px);display:flex;align-items:center;justify-content:space-between;padding:10px 10px 10px 22px;border-radius:999px;border:1px solid transparent;transition:background .6s,border-color .6s,backdrop-filter .6s}
+.nav.solid{background:rgba(12,10,28,.6);border-color:var(--line);backdrop-filter:blur(16px) saturate(140%)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.32em;font-size:14px}
+.logo svg{width:22px;height:22px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--muted)}
+.nav ul a:hover{color:var(--text)}
+.nav .mini{font-size:13.5px;font-weight:500;padding:10px 16px;border-radius:999px;background:rgba(236,235,245,.08);border:1px solid var(--line);transition:background .4s}
+.nav .mini:hover{background:rgba(236,235,245,.16)}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---- primary CTA ---- */
+.cta{--gx:50%;--gy:50%;position:relative;display:inline-flex;align-items:center;gap:14px;padding:19px 30px 19px 32px;border-radius:999px;background:#f4f2ff;color:#0b0918;font-weight:600;font-size:16.5px;letter-spacing:-.01em;border:0;cursor:pointer;isolation:isolate;overflow:hidden;
+ box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 10px 30px -10px rgba(91,43,217,.6),0 0 0 0 rgba(15,181,168,0);
+ transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120px circle at var(--gx) var(--gy),rgba(15,181,168,.35),transparent 70%);opacity:0;transition:opacity .4s}
+.cta::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.9),transparent);transform:skewX(-18deg);transition:left .9s var(--ease)}
+.cta .arr{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#0b0918;color:#f4f2ff;transition:transform .5s var(--ease)}
+.cta:hover{transform:scale(1.04);box-shadow:0 0 0 1px rgba(255,255,255,.8) inset,0 18px 50px -12px rgba(91,43,217,.85),0 0 60px 6px rgba(15,181,168,.28)}
+.cta:hover::before{opacity:1}
+.cta:hover::after{left:130%}
+.cta:hover .arr{transform:translateX(3px) rotate(-45deg)}
+.cta:active{transform:scale(.98)}
+.ghost{display:inline-flex;align-items:center;gap:10px;padding:18px 24px;border-radius:999px;border:1px solid rgba(236,235,245,.18);color:var(--text);font-weight:500;transition:background .4s,border-color .4s}
+.ghost:hover{background:rgba(236,235,245,.06);border-color:rgba(236,235,245,.35)}
+
+/* ---- hero ---- */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 24px 110px;overflow:hidden}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(236,235,245,.03);backdrop-filter:blur(6px)}
+.hero .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px var(--teal);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.hero h1{font-size:clamp(54px,10.4vw,168px);margin:30px auto 0;max-width:13ch;letter-spacing:-.055em;line-height:.88;
+ padding-bottom:.1em;background:linear-gradient(180deg,#fff 30%,#b9b4dc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .serif{background:linear-gradient(95deg,#c9b8ff,#7fe9df);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.hero .eyebrow{white-space:nowrap}
+@media (max-width:480px){.hero .eyebrow{letter-spacing:.12em;font-size:10px}}
+.hero .sub{margin-top:18px!important;font-size:clamp(17px,1.5vw,20px);color:#b7b4cf;max-width:46ch;margin:28px auto 0;line-height:1.55}
+.hero .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.hero .meta{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);margin-top:64px;font:400 11px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#77748f;flex-wrap:wrap}
+.hero .meta span{display:flex;align-items:center;gap:8px}
+.hero .meta span::before{content:"";width:14px;height:1px;background:currentColor;opacity:.5}
+.reveal>*{opacity:0;transform:translateY(22px);filter:blur(8px);animation:rise 1.4s var(--ease) forwards}
+.reveal>*:nth-child(2){animation-delay:.12s}.reveal>*:nth-child(3){animation-delay:.26s}.reveal>*:nth-child(4){animation-delay:.4s}.reveal>*:nth-child(5){animation-delay:.56s}
+@keyframes rise{to{opacity:1;transform:none;filter:none}}
+.orbit{position:absolute;left:50%;top:50%;width:min(1100px,140vw);aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;opacity:.5}
+.orbit circle{fill:none;stroke:url(#ring);stroke-width:.6}
+.orbit g{transform-origin:500px 500px;animation:spin 120s linear infinite}
+.orbit g:nth-child(3){animation-duration:180s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);width:22px;height:36px;border:1px solid rgba(236,235,245,.25);border-radius:12px}
+.scroll::after{content:"";position:absolute;left:50%;top:7px;width:2px;height:7px;margin-left:-1px;border-radius:2px;background:var(--text);animation:wheel 2.2s ease-in-out infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(12px)}}
+
+/* ---- sections ---- */
+section{position:relative}
+.sec{padding:clamp(100px,16vh,170px) 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.head h2{font-size:clamp(40px,5.6vw,80px);margin-top:18px;max-width:14ch}
+.head p{color:var(--muted);max-width:38ch;margin:0}
+.fade{opacity:0;transform:translateY(30px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease)}
+.fade.in{opacity:1;transform:none}
+
+/* product cards */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{position:relative;border-radius:22px;padding:22px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--line);overflow:hidden;transform-style:preserve-3d;transition:transform .6s var(--ease),border-color .6s;cursor:pointer;text-align:left}
+.card:hover{border-color:rgba(236,235,245,.22)}
+.card .stage{height:260px;display:grid;place-items:center;position:relative;margin:-6px -6px 18px;border-radius:16px;background:radial-gradient(70% 60% at 50% 70%,var(--c1),transparent 70%)}
+.card svg{height:200px;width:auto;filter:drop-shadow(0 30px 30px rgba(0,0,0,.5));transition:transform .8s var(--ease)}
+.card:hover svg{transform:translateY(-8px) rotate(-2deg)}
+.card .tag{position:absolute;top:16px;left:16px;font:400 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;padding:6px 9px;border-radius:99px;background:rgba(0,0,0,.35);border:1px solid var(--line);color:#cfcce6}
+.card h3{font-size:24px;letter-spacing:-.02em}
+.card .notes{color:var(--muted);font-size:14.5px;margin:6px 0 16px;min-height:2.6em}
+.card .row{display:flex;justify-content:space-between;align-items:center;font-size:14.5px}
+.card .row b{font-weight:500}
+.card .add{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);display:grid;place-items:center;transition:background .4s,transform .4s;cursor:pointer}
+.card .add:hover{background:#f4f2ff;color:#0b0918;transform:rotate(90deg)}
+.card .glare{position:absolute;inset:0;pointer-events:none;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.08),transparent 60%);opacity:0;transition:opacity .4s}
+.card:hover .glare{opacity:1}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.card .stage{height:220px}}
+
+/* finder */
+.finder{border-radius:32px;border:1px solid var(--line);background:linear-gradient(140deg,rgba(91,43,217,.14),rgba(6,48,58,.22) 60%,rgba(255,255,255,.02));padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;backdrop-filter:blur(8px)}
+.finder h2{font-size:clamp(36px,4.4vw,64px);margin:18px 0 16px}
+.finder .lead{color:var(--muted);max-width:36ch}
+.q{display:none}.q.on{display:block;animation:qIn .7s var(--ease)}
+@keyframes qIn{from{opacity:0;transform:translateX(16px)}}
+.q h3{font-size:clamp(22px,2vw,28px);letter-spacing:-.02em;margin-bottom:18px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);text-align:left;cursor:pointer;transition:background .35s,border-color .35s,transform .35s}
+.opt:hover{background:rgba(255,255,255,.07);border-color:rgba(15,181,168,.5);transform:translateY(-2px)}
+.opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.steps{display:flex;gap:6px;margin-bottom:22px}
+.steps i{flex:1;height:2px;border-radius:2px;background:rgba(236,235,245,.12);transition:background .5s}
+.steps i.on{background:linear-gradient(90deg,var(--violet),var(--teal))}
+.result{display:none;align-items:center;gap:22px}.result.on{display:flex;animation:qIn .8s var(--ease)}
+.result svg{height:150px;flex:0 0 auto}
+.result h3{font-size:32px;margin:8px 0 6px}
+.result p{color:var(--muted);margin:0 0 18px}
+.link{background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-size:14px;margin-left:14px}
+@media (max-width:860px){.finder{grid-template-columns:1fr}.opts{grid-template-columns:1fr}.result{flex-direction:column;align-items:flex-start}}
+
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.pillar{padding:40px 32px 40px 0}
+.pillar+.pillar{padding-left:32px;border-left:1px solid var(--line)}
+.pillar .n{font:400 12px/1 var(--mono);color:var(--teal);letter-spacing:.2em}
+.pillar h3{font-size:28px;letter-spacing:-.025em;margin:18px 0 10px}
+.pillar p{color:var(--muted);margin:0}
+@media (max-width:860px){.pillars{grid-template-columns:1fr}.pillar,.pillar+.pillar{padding:32px 0;border-left:0;border-top:1px solid var(--line)}}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}
+.panel{border-radius:28px;border:1px solid var(--line);background:rgba(255,255,255,.03);padding:clamp(28px,4vw,48px);position:relative;overflow:hidden}
+.panel.big{min-height:440px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(80% 90% at 80% 10%,rgba(91,43,217,.35),transparent 60%),radial-gradient(70% 70% at 10% 100%,rgba(15,181,168,.25),transparent 60%),rgba(255,255,255,.02)}
+.panel.big h2{font-size:clamp(40px,5vw,72px);margin:18px 0 18px;max-width:12ch}
+.panel.big p{color:#bdb9d6;max-width:40ch}
+.hours{list-style:none;margin:22px 0 0;padding:0;font-size:15px}
+.hours li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+.hours li span:last-child{color:var(--muted);font-family:var(--mono);font-size:13px}
+@media (max-width:860px){.visit{grid-template-columns:1fr}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(32px,6vw,96px)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;font-size:19px;font-weight:500;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 26px/1 var(--sans);color:var(--teal);transition:transform .4s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:0;padding:0 0 24px;max-width:58ch}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+
+/* final */
+.final{text-align:center;padding:clamp(120px,20vh,220px) 0}
+.final h2{font-size:clamp(48px,8vw,128px);letter-spacing:-.05em;max-width:12ch;margin:22px auto 0}
+.final p{color:var(--muted);max-width:42ch;margin:24px auto 40px}
+.signup{display:flex;gap:8px;max-width:520px;margin:0 auto;padding:6px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
+.signup input{flex:1;min-width:0;background:transparent;border:0;padding:0 18px;font-size:16px}
+.signup input:focus{outline:none}
+.signup .cta{padding:15px 22px}
+.done-msg{min-height:1.6em;margin-top:16px;color:var(--teal);font-size:15px}
+footer{border-top:1px solid var(--line);padding:48px 0 90px;color:#77748f;font-size:13.5px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* bag toast */
+.toast{position:fixed;right:20px;top:84px;z-index:70;padding:14px 18px;border-radius:16px;background:rgba(14,12,30,.85);border:1px solid var(--line);backdrop-filter:blur(12px);font-size:14.5px;transform:translateY(-10px);opacity:0;transition:all .5s var(--ease);pointer-events:none}
+.toast.on{transform:none;opacity:1}
+.bagc{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:99px;background:var(--teal);color:#04131a;font-size:11.5px;font-weight:600;margin-left:6px}
+
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .reveal>*,.fade{opacity:1!important;transform:none!important;filter:none!important}
+}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div class="spot" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+
+<a class="ribbon" href="/examples/#retail">Sitemind sample · <b>dotted text = placeholder</b></a>
+
+<nav class="nav" id="nav" aria-label="Main">
+ <a class="logo" href="#top" aria-label="Halcyon home"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9b8ff"/><stop offset="1" stop-color="#7fe9df"/></linearGradient></defs><circle cx="12" cy="12" r="10.5" fill="none" stroke="url(#lg)" stroke-width="1.2"/><path d="M12 3.5v17M6.5 8.5c2 1.6 3.8 2.3 5.5 2.3s3.5-.7 5.5-2.3" fill="none" stroke="url(#lg)" stroke-width="1.2"/></svg><span class="ph">HALCYON</span></a>
+ <ul><li><a href="#collection">Collection</a></li><li><a href="#finder">Scent finder</a></li><li><a href="#atelier">The atelier</a></li><li><a href="#faq">FAQ</a></li></ul>
+ <a class="mini" href="#collection">Bag<span class="bagc" id="bagc">0</span></a>
+</nav>
+
+<header class="hero" id="top">
+ <svg class="orbit" viewBox="0 0 1000 1000" aria-hidden="true"><defs><linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8e6bff" stop-opacity=".0"/><stop offset=".5" stop-color="#8e6bff" stop-opacity=".55"/><stop offset="1" stop-color="#2fd3c4" stop-opacity=".0"/></linearGradient></defs>
+  <g><circle cx="500" cy="500" r="330"/><circle cx="830" cy="500" r="3" fill="#7fe9df" stroke="none"/></g>
+  <g><circle cx="500" cy="500" r="470"/><circle cx="500" cy="30" r="2.5" fill="#c9b8ff" stroke="none"/></g>
+ </svg>
+ <div class="reveal">
+  <span class="eyebrow"><i></i>New season · <b>Nocturne collection</b></span>
+  <h1>Scent, <span class="serif">engineered</span> for memory.</h1>
+  <p class="sub">Small-batch fragrance and rare objects, composed in our atelier and released in editions of a few hundred. Once they're gone, they're gone.</p>
+  <div class="actions">
+   <a class="cta" href="#collection" id="heroCta">Explore the collection <span class="arr" aria-hidden="true">→</span></a>
+   <a class="ghost" href="#finder">Find your scent</a>
+  </div>
+  <div class="meta"><span>Editions of 300</span><span>Composed in-house</span><span>Complimentary samples</span></div>
+ </div>
+ <div class="scroll" aria-hidden="true"></div>
+</header>
+
+<main>
+<section class="sec" id="collection">
+ <div class="wrap">
+  <div class="head fade"><div><span class="eyebrow">01 · <b>The Nocturne collection</b></span><h2>Four scents for the <span class="serif">hours after dark.</span></h2></div><p>Each one is built around a single raw material we couldn't stop thinking about, then finished over four months of maceration.</p></div>
+  <div class="grid" id="grid"></div>
+ </div>
+</section>
+
+<section class="sec" id="finder" style="padding-top:0">
+ <div class="wrap">
+  <div class="finder fade">
+   <div><span class="eyebrow">02 · <b>Scent finder</b></span><h2>Three questions. <span class="serif">One signature.</span></h2><p class="lead">Tell us how you'd like to feel and we'll point you to the bottle. Takes about twenty seconds.</p></div>
+   <div id="quiz">
+    <div class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+    <div class="q on" data-k="0"><h3>Where would you rather be at midnight?</h3><div class="opts">
+     <button class="opt" data-v="a">A rooftop in the city<small>Neon, glass, cold air</small></button><button class="opt" data-v="b">By a fire in the woods<small>Smoke, cedar, quiet</small></button>
+     <button class="opt" data-v="c">On a night swim<small>Salt, stone, moonlight</small></button><button class="opt" data-v="d">In a velvet booth<small>Low light, a long conversation</small></button></div></div>
+    <div class="q" data-k="1"><h3>Pick a texture.</h3><div class="opts">
+     <button class="opt" data-v="a">Polished steel</button><button class="opt" data-v="b">Raw suede</button><button class="opt" data-v="c">Wet stone</button><button class="opt" data-v="d">Silk</button></div></div>
+    <div class="q" data-k="2"><h3>How close should people be to notice it?</h3><div class="opts">
+     <button class="opt" data-v="a">Across the room</button><button class="opt" data-v="b">At arm's length</button><button class="opt" data-v="c">Only when they lean in</button><button class="opt" data-v="d">Just for me</button></div></div>
+    <div class="result" id="result" aria-live="polite"><div id="rBottle"></div><div><span class="eyebrow">Your signature</span><h3 id="rName"></h3><p id="rWhy"></p><button class="cta" type="button" id="rAdd">Add to bag <span class="arr" aria-hidden="true">+</span></button><button class="link" type="button" id="again">Start again</button></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+ <div class="wrap">
+  <div class="head fade"><div><span class="eyebrow">03 · <b>Why Halcyon</b></span><h2>Made slowly, <span class="serif">on purpose.</span></h2></div></div>
+  <div class="pillars fade">
+   <div class="pillar"><span class="n">I</span><h3>Small editions</h3><p>Every scent is released in a numbered run. When a batch sells through, the next one is composed from scratch.</p></div>
+   <div class="pillar"><span class="n">II</span><h3>Try before you commit</h3><p>Every order ships with samples of the full collection, and the first one opened can be exchanged.</p></div>
+   <div class="pillar"><span class="n">III</span><h3>Objects that last</h3><p>Refillable glass, solid brass caps and candles poured into vessels made to be kept long after they burn down.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="atelier" style="padding-top:0">
+ <div class="wrap visit fade">
+  <div class="panel big"><span class="eyebrow">04 · <b>The atelier</b></span><h2>Come and <span class="serif">smell the room.</span></h2><p>Private appointments include a guided tasting of the full library and a scent made to your notes. Walk-ins are welcome on weekends.</p><div style="margin-top:28px"><a class="cta" href="#visit-cta">Book a private appointment <span class="arr" aria-hidden="true">→</span></a></div></div>
+  <div class="panel"><span class="eyebrow">Visit</span><p style="font-size:22px;letter-spacing:-.02em;margin:18px 0 0;font-weight:500" class="ph">00 Placeholder Street, City</p>
+   <ul class="hours"><li><span>Tuesday – Friday</span><span>11:00 – 19:00</span></li><li><span>Saturday</span><span>10:00 – 20:00</span></li><li><span>Sunday</span><span>12:00 – 17:00</span></li><li><span>Monday</span><span>Appointments only</span></li></ul>
+   <p style="color:var(--muted);font-size:14px;margin-top:20px">Hours and address are <span class="ph">placeholders</span>.</p></div>
+ </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+ <div class="wrap faq fade">
+  <div><span class="eyebrow">05 · <b>Questions</b></span><h2 style="font-size:clamp(40px,5vw,72px);margin-top:18px">Good to <span class="serif">know.</span></h2></div>
+  <div>
+   <details><summary>How long does a fragrance last on skin?</summary><p>Our extraits are around 25% concentration, so expect eight hours or more on skin and longer on fabric.</p></details>
+   <details><summary>What if I don't like it?</summary><p>Open the included sample first. If it isn't right, send the sealed bottle back within 30 days and we'll exchange it.</p></details>
+   <details><summary>Do you ship internationally?</summary><p>Yes, to most countries. Fragrance ships by ground within the country and by specialist courier abroad.</p></details>
+   <details><summary>Can I get a scent made just for me?</summary><p>Yes. Bespoke commissions start with a private appointment and take about eight weeks. Pricing starts from <span class="ph">$X,XXX</span>.</p></details>
+   <details><summary>Are your ingredients ethically sourced?</summary><p>We buy directly from growers and distillers where we can, and list every material on each product page.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="final" id="visit-cta">
+ <div class="wrap fade">
+  <span class="eyebrow">The next edition</span>
+  <h2>Be first when the <span class="serif">next one</span> opens.</h2>
+  <p>Members hear about new editions 48 hours before anyone else, and get first booking for atelier evenings.</p>
+  <form class="signup" id="signup" novalidate><input type="email" placeholder="Your email" aria-label="Email address" required><button class="cta" type="submit">Join the list <span class="arr" aria-hidden="true">→</span></button></form>
+  <p class="done-msg" id="doneMsg" role="status"></p>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap foot"><span><span class="ph">Halcyon</span> · Rare fragrance &amp; objects</span><span>A sample website by <a href="/" style="color:var(--text)">Sitemind</a>. Business name, address, hours and prices are placeholders. Forms and bag are demos: nothing is sent or sold.</span></div></footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,FINE=matchMedia('(pointer:fine)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+
+/* bottle drawn in SVG: glass, liquid, cap */
+let bid=0;
+function bottle(c1,c2,cap,label){const i=bid++;return `<svg viewBox="0 0 120 200" aria-hidden="true"><defs>
+ <linearGradient id="liq${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}" stop-opacity=".95"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+ <linearGradient id="gl${i}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".18" stop-color="#fff" stop-opacity=".04"/><stop offset=".8" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#fff" stop-opacity=".18"/></linearGradient>
+ <linearGradient id="cap${i}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${cap}"/><stop offset=".45" stop-color="#fff" stop-opacity=".85"/><stop offset=".55" stop-color="${cap}"/><stop offset="1" stop-color="#1a1426"/></linearGradient></defs>
+ <rect x="42" y="8" width="36" height="34" rx="4" fill="url(#cap${i})"/><rect x="50" y="42" width="20" height="10" fill="#cfc9e6" opacity=".5"/>
+ <rect x="14" y="52" width="92" height="140" rx="16" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.28)"/>
+ <rect x="18" y="74" width="84" height="114" rx="12" fill="url(#liq${i})"/>
+ <rect x="14" y="52" width="92" height="140" rx="16" fill="url(#gl${i})"/>
+ <rect x="22" y="58" width="5" height="122" rx="2.5" fill="#fff" opacity=".22"/>
+ <rect x="34" y="112" width="52" height="40" rx="3" fill="rgba(8,6,18,.55)" stroke="rgba(255,255,255,.25)" stroke-width=".6"/>
+ <text x="60" y="130" text-anchor="middle" font-family="Inter Tight,sans-serif" font-size="8" letter-spacing="2.2" fill="#fff">${label}</text>
+ <text x="60" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" letter-spacing="1" fill="#bdb8d8">EXTRAIT · 50 ML</text></svg>`}
+
+const P=[
+ {n:'Nocturne 01',l:'NOCT 01',tag:'Edition of 300',notes:'Black plum, iris, cold steel accord',p:240,c1:'#7a4cf0',c2:'#2a1257',cap:'#6f6a86',bg:'rgba(91,43,217,.45)'},
+ {n:'Tidewater',l:'TIDE',tag:'New',notes:'Sea salt, wet stone, fig leaf',p:220,c1:'#3ad6c6',c2:'#06303a',cap:'#8a9b9a',bg:'rgba(15,181,168,.38)'},
+ {n:'Ember Room',l:'EMBER',tag:'Edition of 250',notes:'Smoked cedar, suede, black tea',p:260,c1:'#b0577f',c2:'#341032',cap:'#9a7a5c',bg:'rgba(176,87,127,.35)'},
+ {n:'Velvet Hour',l:'VELVET',tag:'Few left',notes:'Rose absolute, oud, warm amber',p:280,c1:'#a387ff',c2:'#1c1660',cap:'#c8b27a',bg:'rgba(163,135,255,.32)'}
+];
+$('#grid').innerHTML=P.map((p,i)=>`<article class="card" style="--c1:${p.bg};transition-delay:${i*.08}s" tabindex="0"><span class="glare"></span><div class="stage"><span class="tag">${p.tag}</span>${bottle(p.c1,p.c2,p.cap,p.l)}</div><h3>${p.n}</h3><p class="notes">${p.notes}</p><div class="row"><b>$${p.p} <span class="ph" style="color:var(--muted);font-weight:400;font-size:13px">placeholder</span></b><button class="add" data-i="${i}" aria-label="Add ${p.n} to bag">+</button></div></article>`).join('');
+
+/* bag (demo) */
+let bag=0;const toast=$('#toast');let tt;
+function addBag(i){bag++;$('#bagc').textContent=bag;toast.textContent=`${P[i].n} added to your bag · demo`;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),2200)}
+$('#grid').addEventListener('click',e=>{const b=e.target.closest('.add');if(b)addBag(+b.dataset.i)});
+
+/* card tilt + glare */
+if(FINE&&!RM)$$('.card').forEach(c=>{
+ c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+  c.style.transform=`perspective(900px) rotateX(${(.5-y)*7}deg) rotateY(${(x-.5)*9}deg)`;c.style.setProperty('--gx',x*100+'%');c.style.setProperty('--gy',y*100+'%')});
+ c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+/* CTA glow follows the cursor + gentle magnet */
+$$('.cta').forEach(b=>{
+ b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--gx',e.clientX-r.left+'px');b.style.setProperty('--gy',e.clientY-r.top+'px');
+  if(FINE&&!RM&&b.id==='heroCta'){const dx=(e.clientX-r.left-r.width/2)/r.width,dy=(e.clientY-r.top-r.height/2)/r.height;b.style.translate=`${dx*8}px ${dy*6}px`}});
+ b.addEventListener('pointerleave',()=>b.style.translate='');
+});
+
+/* ambient spotlight follows the pointer */
+if(FINE&&!RM)addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')},{passive:true});
+
+/* nav + reveals */
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+$$('.fade').forEach(el=>io.observe(el));
+
+/* scent finder */
+const ans=[];let step=0;const qs=$$('.q'),bars=$$('.steps i');
+$('#quiz').addEventListener('click',e=>{const o=e.target.closest('.opt');if(!o)return;ans[step]=o.dataset.v;
+ qs[step].classList.remove('on');step++;bars.forEach((b,i)=>b.classList.toggle('on',i<=step));
+ if(step<qs.length){qs[step].classList.add('on');qs[step].querySelector('.opt').focus({preventScroll:true})}else showResult()});
+const WHY={a:'Cool, metallic and precise. It reads clean up close and sharp from across a room.',b:'Smoke and soft leather that settles close to the skin and lasts into the morning.',c:'Mineral and airy, like stepping out of cold water at night.',d:'Rich and slow. A scent people ask about rather than notice.'};
+function showResult(){const cnt={};ans.forEach(a=>cnt[a]=(cnt[a]||0)+1);const k=Object.keys(cnt).sort((x,y)=>cnt[y]-cnt[x]||ans.indexOf(x)-ans.indexOf(y))[0];
+ const i={a:0,b:2,c:1,d:3}[k],p=P[i];$('#rBottle').innerHTML=bottle(p.c1,p.c2,p.cap,p.l);$('#rName').textContent=p.n;$('#rWhy').textContent=WHY[k];$('#rAdd').onclick=()=>addBag(i);
+ $('#result').classList.add('on');$('.steps').style.display='none'}
+$('#again').onclick=()=>{ans.length=0;step=0;$('#result').classList.remove('on');$('.steps').style.display='';bars.forEach((b,i)=>b.classList.toggle('on',i===0));qs[0].classList.add('on')};
+
+/* signup (demo) */
+$('#signup').addEventListener('submit',e=>{e.preventDefault();const v=e.target.querySelector('input').value.trim();
+ $('#doneMsg').textContent=/.+@.+\..+/.test(v)?"You're on the list. Demo only, nothing was sent.":'Please enter a valid email.'});
+})();
+</script>
+</body>
+</html>
