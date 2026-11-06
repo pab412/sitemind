@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hargrove &amp; Lee | Injury &amp; Family Lawyers in Fayetteville, AR</title>
+<meta name="description" content="Fayetteville personal injury and family law attorneys. Free case review, no fee unless we win your injury case, and calls answered 24/7. Sample website by Sitemind.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+/* Palette: Courthouse Navy, Legal-Pad Yellow, Paper White, Filing Gray, Ink Blue */
+:root{--navy:#102A43;--navy-2:#0A1E33;--yellow:#F5B800;--yellow-d:#DCA300;--paper:#fff;--gray:#F1F4F8;--line:#DCE3EB;--ink:#0F1E2E;--muted:#52606D;--blue:#2F6FB2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Libre Franklin",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;border-radius:4px;font-weight:800;font-size:16px;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
+.btn-y{background:var(--yellow);color:var(--navy-2)}.btn-y:hover{background:var(--yellow-d)}
+.btn-n{background:var(--navy);color:#fff}.btn-n:hover{background:var(--navy-2)}
+.btn svg{width:18px;height:18px}
+.alert{background:var(--yellow);color:var(--navy-2);font-weight:700;font-size:14.5px}
+.alert .wrap{display:flex;justify-content:center;gap:10px;padding:9px 0;text-align:center;flex-wrap:wrap}
+.alert a{font-weight:900}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo i{width:42px;height:42px;background:var(--navy);color:var(--yellow);font-style:normal;font-weight:900;display:grid;place-items:center;font-size:17px;letter-spacing:-.02em}
+.logo b{display:block;font-size:19px;font-weight:900;letter-spacing:-.01em;line-height:1.1}
+.logo small{display:block;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+nav{display:flex;gap:26px;font-weight:600;font-size:15px}
+nav a{text-decoration:none}nav a:hover{color:var(--blue)}
+.call{text-align:right;text-decoration:none;line-height:1.2}
+.call small{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.call b{font-size:20px;font-weight:900;color:var(--navy)}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:64px 0 72px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border:60px solid rgba(255,255,255,.04);border-radius:50%}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
+h1{font-size:clamp(38px,5.4vw,64px);line-height:1.02;letter-spacing:-.035em;font-weight:900;margin:14px 0 20px}
+.hero p.lead{font-family:"Source Serif 4",Georgia,serif;font-size:20px;color:#C9D6E3;max-width:560px}
+.bul{list-style:none;display:grid;gap:10px;margin:26px 0 30px}
+.bul li{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16.5px}
+.bul svg{width:22px;height:22px;color:var(--yellow);flex:none}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-o{border:2px solid rgba(255,255,255,.5);color:#fff;background:transparent}.btn-o:hover{background:rgba(255,255,255,.08)}
+.case{background:#fff;color:var(--ink);border-radius:6px;padding:28px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border-top:6px solid var(--yellow)}
+.case h2{font-size:24px;font-weight:900;letter-spacing:-.02em}
+.case > p{color:var(--muted);font-size:14.5px;margin:4px 0 18px}
+.case form{display:grid;gap:12px}
+.case label{display:grid;gap:5px;font-size:13px;font-weight:700}
+.case input,.case select,.case textarea{font:inherit;font-size:15px;font-weight:500;padding:12px;border:1.5px solid var(--line);border-radius:4px;min-height:46px;background:#fff;color:var(--ink)}
+.case .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.case small{font-size:12px;color:var(--muted)}
+/* trust strip */
+.strip{background:var(--gray);border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 0}
+.strip div{display:flex;gap:12px;align-items:center;font-weight:700;font-size:15px}
+.strip svg{width:30px;height:30px;color:var(--blue);flex:none}
+/* sections */
+section{padding:90px 0}
+h2.t{font-size:clamp(30px,3.8vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:900;margin:10px 0 14px}
+.sub{font-family:"Source Serif 4",Georgia,serif;font-size:19px;color:var(--muted);max-width:640px}
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.areas a{display:block;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}
+.areas a:hover{background:var(--gray)}
+.areas h3{font-size:20px;font-weight:800;margin-bottom:6px;display:flex;justify-content:space-between}
+.areas h3::after{content:"→";color:var(--blue)}
+.areas p{color:var(--muted);font-size:15px}
+.areas .k{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;display:block}
+.process{background:var(--gray)}
+.process .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.process img{border-radius:6px;width:100%;aspect-ratio:16/11;object-fit:cover}
+.steps{list-style:none;counter-reset:s;display:grid;gap:22px;margin-top:26px}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:16px}
+.steps li::before{counter-increment:s;content:"0" counter(s);font-weight:900;font-size:26px;color:var(--yellow-d);line-height:1}
+.steps b{display:block;font-size:18px;font-weight:800}
+.steps span{color:var(--muted)}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.att{display:grid;grid-template-columns:200px 1fr;gap:24px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.att img{width:100%;height:100%;object-fit:cover;min-height:240px}
+.att div{padding:24px 24px 24px 0}
+.att h3{font-size:22px;font-weight:900}
+.att .role{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}
+.att p{color:var(--muted);font-size:15px;margin-top:10px}
+.quote{background:var(--navy);color:#fff}
+.quote .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.quote figure{border-left:3px solid var(--yellow);padding-left:20px}
+.quote blockquote{font-family:"Source Serif 4",Georgia,serif;font-size:19px;line-height:1.5;color:#E3EAF2}
+.quote figcaption{margin-top:12px;font-weight:700;font-size:14px;color:var(--yellow)}
+.quote .note{grid-column:1/-1;font-size:12.5px;color:#8FA3B8}
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{cursor:pointer;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--blue);font-size:24px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-family:"Source Serif 4",Georgia,serif;color:var(--muted);margin-top:10px;font-size:17px}
+.final{background:var(--yellow);text-align:center;padding:70px 0}
+.final h2{font-size:clamp(30px,4vw,46px);font-weight:900;letter-spacing:-.03em;color:var(--navy-2)}
+.final p{font-weight:600;margin:10px 0 24px;color:var(--navy)}
+.final .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{background:var(--navy-2);color:#9FB2C6;font-size:14px;padding:46px 0 28px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;font-size:14px;margin-bottom:10px;letter-spacing:.06em;text-transform:uppercase}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:12.5px}
+footer a{color:#DCE6F0}
+.mbar{display:none}
+@media (max-width:980px){
+  nav{display:none}
+  .hero .wrap,.process .wrap{grid-template-columns:1fr}
+  .strip .wrap{grid-template-columns:1fr 1fr}
+  .areas{grid-template-columns:1fr 1fr}
+  .team,.quote .wrap,footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .call{display:none}
+  .areas{grid-template-columns:1fr}
+  .att{grid-template-columns:1fr}.att div{padding:0 22px 22px}.att img{aspect-ratio:4/3;min-height:0}
+  .case .two{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--navy-2);z-index:30}
+  .mbar .btn{padding:12px}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<div class="alert"><div class="wrap">Injured? Talk to a lawyer today, free. <a href="tel:+14795550172">Call (479) 555-0172</a> · Answered 24/7 · Se habla español</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><i>H&amp;L</i><span><b>Hargrove &amp; Lee</b><small>Attorneys at Law · Fayetteville</small></span></a>
+  <nav aria-label="Main"><a href="#areas">Practice areas</a><a href="#process">How it works</a><a href="#team">Attorneys</a><a href="#faq">FAQ</a></nav>
+  <a class="call" href="tel:+14795550172"><small>Free consultation</small><b>(479) 555-0172</b></a>
+</div></header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Personal injury · Family law</span>
+      <h1>Hurt in a wreck? Get the help you're owed.</h1>
+      <p class="lead">Insurance companies have lawyers working for them. You should too. We're a Fayetteville firm that picks up the phone, explains everything in plain English and fights for every dollar.</p>
+      <ul class="bul">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No fee unless we win your injury case</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free, confidential case review</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Can't get to us? We'll come to you</li>
+      </ul>
+      <div class="ctas"><a class="btn btn-y" href="tel:+14795550172"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>Call now, free</a><a class="btn btn-o" href="#areas">See practice areas</a></div>
+    </div>
+    <div class="case">
+      <h2>Free case review</h2>
+      <p>Tell us what happened. An attorney, not a call center, gets back to you within the hour during business hours.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('small').textContent='Thanks! This is a demo form, so nothing was sent.';">
+        <div class="two"><label>Name<input type="text" autocomplete="name" required></label><label>Phone<input type="tel" autocomplete="tel" required></label></div>
+        <label>What kind of case?<select><option>Car or truck accident</option><option>Motorcycle accident</option><option>Injury at work</option><option>Slip and fall</option><option>Divorce or custody</option><option>Something else</option></select></label>
+        <label>Briefly, what happened?<textarea rows="3"></textarea></label>
+        <button class="btn btn-n" type="submit">Get my free review</button>
+        <small>Sending this form doesn't create an attorney-client relationship.</small>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap">
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>Local to Northwest Arkansas</div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Calls answered 24/7</div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>$0 upfront for injury cases</div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Se habla español</div>
+</div></div>
+
+<section id="areas">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--blue)">Practice areas</span>
+    <h2 class="t">What we handle</h2>
+    <p class="sub">Two practices, one standard: you'll always know where your case stands and what happens next.</p>
+    <div class="areas">
+      <a href="#"><span class="k">Injury</span><h3>Car accidents</h3><p>Medical bills, lost wages, car repairs and pain and suffering. We deal with the insurance company so you can heal.</p></a>
+      <a href="#"><span class="k">Injury</span><h3>Truck accidents</h3><p>18-wheeler crashes on I-49 and Highway 412 need fast action to preserve evidence. Call us first.</p></a>
+      <a href="#"><span class="k">Injury</span><h3>Workplace injuries</h3><p>Workers' comp denied or delayed? We help you get the benefits your employer owes you.</p></a>
+      <a href="#"><span class="k">Family</span><h3>Divorce</h3><p>Contested or uncontested, we protect your kids, your home and your future, without dragging it out.</p></a>
+      <a href="#"><span class="k">Family</span><h3>Child custody</h3><p>Custody, visitation and support, including changes when life changes.</p></a>
+      <a href="#"><span class="k">Injury</span><h3>Wrongful death</h3><p>Compassionate help holding the responsible party accountable when the worst happens.</p></a>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <img src="img/consult.jpg" alt="Attorney shaking hands with a client across a desk" loading="lazy" width="1100" height="619">
+    <div>
+      <span class="eyebrow" style="color:var(--blue)">How it works</span>
+      <h2 class="t">From first call to final check</h2>
+      <ol class="steps">
+        <li><div><b>Free consultation</b><span>Tell us your story. We'll tell you honestly whether you have a case.</span></div></li>
+        <li><div><b>We build your case</b><span>Police reports, medical records, witnesses. We handle all of it.</span></div></li>
+        <li><div><b>We negotiate hard</b><span>Most cases settle. If the offer isn't fair, we're ready for court.</span></div></li>
+        <li><div><b>You get paid</b><span>Our fee comes out of the settlement. If you don't win, you owe nothing.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--blue)">Your attorneys</span>
+    <h2 class="t">You'll talk to us, not a paralegal</h2>
+    <div class="team">
+      <article class="att"><img src="img/atty1.jpg" alt="Portrait of attorney James Hargrove in a dark suit" loading="lazy" width="1100" height="734"><div><span class="role">Founding partner · Injury</span><h3>James Hargrove</h3><p>Grew up in Springdale, practiced in Little Rock, and came home to open the firm. Handles car, truck and workplace injury cases.</p></div></article>
+      <article class="att"><img src="img/atty2.jpg" alt="Portrait of attorney Mei Lee smiling in an office" loading="lazy" width="1100" height="619"><div><span class="role">Partner · Family law</span><h3>Mei Lee</h3><p>Focuses on divorce and custody, with a reputation for keeping things calm and kids out of the crossfire.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <figure><blockquote>"After my wreck the insurance company offered me almost nothing. James got me more than enough to cover my surgery and the months I couldn't work."</blockquote><figcaption>— Former client, car accident</figcaption></figure>
+    <figure><blockquote>"Mei made the hardest year of my life manageable. She always called back the same day."</blockquote><figcaption>— Former client, custody case</figcaption></figure>
+    <figure><blockquote>"They came to my house when I couldn't drive. Explained everything twice without making me feel dumb."</blockquote><figcaption>— Former client, work injury</figcaption></figure>
+    <p class="note">Sample testimonials for this demo site.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq">
+    <span class="eyebrow" style="color:var(--blue)">FAQ</span>
+    <h2 class="t">Common questions</h2>
+    <details><summary>How much does it cost to hire you?</summary><p>For injury cases, nothing upfront. We work on contingency, which means our fee is a percentage of what we recover for you. If we don't win, you don't pay us. Family law cases are billed hourly, and we'll give you an estimate at your consultation.</p></details>
+    <details><summary>How long do I have to file an injury claim in Arkansas?</summary><p>Deadlines apply and some are shorter than you'd expect, so it's best to talk to a lawyer as soon as possible after an accident.</p></details>
+    <details><summary>Should I talk to the other driver's insurance company?</summary><p>You can share basic facts, but avoid giving a recorded statement or signing anything until you've spoken with an attorney.</p></details>
+    <details><summary>Do I have to go to court?</summary><p>Most injury cases settle without a trial. If yours doesn't, we'll be with you every step of the way.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Talk to a lawyer today. It's free.</h2>
+    <p>No obligation. No pressure. Just honest answers.</p>
+    <div class="btns"><a class="btn btn-n" href="tel:+14795550172">Call (479) 555-0172</a><a class="btn btn-n" style="background:transparent;color:var(--navy-2);border:2px solid var(--navy-2)" href="#">Free case review</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div><h4>Hargrove &amp; Lee</h4><p>Personal injury and family law for Northwest Arkansas.</p></div>
+  <div><h4>Office</h4><p>300 W Example St, Suite 210<br>Fayetteville, AR 72701</p></div>
+  <div><h4>Contact</h4><p><a href="tel:+14795550172">(479) 555-0172</a><br>Mon–Fri 8am–6pm · Calls 24/7</p></div>
+  <p class="legal">Attorney advertising. This is a sample website by <a href="/">Sitemind</a>; Hargrove &amp; Lee is a fictional firm, and all names, contact details and testimonials are placeholders. Nothing here is legal advice. Photos via Unsplash: <a href="https://unsplash.com/photos/smiling-man-in-black-suit-feUjiSv7eM8">Gift Habeshaw</a>, <a href="https://unsplash.com/photos/a-smiling-woman-with-glasses-in-an-office-APjRQ59peUg">Vitaly Gariev</a>, <a href="https://unsplash.com/photos/two-professionals-shaking-hands-across-a-table-jEpZNyFSQwQ">Vitaly Gariev</a>.</p>
+</div></footer>
+
+<div class="mbar"><a class="btn btn-y" href="tel:+14795550172">Call free</a><a class="btn btn-o" href="#">Case review</a></div>
+</body>
+</html>

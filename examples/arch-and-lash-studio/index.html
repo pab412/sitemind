@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arch &amp; Lash Studio | Lash Extensions &amp; Brow Lamination in Bentonville, AR</title>
+<meta name="description" content="Classic, hybrid and volume lash extensions, lash lifts and brow lamination in Bentonville, Arkansas. See prices and book your first set. Sample website by Sitemind.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Palette: Studio Sand, Terracotta Clay, Espresso, Eucalyptus Sage, Linen */
+:root{--sand:#F3E9DD;--clay:#B05A3C;--clay-d:#93462B;--esp:#2A1D16;--sage:#6F7F60;--linen:#FBF7F1;--muted:#6E5D52;--line:#E2D3C2}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Work Sans",system-ui,sans-serif;color:var(--esp);background:var(--linen);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--clay);outline-offset:3px}
+.serif{font-family:"Fraunces",Georgia,serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--esp);cursor:pointer;transition:background .2s,color .2s}
+.btn-clay{background:var(--clay);border-color:var(--clay);color:#fff}.btn-clay:hover{background:var(--clay-d);border-color:var(--clay-d)}
+.btn-ghost{background:transparent;color:var(--esp)}.btn-ghost:hover{background:var(--esp);color:var(--linen)}
+header{position:absolute;top:0;left:0;right:0;z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.logo{font-family:"Fraunces",serif;font-weight:600;font-size:24px;text-decoration:none;letter-spacing:-.01em}
+.logo span{color:var(--clay)}
+nav{display:flex;gap:28px;font-size:15px;font-weight:500}
+nav a{text-decoration:none}nav a:hover{color:var(--clay)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(760px,100vh);background:var(--sand)}
+.hero-copy{padding:130px max(20px,calc((100vw - 1180px)/2)) 60px;padding-right:56px;display:flex;flex-direction:column;justify-content:center}
+.label{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
+h1{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(40px,5.2vw,66px);line-height:1.02;letter-spacing:-.02em;margin:16px 0 18px}
+h1 span{color:var(--clay)}
+.lead{font-size:18px;color:var(--muted);max-width:470px}
+.picker{margin-top:30px;background:var(--linen);border:1px solid var(--line);border-radius:12px;padding:20px;max-width:500px}
+.picker p{font-weight:600;font-size:14px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14px;font-weight:500;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--esp);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--esp);border-color:var(--esp);color:var(--linen)}
+.pick-out{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.pick-out b{font-family:"Fraunces",serif;font-size:26px;font-weight:600}
+.pick-out small{display:block;color:var(--muted);font-size:13px}
+.hero-img{position:relative}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-img figcaption{position:absolute;left:20px;bottom:20px;background:rgba(251,247,241,.92);padding:10px 14px;border-radius:6px;font-size:13px;font-weight:500}
+/* sections */
+section{padding:96px 0}
+h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.015em;margin:12px 0 14px}
+.intro{max-width:620px;color:var(--muted);font-size:17px}
+.prices{margin-top:44px;border-top:1.5px solid var(--esp)}
+.row{display:grid;grid-template-columns:1.4fr 2fr .7fr .7fr;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line)}
+.row.head{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:14px 0}
+.row h3{font-family:"Fraunces",serif;font-size:22px;font-weight:600}
+.row p{color:var(--muted);font-size:15px}
+.row .pr{font-family:"Fraunces",serif;font-size:22px;font-weight:600;text-align:right}
+.row .tm{text-align:right;color:var(--muted);font-size:15px}
+.tag{display:inline-block;font-family:"Work Sans";font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:var(--sage);color:#fff;border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:middle}
+.split{background:var(--esp);color:var(--linen)}
+.split .wrap{display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:20px;align-items:stretch}
+.split img{width:100%;height:100%;object-fit:cover;border-radius:10px;min-height:320px}
+.split .txt{padding:10px 0 10px 24px;display:flex;flex-direction:column;justify-content:center}
+.split h2{color:var(--linen)}
+.split .label{color:#C9B9A2}
+.prep{list-style:none;display:grid;gap:14px;margin-top:18px}
+.prep li{display:grid;grid-template-columns:26px 1fr;gap:10px;color:#E5D8C8;font-size:15.5px}
+.prep li::before{content:"";width:18px;height:18px;border-radius:50%;border:1.5px solid #C9B9A2;margin-top:3px}
+.artist{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.artist img{border-radius:10px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.sig{font-family:"Fraunces",serif;font-style:italic;font-size:22px;color:var(--clay);margin-top:14px}
+.facts{display:flex;gap:30px;margin-top:24px;flex-wrap:wrap}
+.facts div b{display:block;font-family:"Fraunces",serif;font-size:30px;font-weight:600}
+.facts div span{font-size:13.5px;color:var(--muted)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.quotes figure{border-top:1.5px solid var(--esp);padding-top:20px}
+.quotes blockquote{font-family:"Fraunces",serif;font-size:20px;line-height:1.4}
+.quotes figcaption{margin-top:14px;font-size:14px;color:var(--muted)}
+.small{font-size:12.5px;color:var(--muted);margin-top:24px}
+.care{background:var(--sand)}
+.care .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-family:"Fraunces",serif;font-size:20px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:"Work Sans";color:var(--clay)}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);margin-top:8px}
+.cta{text-align:center}
+.cta p{color:var(--muted);max-width:520px;margin:0 auto 26px}
+.cta .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.addr{display:flex;gap:40px;justify-content:center;margin-top:46px;flex-wrap:wrap;font-size:15px}
+.addr b{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--muted)}
+footer a{color:var(--esp)}
+@media (max-width:960px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-img{min-height:380px;order:-1}
+  .hero-copy{padding:40px 20px 56px}
+  header{position:absolute}
+  header .logo{background:var(--linen);padding:6px 12px;border-radius:6px}
+  .split .wrap,.artist,.care .wrap{grid-template-columns:1fr}
+  .split .txt{padding:10px 0 0}
+  .quotes{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto;gap:6px 16px}
+  .row.head{display:none}
+  .row p{grid-column:1/-1;grid-row:2}
+  .row .tm{grid-row:1;grid-column:2;display:none}
+}
+@media (max-width:640px){section{padding:68px 0}header .btn{display:none}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="#">Arch <span>&amp;</span> Lash</a>
+  <nav aria-label="Main"><a href="#prices">Services</a><a href="#about">About</a><a href="#care">Aftercare</a><a href="#book">Book</a></nav>
+  <a class="btn btn-ghost" href="#book">Book a visit</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="hero-copy">
+    <span class="label">Lash &amp; brow studio · Bentonville</span>
+    <h1>Wake up with lashes <span>you love.</span></h1>
+    <p class="lead">Lightweight extensions, lifts and brow lamination, done one-on-one in a quiet private studio. No mascara, no fuss, no salon chaos.</p>
+    <div class="picker" role="group" aria-labelledby="pk">
+      <p id="pk">What are you thinking?</p>
+      <div class="chips" id="chips">
+        <button class="chip" type="button" aria-pressed="true" data-p="$140" data-t="2 hrs" data-n="Classic full set">Classic set</button>
+        <button class="chip" type="button" aria-pressed="false" data-p="$165" data-t="2.5 hrs" data-n="Hybrid full set">Hybrid set</button>
+        <button class="chip" type="button" aria-pressed="false" data-p="$80" data-t="1 hr" data-n="Lash lift &amp; tint">Lash lift</button>
+        <button class="chip" type="button" aria-pressed="false" data-p="$75" data-t="1 hr" data-n="Brow lamination">Brow lamination</button>
+      </div>
+      <div class="pick-out"><div><b id="pp">$140</b><small id="pn">Classic full set · about 2 hrs</small></div><a class="btn btn-clay" href="#book">Book this</a></div>
+    </div>
+  </div>
+  <figure class="hero-img"><img src="img/hero.jpg" alt="Lash artist applying extensions to a client lying on the treatment bed" width="1600" height="1067"><figcaption>Every set is mapped to your eye shape</figcaption></figure>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <span class="label">Services &amp; prices</span>
+    <h2>Simple menu. Honest prices.</h2>
+    <p class="intro">Not sure which set? Book a free 15-minute consult and we'll look at your natural lashes together first.</p>
+    <div class="prices">
+      <div class="row head"><span>Service</span><span>What it is</span><span style="text-align:right">Time</span><span style="text-align:right">Price</span></div>
+      <div class="row"><h3>Classic full set</h3><p>One extension per natural lash. Looks like mascara, feels like nothing.</p><span class="tm">2 hrs</span><span class="pr">$140</span></div>
+      <div class="row"><h3>Hybrid full set <span class="tag">Most booked</span></h3><p>A mix of classic and soft volume for a fuller, still natural look.</p><span class="tm">2.5 hrs</span><span class="pr">$165</span></div>
+      <div class="row"><h3>Volume full set</h3><p>Handmade fans for a dark, fluffy, camera-ready lash line.</p><span class="tm">2.5 hrs</span><span class="pr">$190</span></div>
+      <div class="row"><h3>Fill (2–3 weeks)</h3><p>Keeps your set full. Must have at least 40% of extensions remaining.</p><span class="tm">1 hr</span><span class="pr">$70</span></div>
+      <div class="row"><h3>Lash lift &amp; tint</h3><p>Curls and darkens your own lashes for 6–8 weeks. Zero upkeep.</p><span class="tm">1 hr</span><span class="pr">$80</span></div>
+      <div class="row"><h3>Brow lamination</h3><p>Brushed-up, fluffy brows that stay put. Includes shaping and tint.</p><span class="tm">1 hr</span><span class="pr">$75</span></div>
+    </div>
+    <p class="small">Prices on this sample site are placeholders.</p>
+  </div>
+</section>
+
+<section class="split">
+  <div class="wrap">
+    <img src="img/eye.jpg" alt="Close-up of an eye with long, natural-looking lash extensions" loading="lazy" width="1100" height="798">
+    <img src="img/brow.jpg" alt="Brow artist shaping a client's eyebrow" loading="lazy" width="1100" height="710">
+    <div class="txt">
+      <span class="label">Before your first visit</span>
+      <h2>A little prep goes a long way</h2>
+      <ul class="prep">
+        <li>Come with clean, makeup-free eyes. We'll have wipes if you forget.</li>
+        <li>Skip caffeine right before. You'll be lying still for a while.</li>
+        <li>No lash curling or strip lashes 24 hours before.</li>
+        <li>Bring headphones. Lots of clients nap through their set.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap artist">
+    <img src="img/tray.jpg" alt="Lash tweezers resting on a tray of extensions" loading="lazy" width="1100" height="729">
+    <div>
+      <span class="label">Meet your artist</span>
+      <h2>Hi, I'm Maya.</h2>
+      <p class="intro">I opened Arch &amp; Lash because I was tired of rushed appointments and lashes that fell out in a week. Here it's just you and me, one chair, and as much time as your lashes need. Healthy natural lashes come first, always.</p>
+      <p class="sig">Maya, owner &amp; lead artist</p>
+      <div class="facts"><div><b>1:1</b><span>Private appointments</span></div><div><b>3–4 wks</b><span>Average retention</span></div><div><b>Free</b><span>15-min consults</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="label">Kind words</span>
+    <h2>From the chair</h2>
+    <div class="quotes">
+      <figure><blockquote>"I've had extensions at four studios. These are the first that still look good at week three."</blockquote><figcaption>Hannah P., hybrid set</figcaption></figure>
+      <figure><blockquote>"The brow lamination changed my whole morning routine. I just brush them up and go."</blockquote><figcaption>Rachel S., brow lamination</figcaption></figure>
+      <figure><blockquote>"So calm and clean. I fell asleep and woke up looking like I'd had eight hours of sleep."</blockquote><figcaption>Dani W., classic set</figcaption></figure>
+    </div>
+    <p class="small">Sample reviews for this demo site.</p>
+  </div>
+</section>
+
+<section class="care" id="care">
+  <div class="wrap">
+    <div><span class="label">Aftercare</span><h2>Make your set last</h2><p class="intro">Follow these and you'll get the most out of every appointment.</p></div>
+    <div>
+      <details open><summary>Keep them dry for 24 hours</summary><p>The adhesive needs a full day to cure. Skip steam, saunas, hot yoga and long showers until tomorrow.</p></details>
+      <details><summary>Wash them every day</summary><p>Use an oil-free lash cleanser and a soft brush. Clean lashes hold on longer and keep your eyes healthy.</p></details>
+      <details><summary>Brush, don't pull</summary><p>Comb through gently each morning. Picking or pulling takes your natural lashes with it.</p></details>
+      <details><summary>Book fills every 2–3 weeks</summary><p>Your natural lashes shed every day. Regular fills keep your set looking full without starting over.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="book">
+  <div class="wrap">
+    <span class="label">Ready?</span>
+    <h2>Book your first set</h2>
+    <p>New clients get $20 off any full set. Appointments open Tuesday through Saturday.</p>
+    <div class="btns"><a class="btn btn-clay" href="#">Book online</a><a class="btn btn-ghost" href="sms:+14795550126">Text (479) 555-0126</a></div>
+    <div class="addr"><div><b>Studio</b>108 SW Example St, Suite 2<br>Bentonville, AR 72712</div><div><b>Hours</b>Tue–Fri 9am–6pm<br>Sat 9am–2pm</div><div><b>Instagram</b>@archandlash</div></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Sample website by <a href="/">Sitemind</a>. Arch &amp; Lash Studio is a fictional business; name, address, phone, prices and reviews are placeholders. Photos via Unsplash: <a href="https://unsplash.com/photos/a-woman-getting-her-eyelashes-done-by-a-professional-makeup-artist-xA_djNkH0Yo">Bermix Studio</a>, <a href="https://unsplash.com/photos/a-close-up-of-a-persons-eye-with-long-lashes-GEct9d7zgos">Milky Way Lashes</a>, <a href="https://unsplash.com/photos/tweezers-resting-on-a-tray-of-false-eyelashes-irXGNGSuWW4">Jessica Donnelly</a>.</div></footer>
+
+<script>
+(function(){var cs=[...document.querySelectorAll('#chips .chip')];cs.forEach(function(c){c.addEventListener('click',function(){cs.forEach(function(x){x.setAttribute('aria-pressed',x===c)});document.getElementById('pp').textContent=c.dataset.p;document.getElementById('pn').innerHTML=c.dataset.n+' · about '+c.dataset.t;});});})();
+</script>
+</body>
+</html>

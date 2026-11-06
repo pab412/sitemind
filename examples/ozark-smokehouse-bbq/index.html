@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ozark Smokehouse BBQ | Brisket, Ribs &amp; Catering in Rogers, AR</title>
+<meta name="description" content="Post-oak smoked brisket, ribs and pulled pork in Rogers, Arkansas. Order pickup, see the menu and book catering. Sample website by Sitemind.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Palette: Charcoal Pit, Smoke Ring Red, Butcher Paper, Mustard Sauce, Ember Orange */
+:root{--char:#171311;--char-2:#221C19;--red:#C8322B;--red-d:#A8241E;--paper:#F4EADB;--paper-2:#EADCC6;--mustard:#E3A82B;--ink:#1E1915;--muted:#6B5E53}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Barlow",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}
+.ant{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-line{border-color:#fff;color:#fff}.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-dark{background:var(--char);color:#fff}.btn-dark:hover{background:#000}
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:20;color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0}
+.logo{text-decoration:none;line-height:.9}
+.logo b{display:block;font-family:"Anton",sans-serif;font-weight:400;font-size:28px;letter-spacing:.02em;text-transform:uppercase}
+.logo small{display:block;font-family:"Barlow Condensed";font-weight:700;letter-spacing:.3em;font-size:12px;color:var(--mustard)}
+nav{display:flex;gap:28px;font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+nav a{text-decoration:none}nav a:hover{color:var(--mustard)}
+/* hero */
+.hero{position:relative;min-height:min(820px,100vh);display:flex;align-items:flex-end;color:#fff;background:#000}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(23,19,17,.95) 0%,rgba(23,19,17,.35) 55%,rgba(23,19,17,.55) 100%)}
+.hero .wrap{position:relative;z-index:1;padding:140px 0 54px;display:grid;grid-template-columns:1.4fr .6fr;gap:40px;align-items:end}
+.kick{display:inline-flex;align-items:center;gap:10px;font-family:"Barlow Condensed";font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mustard);font-size:16px}
+.kick::before{content:"";width:34px;height:3px;background:var(--mustard)}
+h1{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(56px,10vw,138px);line-height:.88;letter-spacing:.005em;margin:14px 0 22px}
+h1 span{color:var(--red);-webkit-text-stroke:0}
+.hero p{font-size:19px;color:#E8DFD4;max-width:560px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.side{background:rgba(23,19,17,.72);border:1px solid rgba(255,255,255,.14);padding:22px;backdrop-filter:blur(6px)}
+.open{display:flex;align-items:center;gap:10px;font-family:"Barlow Condensed";font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em}
+.open i{width:11px;height:11px;border-radius:50%;background:#3DD26B;box-shadow:0 0 0 5px rgba(61,210,107,.2)}
+.open.closed i{background:#9B9B9B;box-shadow:none}
+.side p{font-size:15px;color:#CFC5BA;margin-top:6px}
+.side hr{border:0;border-top:1px solid rgba(255,255,255,.14);margin:14px 0}
+.rating{display:flex;align-items:center;gap:8px;font-weight:700}
+.rating .st{color:var(--mustard);letter-spacing:2px}
+/* quick bar */
+.quick{background:var(--red);color:#fff}
+.quick .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.quick a{display:flex;align-items:center;justify-content:center;gap:10px;padding:20px 10px;font-family:"Barlow Condensed";font-weight:700;font-size:19px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-right:1px solid rgba(255,255,255,.22)}
+.quick a:last-child{border-right:0}
+.quick a:hover{background:var(--red-d)}
+.quick svg{width:22px;height:22px}
+/* menu */
+section{padding:90px 0}
+h2{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(42px,6vw,78px);line-height:.92;letter-spacing:.01em}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.sh p{max-width:420px;color:var(--muted);font-size:17px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:3px solid var(--ink);margin-bottom:8px}
+.tabs button{font-family:"Barlow Condensed";font-weight:700;font-size:20px;letter-spacing:.05em;text-transform:uppercase;background:transparent;border:0;padding:12px 18px;cursor:pointer;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.board[hidden]{display:none}
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:20px 0;border-bottom:1px dashed rgba(30,25,21,.3)}
+.dish h3{font-family:"Barlow Condensed";font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:.02em}
+.dish .pr{font-family:"Anton";font-size:24px;color:var(--red)}
+.dish p{grid-column:1/-1;color:var(--muted);font-size:15.5px}
+.dish .tag{display:inline-block;font-family:"Barlow";font-size:12px;font-weight:700;background:var(--mustard);color:var(--ink);padding:2px 8px;margin-left:8px;vertical-align:middle;letter-spacing:.04em}
+.mnote{font-size:13px;color:var(--muted);margin-top:16px}
+/* photo row */
+.photos{display:grid;grid-template-columns:2fr 1fr 1fr;gap:0}
+.photos img{width:100%;height:380px;object-fit:cover}
+/* story */
+.story{background:var(--char);color:#fff;position:relative;overflow:hidden}
+.story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.story h2{color:#fff}
+.story h2 span{color:var(--mustard)}
+.story p{color:#CFC5BA;font-size:18px;margin-top:18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.facts div{border-top:3px solid var(--red);padding-top:10px}
+.facts b{display:block;font-family:"Anton";font-size:40px;font-weight:400;line-height:1}
+.facts span{font-size:14px;color:#B4A89C;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+/* catering */
+.cater{background:var(--mustard)}
+.cater .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.cater p{font-size:18px;margin-top:14px;max-width:560px;font-weight:500}
+.cater ul{list-style:none;display:grid;gap:10px;font-family:"Barlow Condensed";font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:.03em}
+.cater li{border-bottom:2px solid var(--ink);padding-bottom:8px;display:flex;justify-content:space-between}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:#fff;padding:26px;border-bottom:5px solid var(--red)}
+.rev .st{color:var(--mustard);letter-spacing:2px}
+.rev p{margin:10px 0 14px;font-size:17px}
+.rev b{font-family:"Barlow Condensed";font-size:18px;text-transform:uppercase;letter-spacing:.04em}
+.note{font-size:13px;color:var(--muted);margin-top:18px}
+/* visit */
+.visit{background:var(--paper-2)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:36px}
+.visit h3{font-family:"Barlow Condensed";font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;color:var(--red)}
+.visit table{width:100%;border-collapse:collapse;font-size:16px}
+.visit td{padding:5px 0;border-bottom:1px dashed rgba(30,25,21,.25)}
+.visit td:last-child{text-align:right;font-weight:700}
+.visit tr.today td{color:var(--red)}
+.map{width:100%;height:260px;border:0;filter:grayscale(.3) sepia(.2)}
+footer{background:var(--char);color:#A99D92;padding:40px 0 30px;font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .credits{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:12.5px}
+footer a{color:#fff}
+.mbar{display:none}
+@media (max-width:980px){
+  nav{display:none}
+  .hero .wrap{grid-template-columns:1fr}
+  .quick .wrap{grid-template-columns:1fr 1fr}.quick a:nth-child(2){border-right:0}.quick a:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.22)}
+  .board,.story .wrap,.cater .wrap,.visit .wrap{grid-template-columns:1fr}
+  .revs{grid-template-columns:1fr}
+  .photos{grid-template-columns:1fr 1fr}.photos img:first-child{grid-column:1/-1}.photos img{height:240px}
+}
+@media (max-width:640px){
+  header .btn{display:none}
+  section{padding:64px 0}
+  .facts b{font-size:32px}
+  .tabs button{padding:10px 12px;font-size:17px}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:30}
+  .mbar .btn{padding:16px 10px}
+  body{padding-bottom:58px}
+}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><b>Ozark Smokehouse</b><small>BBQ · Rogers, AR</small></a>
+  <nav aria-label="Main"><a href="#menu">Menu</a><a href="#story">Our pit</a><a href="#catering">Catering</a><a href="#visit">Hours</a></nav>
+  <a class="btn btn-red" href="#menu">Order pickup</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <img src="img/hero.jpg" alt="Sliced smoked brisket with a dark bark on a wooden board" width="1600" height="900">
+  <div class="wrap">
+    <div>
+      <span class="kick">Smoked 14 hours over post oak</span>
+      <h1>Real Ozark<br><span>barbecue.</span></h1>
+      <p>Brisket, ribs and pulled pork smoked low and slow every morning, until we sell out. Grab a tray, take a pound home or let us cater your next cookout.</p>
+      <div class="ctas"><a class="btn btn-red" href="#menu">See the menu</a><a class="btn btn-line" href="tel:+14795550111">Call (479) 555-0111</a></div>
+    </div>
+    <aside class="side">
+      <div class="open" id="open"><i></i><span>Checking hours</span></div>
+      <p id="openNote">Tue–Sun 11am until sold out</p>
+      <hr>
+      <div class="rating"><span class="st">★★★★★</span>4.8 on Google</div>
+      <p>812 W Example Rd, Rogers, AR</p>
+    </aside>
+  </div>
+</section>
+
+<nav class="quick" aria-label="Order options"><div class="wrap">
+  <a href="#menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>Order pickup</a>
+  <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="6" width="15" height="11"/><path d="M16 10h4l3 3v4h-7"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>Delivery</a>
+  <a href="#catering"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18M5 11a7 7 0 0 1 14 0M2 15h20M12 4V2"/></svg>Catering</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Directions</a>
+</div></nav>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="sh"><h2>The menu</h2><p>Everything's smoked fresh daily. When a meat sells out, it's gone till tomorrow, so come early on weekends.</p></div>
+    <div class="tabs" role="tablist" aria-label="Menu sections">
+      <button role="tab" aria-selected="true" data-t="plates">Plates</button>
+      <button role="tab" aria-selected="false" data-t="pound">By the pound</button>
+      <button role="tab" aria-selected="false" data-t="sand">Sandwiches</button>
+      <button role="tab" aria-selected="false" data-t="sides">Sides &amp; sweets</button>
+    </div>
+    <div class="board" id="plates" role="tabpanel">
+      <div class="dish"><h3>Brisket plate <span class="tag">Fan favorite</span></h3><span class="pr">$17</span><p>Half pound of sliced brisket, two sides, pickles, onions and white bread.</p></div>
+      <div class="dish"><h3>Rib plate</h3><span class="pr">$18</span><p>Half rack of St. Louis ribs with our sweet heat rub. Two sides.</p></div>
+      <div class="dish"><h3>Two-meat combo</h3><span class="pr">$19</span><p>Pick any two meats. Two sides and a roll.</p></div>
+      <div class="dish"><h3>Pulled pork plate</h3><span class="pr">$14</span><p>Hand-pulled shoulder, vinegar slaw on the side, two sides.</p></div>
+      <div class="dish"><h3>Smoked half chicken</h3><span class="pr">$15</span><p>Crispy skin, juicy inside, white sauce on the side.</p></div>
+      <div class="dish"><h3>Kids' plate</h3><span class="pr">$8</span><p>Pulled pork or chicken, one side and a drink.</p></div>
+    </div>
+    <div class="board" id="pound" role="tabpanel" hidden>
+      <div class="dish"><h3>Prime brisket</h3><span class="pr">$28/lb</span><p>Lean, fatty or mixed. Just tell us how you like it.</p></div>
+      <div class="dish"><h3>Pork ribs</h3><span class="pr">$26/rack</span><p>Full rack of St. Louis cut spare ribs.</p></div>
+      <div class="dish"><h3>Pulled pork</h3><span class="pr">$18/lb</span><p>Feeds about four as sandwiches.</p></div>
+      <div class="dish"><h3>Jalapeño cheddar sausage</h3><span class="pr">$16/lb</span><p>Made for us by a local butcher.</p></div>
+    </div>
+    <div class="board" id="sand" role="tabpanel" hidden>
+      <div class="dish"><h3>Chopped brisket</h3><span class="pr">$12</span><p>On a toasted bun with pickles, onions and house sauce.</p></div>
+      <div class="dish"><h3>Pulled pork &amp; slaw</h3><span class="pr">$10</span><p>Piled high with vinegar slaw and pickles.</p></div>
+      <div class="dish"><h3>The Ozark</h3><span class="pr">$15</span><p>Brisket, sausage, pickled jalapeños and pepper jack. Bring napkins.</p></div>
+      <div class="dish"><h3>Smoked turkey</h3><span class="pr">$11</span><p>Sliced breast, lettuce, tomato, mayo on Texas toast.</p></div>
+    </div>
+    <div class="board" id="sides" role="tabpanel" hidden>
+      <div class="dish"><h3>Mac &amp; cheese</h3><span class="pr">$4</span><p>Three-cheese, baked with a crunchy top.</p></div>
+      <div class="dish"><h3>Pit beans</h3><span class="pr">$4</span><p>Slow-cooked under the brisket all morning.</p></div>
+      <div class="dish"><h3>Potato salad</h3><span class="pr">$4</span><p>Mustard-style, like Grandma made.</p></div>
+      <div class="dish"><h3>Banana pudding</h3><span class="pr">$5</span><p>With Nilla wafers. Usually gone by 3pm.</p></div>
+      <div class="dish"><h3>Peach cobbler</h3><span class="pr">$5</span><p>Add a scoop of vanilla for $1.</p></div>
+      <div class="dish"><h3>Sweet tea</h3><span class="pr">$3</span><p>Bottomless, obviously.</p></div>
+    </div>
+    <p class="mnote">Menu items and prices on this sample site are placeholders.</p>
+  </div>
+</section>
+
+<div class="photos">
+  <img src="img/ribs.jpg" alt="Glazed rack of ribs with tomatoes and fries on a board" loading="lazy" width="1100" height="734">
+  <img src="img/sandwich.jpg" alt="Pulled pork sandwich with coleslaw and pickles" loading="lazy" width="1100" height="733">
+  <img src="img/slice.jpg" alt="Pitmaster checking meats on the smoker" loading="lazy" width="1100" height="733">
+</div>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <img src="img/smoke.jpg" alt="Smoke rolling out of an offset smoker" loading="lazy" width="1100" height="734">
+    <div>
+      <span class="kick">Our pit</span>
+      <h2>No gas. No shortcuts.<br><span>Just wood &amp; time.</span></h2>
+      <p>The fire gets lit at 3am every day. Salt, pepper and Arkansas post oak do the rest. We started with one smoker in a gravel lot, and we still cook every brisket the same way.</p>
+      <div class="facts"><div><b>14 hrs</b><span>Brisket cook</span></div><div><b>3am</b><span>Fire's lit</span></div><div><b>100%</b><span>Wood-fired</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cater" id="catering">
+  <div class="wrap">
+    <div><h2>Feeding a crowd?</h2><p>Office lunches, weddings, tailgates and family reunions. We bring the meat, the sides, the sauce and the setup. Orders for 15 to 500.</p><a class="btn btn-dark" href="tel:+14795550111" style="margin-top:22px">Get a catering quote</a></div>
+    <ul><li><span>Per person, 1 meat</span><span>$16</span></li><li><span>Per person, 2 meats</span><span>$21</span></li><li><span>Setup &amp; serving</span><span>Ask us</span></li><li><span>Notice needed</span><span>72 hrs</span></li></ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sh"><h2>Word around town</h2></div>
+    <div class="revs">
+      <div class="rev"><span class="st">★★★★★</span><p>"Best brisket in Northwest Arkansas, period. The bark is unreal. Get there before noon on Saturday."</p><b>Marcus D.</b></div>
+      <div class="rev"><span class="st">★★★★★</span><p>"They catered our wedding for 180 people and everybody's still talking about the ribs."</p><b>Hailey &amp; Ben</b></div>
+      <div class="rev"><span class="st">★★★★★</span><p>"Banana pudding alone is worth the drive. Staff is super friendly too."</p><b>Jo P.</b></div>
+    </div>
+    <p class="note">Sample reviews for this demo site.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div><h3>Hours</h3><table id="hours">
+      <tr data-d="1"><td>Monday</td><td>Closed</td></tr>
+      <tr data-d="2"><td>Tuesday</td><td>11am – 8pm</td></tr>
+      <tr data-d="3"><td>Wednesday</td><td>11am – 8pm</td></tr>
+      <tr data-d="4"><td>Thursday</td><td>11am – 8pm</td></tr>
+      <tr data-d="5"><td>Friday</td><td>11am – 9pm</td></tr>
+      <tr data-d="6"><td>Saturday</td><td>11am – 9pm</td></tr>
+      <tr data-d="0"><td>Sunday</td><td>11am – 4pm</td></tr>
+    </table><p style="margin-top:10px;font-size:14px;color:var(--muted)">Or until we sell out.</p></div>
+    <div><h3>Find us</h3><p style="font-size:17px">812 W Example Rd<br>Rogers, AR 72756</p><p style="margin-top:12px"><a href="tel:+14795550111" style="font-weight:700">(479) 555-0111</a></p><p style="margin-top:12px;color:var(--muted)">Big gravel lot out back. Covered patio seating, dogs welcome outside.</p></div>
+    <iframe class="map" title="Map of Rogers, Arkansas" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-94.150%2C36.320%2C-94.100%2C36.345&amp;layer=mapnik"></iframe>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div><span class="ant" style="color:#fff;font-size:22px">Ozark Smokehouse BBQ</span><br>Rogers, Arkansas</div>
+  <div><a href="tel:+14795550111">(479) 555-0111</a> · @ozarksmokehouse</div>
+  <p class="credits">Sample website by <a href="/">Sitemind</a>. Ozark Smokehouse BBQ is a fictional business; name, address, phone, menu, prices and reviews are placeholders. Photos via Unsplash: <a href="https://unsplash.com/photos/sliced-meat-on-brown-wooden-chopping-board-IePWXTF3-0Y">Luis Santoyo</a>, <a href="https://unsplash.com/photos/roasted-ribs-with-sliced-tomatoes-and-potatoes-UeYkqQh4PoI">Alexandru-Bogdan Ghita</a>, <a href="https://unsplash.com/photos/pulled-pork-sandwich-with-coleslaw-and-pickles-8icctIHfJIo">nobleseed</a>, <a href="https://unsplash.com/photos/person-holding-knife-slicing-meat-on-black-grill-pZyDC7BVN7s">Z Grills Australia</a>, <a href="https://unsplash.com/photos/smoke-coming-out-of-an-outdoor-grill-on-a-sunny-day-lqE74d0rESs">Quilia</a>.</p>
+</div></footer>
+
+<div class="mbar"><a class="btn btn-dark" href="tel:+14795550111">Call</a><a class="btn btn-red" href="#menu">Order</a></div>
+
+<script>
+(function(){
+  var tabs=[...document.querySelectorAll('.tabs button')];
+  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.dataset.t).hidden=!on;});});});
+  var hrs={0:[11,16],1:null,2:[11,20],3:[11,20],4:[11,20],5:[11,21],6:[11,21]};
+  var n=new Date(),d=n.getDay(),h=n.getHours()+n.getMinutes()/60,r=hrs[d],open=r&&h>=r[0]&&h<r[1];
+  var o=document.getElementById('open');o.querySelector('span').textContent=open?'Open now':'Closed now';if(!open)o.classList.add('closed');
+  var row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+})();
+</script>
+</body>
+</html>

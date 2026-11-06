@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muddy Paws Grooming | Dog Grooming &amp; Baths in Bentonville, AR</title>
+<meta name="description" content="Cage-free dog grooming in Bentonville, Arkansas. Baths, full grooms, nail trims and puppy intros. See prices by size and book online. Sample website by Sitemind.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Palette: Tennis-Ball Yellow, Collar Black, Bath-Water Blue, Squeaky-Toy Coral, Fresh Towel White */
+:root{--sun:#FFD43B;--sun-l:#FFF4C2;--ink:#1D1D1F;--sky:#4FB6E3;--sky-l:#E3F4FC;--coral:#FF7A55;--white:#fff;--muted:#5B5B60}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.f{font-family:"Fredoka",sans-serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-family:"Fredoka",sans-serif;font-weight:600;font-size:17px;text-decoration:none;border:3px solid var(--ink);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-w{background:#fff;color:var(--ink)}
+.btn-c{background:var(--coral);color:#fff;border-color:var(--coral)}
+header{background:var(--sun)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Fredoka",sans-serif;font-weight:700;font-size:25px;text-decoration:none}
+.logo svg{width:40px;height:40px}
+nav{display:flex;gap:24px;font-weight:800}
+nav a{text-decoration:none}nav a:hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+/* hero */
+.hero{background:var(--sun);position:relative;padding:30px 0 120px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+h1{font-family:"Fredoka",sans-serif;font-weight:700;font-size:clamp(46px,7vw,86px);line-height:.95;letter-spacing:-.02em}
+h1 span{display:inline-block;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:0 14px;transform:rotate(-2deg);margin-top:8px}
+.hero p{font-size:19px;font-weight:600;max-width:480px;margin:22px 0 28px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.blob{position:relative;justify-self:center;width:min(460px,90%)}
+.blob img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:46% 54% 50% 50% / 52% 46% 54% 48%;border:4px solid var(--ink)}
+.sticker{position:absolute;font-family:"Fredoka",sans-serif;font-weight:700;font-size:16px;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:8px 16px;white-space:nowrap}
+.s1{top:8%;left:-6%;transform:rotate(-8deg);background:var(--coral);color:#fff}
+.s2{bottom:12%;right:-8%;transform:rotate(6deg);background:var(--sky);color:#fff}
+.s3{bottom:-2%;left:6%;transform:rotate(-3deg)}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:80px;width:100%}
+section{padding:90px 0}
+h2{font-family:"Fredoka",sans-serif;font-weight:700;font-size:clamp(34px,4.6vw,54px);line-height:1;letter-spacing:-.01em;margin-bottom:14px}
+.lede{color:var(--muted);font-size:18px;max-width:560px}
+.center{text-align:center}.center .lede{margin-inline:auto}
+/* size picker */
+.sizes{display:inline-flex;gap:8px;background:var(--sun-l);border:3px solid var(--ink);border-radius:999px;padding:6px;margin:30px 0 32px;flex-wrap:wrap;justify-content:center}
+.sizes button{font-family:"Fredoka",sans-serif;font-weight:600;font-size:16px;border:0;background:transparent;padding:10px 20px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.sizes button[aria-selected="true"]{background:var(--ink);color:#fff}
+.sizes small{display:block;font-family:"Nunito";font-size:12px;font-weight:700;opacity:.75}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:left}
+.plan{border:3px solid var(--ink);border-radius:26px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.plan img{aspect-ratio:16/10;object-fit:cover;width:100%;border-bottom:3px solid var(--ink)}
+.plan div{padding:22px 24px 26px;display:flex;flex-direction:column;gap:8px;flex:1}
+.plan h3{font-family:"Fredoka",sans-serif;font-size:26px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.plan h3 b{font-size:32px;color:var(--coral)}
+.plan p{color:var(--muted);font-size:15.5px}
+.plan ul{list-style:none;display:grid;gap:4px;font-size:15px;font-weight:700;margin-top:6px}
+.plan li::before{content:"🐾 "}
+.plan.pop{background:var(--sun-l)}
+.plan .tag{align-self:flex-start;background:var(--sky);color:#fff;font-family:"Fredoka";font-weight:600;border-radius:999px;padding:2px 12px;font-size:14px}
+.addons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.addons span{background:var(--sky-l);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:15px}
+/* how */
+.how{background:var(--sky-l)}
+.how .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px}
+.how .card{background:#fff;border:3px solid var(--ink);border-radius:26px;padding:30px 26px;position:relative}
+.how .n{position:absolute;top:-24px;left:24px;width:52px;height:52px;border-radius:50%;background:var(--coral);border:3px solid var(--ink);color:#fff;font-family:"Fredoka";font-weight:700;font-size:24px;display:grid;place-items:center}
+.how h3{font-family:"Fredoka",sans-serif;font-size:24px;margin:14px 0 6px}
+.how p{color:var(--muted)}
+/* gallery */
+.pics{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px;margin-top:36px}
+.pics figure{position:relative}
+.pics img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;border:3px solid var(--ink)}
+.pics figcaption{position:absolute;left:12px;bottom:12px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:3px 12px;font-weight:800;font-size:13.5px}
+.pics figure:nth-child(odd){transform:rotate(-1.5deg)}.pics figure:nth-child(even){transform:rotate(1.5deg) translateY(14px)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.rev{background:var(--sun-l);border:3px solid var(--ink);border-radius:26px;padding:26px}
+.rev .st{color:var(--coral);font-size:20px;letter-spacing:2px}
+.rev p{font-size:16.5px;font-weight:600;margin:10px 0 14px}
+.rev b{font-family:"Fredoka";font-size:17px}
+.rev span{color:var(--muted);font-size:14px}
+.small{font-size:13px;color:var(--muted);margin-top:22px;text-align:center}
+/* book */
+.book{background:var(--ink);color:#fff}
+.book .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.book h2{color:var(--sun)}
+.book .lede{color:#CFCFD4}
+.info{margin-top:26px;display:grid;gap:14px}
+.info div{display:flex;gap:12px;align-items:flex-start}
+.info i{font-style:normal;font-size:22px}
+.info b{display:block;font-family:"Fredoka";font-size:18px}
+.info span{color:#CFCFD4}
+form{background:#fff;color:var(--ink);border-radius:26px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:14px;border:3px solid var(--sun)}
+form h3{grid-column:1/-1;font-family:"Fredoka";font-size:28px}
+label{display:grid;gap:6px;font-weight:800;font-size:14px}
+input,select,textarea{font:inherit;font-weight:600;padding:12px 14px;border:2.5px solid var(--ink);border-radius:14px;min-height:48px;background:#fff;color:var(--ink)}
+.full{grid-column:1/-1}
+.fnote{grid-column:1/-1;font-size:13px;color:var(--muted)}
+footer{background:var(--ink);color:#A9A9B0;font-size:13px;padding:0 0 30px}
+footer .wrap{border-top:1px solid rgba(255,255,255,.14);padding-top:22px}
+footer a{color:#fff}
+@media (max-width:960px){
+  nav{display:none}
+  .hero .wrap,.book .wrap{grid-template-columns:1fr}
+  .blob{margin-top:20px}
+  .plans,.how .grid,.revs{grid-template-columns:1fr}
+  .how .grid{gap:40px}
+  .pics{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  header .btn{display:none}
+  .s1{left:0}.s2{right:0}
+  form{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .sizes button{padding:8px 12px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#1D1D1F"/><ellipse cx="20" cy="25" rx="7" ry="6" fill="#FFD43B"/><circle cx="12" cy="17" r="3.2" fill="#FFD43B"/><circle cx="17" cy="12" r="3.2" fill="#FFD43B"/><circle cx="23" cy="12" r="3.2" fill="#FFD43B"/><circle cx="28" cy="17" r="3.2" fill="#FFD43B"/></svg>Muddy Paws</a>
+  <nav aria-label="Main"><a href="#prices">Prices</a><a href="#how">How it works</a><a href="#reviews">Reviews</a><a href="#book">Book</a></nav>
+  <a class="btn btn-ink" href="#book">Book a groom</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding-top:30px">
+  <div class="wrap">
+    <div>
+      <h1>Muddy pup?<br><span>We've got the bath.</span></h1>
+      <p>Cage-free dog grooming in Bentonville. Your dog gets one-on-one attention, a fluff dry and a bandana. You get a clean dog and a happy-dog photo text when they're ready.</p>
+      <div class="ctas"><a class="btn btn-ink" href="#book">Book a groom</a><a class="btn btn-w" href="tel:+14795550164">(479) 555-0164</a></div>
+    </div>
+    <div class="blob">
+      <img src="img/hero.jpg" alt="Happy fluffy brown and white dog with ears up" width="1600" height="1067">
+      <span class="sticker s1">Cage-free!</span>
+      <span class="sticker s2">Same-week appts</span>
+      <span class="sticker s3">★ 4.9 on Google</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 90 480 0 720 30 S 1200 80 1440 30 V80 H0Z" fill="#fff"/></svg>
+</section>
+
+<section id="prices" class="center" style="padding-top:60px">
+  <div class="wrap">
+    <h2>Prices by pup size</h2>
+    <p class="lede">Every pup is different. Pick a size to see what most dogs that size pay. We'll confirm at drop-off, no surprises.</p>
+    <div class="sizes" role="tablist" aria-label="Dog size">
+      <button role="tab" aria-selected="false" data-i="0">Small<small>Under 20 lb</small></button>
+      <button role="tab" aria-selected="true" data-i="1">Medium<small>20–50 lb</small></button>
+      <button role="tab" aria-selected="false" data-i="2">Large<small>50–90 lb</small></button>
+      <button role="tab" aria-selected="false" data-i="3">XL<small>90 lb +</small></button>
+    </div>
+    <div class="plans">
+      <article class="plan"><img src="img/bath.jpg" alt="Dog covered in suds during a bath" loading="lazy" width="1100" height="734"><div><h3>Bath &amp; Brush <b data-p="35,45,60,75">$45</b></h3><p>For pups between haircuts.</p><ul><li>Shampoo &amp; conditioner</li><li>Fluff dry &amp; brush-out</li><li>Nails &amp; ears</li></ul></div></article>
+      <article class="plan pop"><img src="img/trim.jpg" alt="Groomer trimming a small white poodle's face with scissors" loading="lazy" width="1100" height="734"><div><span class="tag">Most popular</span><h3>Full Groom <b data-p="55,70,90,110">$70</b></h3><p>Everything in the bath, plus a haircut.</p><ul><li>Breed or custom cut</li><li>Sanitary trim &amp; paw pads</li><li>Bandana or bow</li></ul></div></article>
+      <article class="plan"><img src="img/brush.jpg" alt="Groomer brushing a white Pomeranian on the grooming table" loading="lazy" width="1100" height="732"><div><h3>De-shed <b data-p="45,60,80,95">$60</b></h3><p>Less fur on your couch for weeks.</p><ul><li>De-shedding shampoo</li><li>Blowout &amp; undercoat rake</li><li>Nails &amp; ears</li></ul></div></article>
+    </div>
+    <div class="addons"><span>Nail trim $15</span><span>Teeth brushing $10</span><span>Blueberry facial $8</span><span>Puppy intro (under 6 mo) $30</span></div>
+    <p class="small">Prices on this sample site are placeholders.</p>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap center">
+    <h2>How a visit works</h2>
+    <p class="lede">Most grooms take 2–3 hours. No crates, no waiting all day.</p>
+    <div class="grid" style="text-align:left">
+      <div class="card"><span class="n">1</span><h3>Book online</h3><p>Pick a day and drop-off time. Add notes about anything your pup is nervous about.</p></div>
+      <div class="card"><span class="n">2</span><h3>Drop off &amp; relax</h3><p>Your dog hangs out in our open play area, not a cage, between steps.</p></div>
+      <div class="card"><span class="n">3</span><h3>Get the photo text</h3><p>We text a glamour shot when they're ready. Pick up, pay and go.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Recent good boys &amp; girls</h2>
+    <div class="pics">
+      <figure><img src="img/corgi.jpg" alt="Corgi lying down and smiling" loading="lazy" width="1100" height="734"><figcaption>Biscuit</figcaption></figure>
+      <figure><img src="img/run.jpg" alt="Small fluffy white dog running happily on grass" loading="lazy" width="1100" height="734"><figcaption>Luna</figcaption></figure>
+      <figure><img src="img/trim.jpg" alt="White poodle getting a trim" loading="lazy" width="1100" height="734"><figcaption>Coco</figcaption></figure>
+      <figure><img src="img/brush.jpg" alt="White Pomeranian being brushed" loading="lazy" width="1100" height="732"><figcaption>Mochi</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:20px">
+  <div class="wrap center">
+    <h2>Pup parents say</h2>
+    <div class="revs" style="text-align:left">
+      <div class="rev"><div class="st">★★★★★</div><p>"Our anxious rescue usually hides at the groomer. Here he came out wagging. Cage-free makes a huge difference."</p><b>Sarah K.</b> <span>· mom to Rocket</span></div>
+      <div class="rev"><div class="st">★★★★★</div><p>"Best doodle cut we've ever had, and they actually listened to 'not too short.' Booking took 30 seconds."</p><b>Tyler M.</b> <span>· dad to Waffles</span></div>
+      <div class="rev"><div class="st">★★★★★</div><p>"Love the photo text when she's ready. Fair prices and she smells amazing for days."</p><b>Priya N.</b> <span>· mom to Pepper</span></div>
+    </div>
+    <p class="small">Sample reviews for this demo site.</p>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div>
+      <h2>Book a groom</h2>
+      <p class="lede">New pups get $10 off their first full groom. Tell us a little about your dog and we'll text to confirm.</p>
+      <div class="info">
+        <div><i>📍</i><div><b>Find us</b><span>1500 SE Example Blvd, Bentonville, AR 72712</span></div></div>
+        <div><i>🕘</i><div><b>Hours</b><span>Tue–Sat 8am–5pm · Drop-offs until 11am</span></div></div>
+        <div><i>📞</i><div><b>Call or text</b><span>(479) 555-0164</span></div></div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.fnote').textContent='Woof! This is a demo form, so nothing was sent.';">
+      <h3>Tell us about your pup</h3>
+      <label>Your name<input type="text" autocomplete="name" required></label>
+      <label>Phone<input type="tel" autocomplete="tel" required></label>
+      <label>Dog's name<input type="text" required></label>
+      <label>Breed<input type="text" placeholder="e.g. Goldendoodle"></label>
+      <label>Service<select><option>Full Groom</option><option>Bath &amp; Brush</option><option>De-shed</option><option>Nail trim only</option><option>Puppy intro</option></select></label>
+      <label>Preferred day<input type="date"></label>
+      <label class="full">Anything we should know?<textarea rows="3" placeholder="Nervous with clippers, matting behind ears, etc."></textarea></label>
+      <button class="btn btn-c full" type="submit">Request appointment</button>
+      <p class="fnote">We'll text you within a few hours to confirm.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Sample website by <a href="/">Sitemind</a>. Muddy Paws Grooming is a fictional business; name, address, phone, prices and reviews are placeholders. Photos via Unsplash: <a href="https://unsplash.com/photos/white-and-brown-long-coat-large-dog-U3aF7hgUSrk">Pauline Loroy</a>, <a href="https://unsplash.com/photos/a-small-white-dog-being-cut-with-a-pair-of-scissors-LpK2xddrElI">Buddy AN</a>, <a href="https://unsplash.com/photos/man-brushing-dog-hair-dHIRbh9En6I">Александр Гросс</a>, <a href="https://unsplash.com/photos/a-brown-dog-standing-next-to-a-bath-tub-filled-with-water-Eb7WQOqwnp0">Ottr Dan</a>, <a href="https://unsplash.com/photos/brown-and-white-corgi-puppy-1QsQRkxnU6I">fatty corgi</a>, <a href="https://unsplash.com/photos/shallow-focus-photography-of-white-shih-tzu-puppy-running-on-the-grass-qO-PIF84Vxg">Joe Caione</a>.</div></footer>
+
+<script>
+(function(){var t=[...document.querySelectorAll('.sizes button')];t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){x.setAttribute('aria-selected',x===b)});var i=+b.dataset.i;document.querySelectorAll('[data-p]').forEach(function(p){p.textContent='$'+p.dataset.p.split(',')[i]});});});})();
+</script>
+</body>
+</html>
