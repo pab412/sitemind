@@ -127,11 +127,23 @@
   .plan.pop{border-color:rgba(201,185,143,.45);background:linear-gradient(90deg,rgba(201,185,143,.07),var(--bg2) 60%)}
   .orb{width:58px;height:58px;border-radius:50%}
   .plan h3{font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  .pill{font-size:11px;font-weight:500;padding:4px 10px;border-radius:999px;border:1px solid rgba(201,185,143,.5);color:var(--accent)}
+  .badge{font-size:11px;font-weight:500;padding:4px 10px;border-radius:999px;border:1px solid rgba(201,185,143,.5);color:var(--accent)}
   .plan p{color:var(--muted);font-size:14px;margin-top:5px}
   .price{text-align:right}
   .price .p{font-family:var(--serif);font-style:italic;font-size:42px;line-height:1}
   .price .m{font-size:13px;color:var(--muted);margin-top:4px}
+  .plan-group{margin-top:60px}
+  .plan-group+.plan-group{margin-top:56px}
+  .group-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 6px 16px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .group-head h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px}
+  .group-head p{color:var(--muted);font-size:14px}
+  .plan-group .plans{margin-top:0}
+  .save{font-size:12px;color:var(--accent);margin-top:6px}
+  .plan.solo{padding:16px 30px 16px 22px;background:transparent}
+  .plan.solo .orb{width:40px;height:40px;opacity:.7;justify-self:center}
+  .plan.solo h3{font-size:17px}
+  .plan.solo .price .p{font-size:32px}
+  .tag{font-size:11px;font-weight:500;padding:3px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--muted)}
 
   /* steps */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;border-top:1px solid var(--line)}
@@ -191,6 +203,7 @@
     .stats{grid-template-columns:1fr 1fr}
     .plan{grid-template-columns:1fr auto;border-radius:28px;padding:24px} .orb{display:none}
     .price .p{font-size:34px}
+    .plan.solo .price .p{font-size:28px} .group-head h3{font-size:26px}
     form{grid-template-columns:1fr}
     .sec{padding:100px 0}
   }
@@ -286,28 +299,48 @@
       </div>
       <a href="#contact" class="btn o rv">Get started →</a>
     </div>
-    <div class="plans">
-      <div class="plan rv">
-        <div class="orb" style="background:radial-gradient(circle at 30% 30%,#e9e4d8,#6b6658)"></div>
-        <div><h3>Website</h3><p>Custom mobile design, contact form, Google setup, hosting and updates.</p></div>
-        <div class="price"><div class="p">$500</div><div class="m">+ $75/mo</div></div>
+    <!-- Packages -->
+    <div class="plan-group">
+      <div class="group-head rv"><h3>Packages</h3><p>Bundle and save compared to buying each service on its own.</p></div>
+      <div class="plans">
+        <div class="plan rv">
+          <div class="orb" style="background:conic-gradient(from 200deg,#6c7cff,#c06cff,#40c9ff,#6c7cff)"></div>
+          <div><h3>Website + AI</h3><p>Everything in Website, plus 24/7 AI chat, online booking and reminder texts.</p></div>
+          <div class="price"><div class="p">$1,250</div><div class="m">+ $150/mo</div><div class="save">Save $200 + $75/mo</div></div>
+        </div>
+        <div class="plan pop rv d1">
+          <div class="orb" style="background:radial-gradient(circle at 30% 30%,#8fe3b0,#1d5a3a)"></div>
+          <div><h3>Website + SEO <span class="badge">Most popular</span></h3><p>Everything in Website, plus local SEO: Google Business Profile, keywords, directory listings and a monthly report.</p></div>
+          <div class="price"><div class="p">$1,450</div><div class="m">+ $200/mo</div><div class="save">Save $200 + $75/mo</div></div>
+        </div>
+        <div class="plan rv d2">
+          <div class="orb" style="background:radial-gradient(circle at 30% 30%,#c9b98f,#3d3524)"></div>
+          <div><h3>Complete <span class="badge">Best value</span></h3><p>Website + AI + SEO. Includes an AI phone receptionist, follow-ups, review requests and ongoing local SEO.</p></div>
+          <div class="price"><div class="p">$2,000</div><div class="m">+ $350/mo</div><div class="save">Save $600 + $75/mo</div></div>
+        </div>
       </div>
-      <div class="plan rv d1">
-        <div class="orb" style="background:conic-gradient(from 200deg,#6c7cff,#c06cff,#40c9ff,#6c7cff)"></div>
-        <div><h3>Website + AI</h3><p>Everything in Website, plus 24/7 AI chat, online booking and reminder texts.</p></div>
-        <div class="price"><div class="p">$1,250</div><div class="m">+ $150/mo</div></div>
+    </div>
+
+    <!-- Individual services -->
+    <div class="plan-group">
+      <div class="group-head rv"><h3>Individual services</h3><p>Just need one thing? Buy it on its own.</p></div>
+      <div class="plans">
+        <div class="plan solo rv">
+          <div class="orb" style="background:radial-gradient(circle at 30% 30%,#e9e4d8,#6b6658)"></div>
+          <div><h3>Website</h3><p>Custom mobile design, contact form, Google setup, hosting and updates.</p></div>
+          <div class="price"><div class="p">$500</div><div class="m">+ $75/mo</div></div>
+        </div>
+        <div class="plan solo rv d1">
+          <div class="orb" style="background:conic-gradient(from 200deg,#6c7cff,#c06cff,#40c9ff,#6c7cff)"></div>
+          <div><h3>AI only <span class="tag">For existing websites</span></h3><p>24/7 AI chat, online booking and reminder texts added to the site you already have.</p></div>
+          <div class="price"><div class="p">$950</div><div class="m">+ $150/mo</div></div>
+        </div>
+        <div class="plan solo rv d2">
+          <div class="orb" style="background:radial-gradient(circle at 30% 30%,#8fe3b0,#1d5a3a)"></div>
+          <div><h3>SEO only <span class="tag">For existing websites</span></h3><p>Local SEO for the site you already have: Google Business Profile, keywords, directory listings and a monthly report.</p></div>
+          <div class="price"><div class="p">$1,150</div><div class="m">+ $200/mo</div></div>
+        </div>
       </div>
-      <div class="plan rv d1">
-        <div class="orb" style="background:radial-gradient(circle at 30% 30%,#8fe3b0,#1d5a3a)"></div>
-        <div><h3>Website + SEO</h3><p>Everything in Website, plus local SEO: Google Business Profile, keywords, directory listings and a monthly report.</p></div>
-        <div class="price"><div class="p">$1,450</div><div class="m">+ $200/mo</div></div>
-      </div>
-      <div class="plan rv d2">
-        <div class="orb" style="background:radial-gradient(circle at 30% 30%,#c9b98f,#3d3524)"></div>
-        <div><h3>Complete</h3><p>Website + AI + SEO. Includes an AI phone receptionist, follow-ups, review requests and ongoing local SEO.</p></div>
-        <div class="price"><div class="p">$2,000</div><div class="m">+ $350/mo</div></div>
-      </div
-</div>
     </div>
   </div>
 </section>
