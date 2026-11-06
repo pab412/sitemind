@@ -3,370 +3,398 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KŌBŌ 工房 — Late-Night Ramen Counter · Sitemind sample</title>
-<meta name="description" content="Kōbō is a 16-seat late-night ramen counter. 18-hour broth, hand-cut noodles, open til 2am. Grab a seat.">
+<title>Kōbō — Ramen House &amp; Izakaya · Sitemind sample</title>
+<meta name="description" content="Kōbō is a ramen house and izakaya. Eighteen-hour broths, noodles made every morning, small plates, sake and a chef's counter. Browse the full menu and reserve a table.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#F4EFE4;--pink:#FF48B0;--blue:#0078BF;--yellow:#FFE800;--ink:#1A1A1A;
---display:'Dela Gothic One',system-ui,sans-serif;--sans:'Bricolage Grotesque',system-ui,sans-serif;--mono:'Space Mono',ui-monospace,monospace;--marker:'Permanent Marker',cursive;
---spring:cubic-bezier(.34,1.56,.64,1)}
+:root{--washi:#F6F2EA;--kinari:#ECE5D8;--paper:#FBF9F4;--sumi:#1B1916;--ink2:#3A3631;--mute:#6E675E;--line:rgba(27,25,22,.12);--shu:#B23A2B;--shu-d:#922C20;--wood:#8B6B4A;
+--serif:'Shippori Mincho',Georgia,serif;--sans:'Zen Kaku Gothic New',system-ui,sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{overflow-x:clip}
-body{background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .42 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E")}
+html{scroll-behavior:smooth}
+body{background:var(--washi);color:var(--sumi);font:400 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
 section,header,footer{overflow-x:clip}
-::selection{background:var(--yellow)}
-.ph{border-bottom:2px dotted currentColor;cursor:help}
-.wrap{width:min(1280px,100% - 48px);margin:0 auto}
-.mono{font-family:var(--mono)}
-.mult{mix-blend-mode:multiply}
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font:800 18px/1 var(--sans);padding:18px 30px;border:3px solid var(--ink);border-radius:999px;box-shadow:5px 5px 0 var(--ink);transition:transform .18s var(--spring),box-shadow .18s var(--spring);cursor:pointer;white-space:nowrap}
-.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
-.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
-.btn.sm{font-size:15px;padding:11px 20px;box-shadow:3px 3px 0 var(--ink)}
-.btn.sm:hover{box-shadow:1px 1px 0 var(--ink);transform:translate(2px,2px)}
-.btn.pink{background:var(--pink);color:var(--paper)}
-/* nav */
-header{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--ink)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
-.logo{display:flex;align-items:center;gap:10px;font:24px/1 var(--display)}
-.logo i{font-style:normal;background:var(--pink);color:var(--paper);padding:6px 7px 4px;border:2px solid var(--ink);transform:rotate(-6deg);font-size:19px;line-height:1.1}
-.nav nav{display:flex;gap:6px}
-.nav nav a{font:700 13px/1 var(--mono);text-transform:uppercase;padding:9px 12px;border:2px solid transparent;border-radius:999px;transition:all .2s var(--spring)}
-.nav nav a:hover{border-color:var(--ink);background:#fff;transform:rotate(-3deg)}
+::selection{background:var(--shu);color:#fff}
+.ph{border-bottom:1px dotted currentColor;cursor:help}
+.wrap{width:min(1240px,100% - 56px);margin:0 auto}
+.label{font:500 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--shu)}
+.jp{font-family:var(--serif);color:var(--mute);letter-spacing:.12em}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:.01em}
+h2{font-size:clamp(36px,4.4vw,58px);line-height:1.12}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 28px;background:var(--sumi);color:var(--washi);font:500 14px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--sumi);transition:background .35s var(--ease),border-color .35s,color .35s;white-space:nowrap}
+.btn:hover{background:var(--shu);border-color:var(--shu)}
+.btn.line{background:transparent;color:var(--sumi)}
+.btn.line:hover{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.btn.sm{padding:12px 20px;font-size:12.5px}
+/* top bar + nav */
+.topbar{background:var(--sumi);color:#d9d2c6;font-size:12.5px;letter-spacing:.06em}
+.topbar .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 0}
+header{position:sticky;top:0;z-index:60;background:rgba(246,242,234,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.hanko{width:38px;height:38px;background:var(--shu);color:#fff;display:grid;place-items:center;font:600 13px/1.05 var(--serif);writing-mode:vertical-rl;letter-spacing:.05em;border-radius:3px}
+.logo b{font:600 26px/1 var(--serif);letter-spacing:.14em}
+.logo small{display:block;font:500 10px/1 var(--sans);letter-spacing:.3em;color:var(--mute);margin-top:6px;text-transform:uppercase}
+.nav nav{display:flex;gap:34px}
+.nav nav a{font-size:14px;letter-spacing:.08em;color:var(--ink2);position:relative;padding:6px 0}
+.nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--shu);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav nav a:hover::after{transform:scaleX(1)}
+.navr{display:flex;align-items:center;gap:14px}
+.bagbtn{position:relative;width:46px;height:46px;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;border-radius:50%}
+.bagbtn svg{width:20px;height:20px}
+.bagbtn i{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:10px;background:var(--shu);color:#fff;font:700 11px/20px var(--sans);font-style:normal;text-align:center;padding:0 5px;transform:scale(0);transition:transform .3s var(--ease)}
+.bagbtn i.on{transform:scale(1)}
 /* hero */
-.hero{position:relative;padding:40px 0 70px;min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:center}
-.hero .top{display:flex;justify-content:space-between;align-items:center;font:700 13px/1.3 var(--mono);text-transform:uppercase;border-bottom:2px dashed var(--ink);padding-bottom:12px;margin-bottom:clamp(50px,5vw,80px);gap:20px;flex-wrap:wrap}
-.hero .top span b{background:var(--ink);color:var(--paper);padding:2px 6px}
-.poster{position:relative}
-.ramen{font:clamp(100px,19.5vw,300px)/.78 var(--display);letter-spacing:-.04em;display:flex;justify-content:space-between;position:relative;z-index:1;user-select:none}
-.ramen span{display:inline-block;color:var(--pink);mix-blend-mode:multiply;position:relative;transform:translateY(40px) rotate(var(--r,0deg));opacity:0;transition:transform .7s var(--spring),opacity .3s}
-.ramen span::after{content:attr(data-l);position:absolute;left:0;top:0;color:var(--blue);mix-blend-mode:multiply;transform:translate(.045em,.04em);z-index:-1}
-.on .ramen span{transform:translateY(0) rotate(var(--r,0deg));opacity:1}
-.ramen span:nth-child(1){--r:-4deg}.ramen span:nth-child(2){--r:3deg;transition-delay:.06s}.ramen span:nth-child(3){--r:-2deg;transition-delay:.12s}.ramen span:nth-child(4){--r:5deg;transition-delay:.18s}.ramen span:nth-child(5){--r:-3deg;transition-delay:.24s}
-.bowlwrap{position:absolute;left:50%;top:50%;width:clamp(200px,23vw,360px);aspect-ratio:1;transform:translate(-50%,-48%) scale(.6);z-index:2;opacity:0;transition:transform 1s var(--spring) .35s,opacity .4s .35s}
-.on .bowlwrap{transform:translate(-50%,-48%) scale(1);opacity:1}
-.bowlwrap img{width:100%;height:100%;border-radius:50%;border:4px solid var(--ink);box-shadow:10px 10px 0 var(--blue);animation:spin 60s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.steam{position:absolute;left:18%;right:18%;top:-46%;height:60%;pointer-events:none}
-.steam path{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-dasharray:6 10;opacity:0;animation:steam 4s ease-in-out infinite}
-.steam path:nth-child(2){animation-delay:1.3s}.steam path:nth-child(3){animation-delay:2.6s}
-@keyframes steam{0%{opacity:0;transform:translateY(30px)}30%{opacity:.8}100%{opacity:0;transform:translateY(-30px)}}
-.stamp{position:absolute;right:2%;top:-6%;z-index:3;width:150px;height:150px;border-radius:50%;background:var(--yellow);border:3px solid var(--ink);display:grid;place-items:center;text-align:center;font:22px/1 var(--display);transform:rotate(14deg);box-shadow:4px 4px 0 var(--ink);animation:wob 3s ease-in-out infinite}
-.stamp small{display:block;font:700 11px/1.2 var(--mono);margin-top:4px}
-@keyframes wob{50%{transform:rotate(8deg) scale(1.04)}}
-.kanji{position:absolute;left:-6px;top:4%;writing-mode:vertical-rl;font:clamp(40px,5vw,72px)/1 var(--display);color:var(--blue);mix-blend-mode:multiply;z-index:0;letter-spacing:.1em}
-.hero .bottom{display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:30px;align-items:end;margin-top:clamp(50px,6vw,90px)}
-.hero .bottom p{font:600 clamp(20px,2.2vw,28px)/1.25 var(--sans);max-width:620px}
-.hero .bottom p mark{background:var(--yellow);padding:0 4px}
-.acts{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.acts .mono{font-size:13px;text-decoration:underline;text-underline-offset:4px;font-weight:700}
-/* band */
-.band{background:var(--blue);color:var(--paper);border-block:3px solid var(--ink);transform:rotate(-2deg);margin:20px -20px;padding:16px 0;white-space:nowrap;overflow:hidden;position:relative;z-index:3}
-.band div{display:inline-flex;gap:40px;animation:tick 30s linear infinite;font:28px/1 var(--display)}
-.band span::after{content:"✺";color:var(--yellow);margin-left:40px}
-@keyframes tick{to{transform:translateX(-50%)}}
-.band.alt{background:var(--pink);transform:rotate(1.5deg);margin-top:-14px}
-.band.alt div{animation-direction:reverse;animation-duration:36s}
-/* sections */
-.sec{padding:110px 0}
-.h2{font:clamp(50px,8vw,120px)/.85 var(--display);letter-spacing:-.03em;margin-bottom:40px;position:relative;display:inline-block}
-.h2 .p{color:var(--pink);mix-blend-mode:multiply}
-.h2 .b{color:var(--blue);mix-blend-mode:multiply}
-.h2 sup{font:700 14px/1 var(--mono);vertical-align:top;background:var(--ink);color:var(--paper);padding:4px 8px;margin-left:10px;transform:rotate(6deg);display:inline-block}
-/* departure board */
-.board{background:#111;border:4px solid var(--ink);border-radius:14px;padding:26px 26px 18px;box-shadow:10px 10px 0 var(--pink);color:#f6f2e8;position:relative}
-.board .hdr{display:grid;grid-template-columns:minmax(0,2fr) 1fr 1fr 1fr;gap:14px;font:700 12px/1 var(--mono);color:var(--yellow);text-transform:uppercase;padding:0 6px 14px;border-bottom:2px solid #333}
-.row{display:grid;grid-template-columns:minmax(0,2fr) 1fr 1fr 1fr;gap:14px;align-items:center;padding:14px 6px;border-bottom:1px dashed #333}
-.row:last-child{border:0}
-.flaps{display:flex;flex-wrap:wrap;gap:3px}
-.f{display:inline-grid;place-items:center;width:1.25em;height:1.6em;background:#262626;border-radius:3px;font:700 clamp(15px,1.8vw,22px)/1 var(--mono);color:#f6f2e8;position:relative;overflow:hidden}
-.f::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#0a0a0a}
-.f.sp{background:transparent}
-.f.flip{animation:flip .08s linear}
-@keyframes flip{50%{transform:scaleY(.2)}}
-.row .pr{font:700 22px/1 var(--mono);color:var(--yellow)}
-.row .sp{font-size:18px}
-.row .t{font:400 13px/1.3 var(--mono);color:#bbb}
-.boardnote{margin-top:18px;font:700 13px/1.4 var(--mono)}
-/* build your bowl */
-.build{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px;align-items:start}
-.opts h3{font:24px/1 var(--display);margin:28px 0 14px;display:flex;align-items:center;gap:10px}
-.opts h3:first-child{margin-top:0}
-.opts h3 i{font-style:normal;background:var(--ink);color:var(--paper);font:700 12px/1 var(--mono);padding:5px 8px;border-radius:99px}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{font:700 15px/1 var(--sans);padding:12px 16px;background:#fff;border:2.5px solid var(--ink);border-radius:999px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .2s var(--spring),box-shadow .2s,background .2s}
-.chip:hover{transform:rotate(-3deg) translateY(-2px)}
-.chip.on{background:var(--pink);color:var(--paper)}
-.chip small{font:400 12px var(--mono);margin-left:6px;opacity:.75}
-.bowlbox{position:sticky;top:100px;text-align:center}
-.bowlbox svg{width:min(100%,480px);overflow:visible}
-.tp{transform-box:fill-box;transform-origin:center;transition:transform .5s var(--spring),opacity .3s}
-.tp.hide{transform:scale(0) rotate(-40deg);opacity:0}
-.receipt{margin:22px auto 0;max-width:420px;background:#fff;border:2.5px solid var(--ink);padding:18px 20px;font:400 14px/1.6 var(--mono);text-align:left;box-shadow:6px 6px 0 var(--blue);transform:rotate(-1.5deg)}
-.receipt .tot{display:flex;justify-content:space-between;border-top:2px dashed var(--ink);margin-top:8px;padding-top:10px;font:700 22px var(--mono)}
-.receipt .line{display:flex;justify-content:space-between}
-/* counter strip */
-.strip{display:flex;gap:28px;overflow-x:auto;padding:30px 24px 40px;scroll-snap-type:x mandatory;scrollbar-width:none}
-.strip::-webkit-scrollbar{display:none}
-.strip figure{flex:0 0 auto;width:min(380px,78vw);scroll-snap-align:center;transform:rotate(var(--r));transition:transform .3s var(--spring)}
-.strip figure:hover{transform:rotate(0deg) scale(1.03)}
-.torn{background:#fff;padding:14px 14px 0;clip-path:polygon(0 2%,6% 0,14% 2%,22% 0,31% 1.5%,40% 0,50% 2%,60% 0,70% 1.5%,80% 0,90% 2%,100% 0,100% 98%,94% 100%,86% 98%,77% 100%,68% 98.5%,58% 100%,49% 98%,39% 100%,30% 98.5%,20% 100%,11% 98%,0 100%);filter:drop-shadow(4px 4px 0 var(--ink))}
-.torn img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.torn figcaption{font:22px/1.2 var(--marker);padding:14px 4px 26px;color:var(--ink)}
-.strip figure:nth-child(3n+1) figcaption{color:var(--blue)}
-.strip figure:nth-child(3n+2) figcaption{color:var(--pink)}
-/* rules */
-.rules{background:var(--yellow);border-block:3px solid var(--ink)}
-.rgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:3px solid var(--ink);background:var(--paper)}
-.rule{padding:34px 34px 38px;border:1.5px solid var(--ink);position:relative}
-.rule b{display:block;font:clamp(70px,8vw,110px)/.8 var(--display);color:var(--pink);mix-blend-mode:multiply;margin-bottom:14px}
-.rule:nth-child(even) b{color:var(--blue)}
-.rule h3{font:28px/1.05 var(--display);margin-bottom:10px}
-.rule p{font-size:16px}
-/* reviews */
-.stickers{position:relative;display:flex;flex-wrap:wrap;gap:30px;justify-content:center;padding:20px 0}
-.st{background:#fff;border:3px solid var(--ink);border-radius:28px;padding:24px 26px 22px;max-width:340px;position:relative;box-shadow:6px 6px 0 var(--ink);transform:rotate(var(--r));transition:transform .4s var(--spring)}
-.st:hover{animation:wiggle .5s ease-in-out}
-@keyframes wiggle{25%{transform:rotate(calc(var(--r) + 4deg))}75%{transform:rotate(calc(var(--r) - 4deg))}}
-.st::after{content:"";position:absolute;left:40px;bottom:-22px;width:30px;height:30px;background:#fff;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:skewY(40deg) rotate(10deg)}
-.st p{font:600 19px/1.35 var(--sans)}
-.st cite{display:block;font:700 12px/1 var(--mono);font-style:normal;margin-top:14px;text-transform:uppercase}
-.st.p{background:var(--pink);color:var(--paper)}.st.p::after{background:var(--pink)}
-.st.y{background:var(--yellow)}.st.y::after{background:var(--yellow)}
-/* ticket */
-.tix{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:50px;align-items:center}
-.tix .lead{font:600 22px/1.35 var(--sans);margin-bottom:24px}
-.tix ul{list-style:none;font:400 15px/1.8 var(--mono)}
-.tix li::before{content:"→ ";color:var(--pink);font-weight:700}
-.ticket{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 120px;background:#fff;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--blue);transition:transform .6s var(--spring)}
-.ticket .main{padding:28px 28px 26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.ticket .main h3{grid-column:1/-1;font:30px/1 var(--display)}
-.ticket .full{grid-column:1/-1}
-.ticket label{display:block;font:700 11px/1 var(--mono);text-transform:uppercase;margin-bottom:6px}
-.ticket input,.ticket select{width:100%;font:600 17px var(--sans);padding:10px 12px;border:2.5px solid var(--ink);border-radius:10px;background:var(--paper);outline:none;-webkit-appearance:none;appearance:none}
-.ticket input:focus,.ticket select:focus{background:#fff;box-shadow:3px 3px 0 var(--pink)}
-.ticket select{background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231A1A1A' stroke-width='2'/%3E%3C/svg%3E") right 12px center no-repeat}
-.party{display:flex;gap:8px}
-.party label{margin:0}
-.party input{position:absolute;opacity:0;width:1px}
-.party span{display:grid;place-items:center;width:46px;height:46px;border:2.5px solid var(--ink);border-radius:50%;font:20px var(--display);cursor:pointer;transition:all .2s var(--spring);background:var(--paper)}
-.party input:checked+span{background:var(--ink);color:var(--yellow);transform:rotate(-8deg) scale(1.08)}
-.party input:focus-visible+span{box-shadow:0 0 0 3px var(--pink)}
-.stub{border-left:3px dashed var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px 10px;background:var(--pink);color:var(--paper);position:relative;transition:transform .9s var(--spring),opacity .6s}
-.stub .v{writing-mode:vertical-rl;font:26px/1 var(--display);letter-spacing:.06em}
-.stub small{font:700 11px/1 var(--mono)}
-.ticket::before,.ticket::after{content:"";position:absolute;right:108px;width:24px;height:24px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);z-index:2}
-.ticket::before{top:-14px}.ticket::after{bottom:-14px}
-.ticket button{grid-column:1/-1;justify-self:start}
-.ticket.torn .stub{transform:translate(60px,40px) rotate(24deg);opacity:0}
-.done{display:none;grid-column:1/-1;text-align:center;padding:16px 0}
-.done b{display:block;font:clamp(60px,9vw,110px)/1 var(--display);color:var(--pink)}
-.done p{font:700 14px var(--mono)}
-.ticket.sent .main>*:not(.done){display:none}
-.ticket.sent .done{display:block}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center;padding:70px 0 90px}
+.hero .label{display:block;margin-bottom:26px}
+.hero h1{font-size:clamp(48px,5.8vw,84px);line-height:1.08;font-weight:500}
+.hero h1 em{font-style:normal;color:var(--shu)}
+.hero p.lead{font-size:18px;color:var(--ink2);max-width:500px;margin:28px 0 38px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:56px;border-top:1px solid var(--line)}
+.facts div{padding:20px 16px 0 0}
+.facts b{display:block;font:500 30px/1 var(--serif)}
+.facts span{font-size:13px;color:var(--mute);letter-spacing:.04em}
+.heroimg{position:relative}
+.heroimg .main{aspect-ratio:4/5;overflow:hidden}
+.heroimg .main img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 2.4s var(--ease)}
+.loaded .heroimg .main img{transform:scale(1)}
+.heroimg .vert{position:absolute;right:-44px;top:0;writing-mode:vertical-rl;font:500 15px/1 var(--serif);letter-spacing:.6em;color:var(--shu)}
+.heroimg .card{position:absolute;left:-48px;bottom:44px;background:var(--paper);padding:20px 22px;box-shadow:0 24px 50px -24px rgba(27,25,22,.4);display:flex;gap:16px;align-items:center;max-width:320px;cursor:pointer;border:0;text-align:left;transition:transform .4s var(--ease)}
+.heroimg .card:hover{transform:translateY(-4px)}
+.heroimg .card img{width:64px;height:64px;object-fit:cover;border-radius:50%}
+.heroimg .card small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--shu)}
+.heroimg .card b{display:block;font:500 19px/1.25 var(--serif);margin:4px 0 2px}
+.heroimg .card span{font-size:13px;color:var(--mute)}
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+/* signatures */
+.sig{background:var(--kinari);padding:100px 0}
+.sechead{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:46px}
+.sechead p{max-width:420px;color:var(--mute)}
+.sechead .label{display:block;margin-bottom:16px}
+.sigrow{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:24px}
+.sigc{position:relative;text-align:left;border:0;background:none;padding:0}
+.sigc .im{overflow:hidden;aspect-ratio:4/5}
+.sigc:first-child .im{aspect-ratio:5/6}
+.sigc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.sigc:hover img{transform:scale(1.04)}
+.sigc .meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:18px 2px 0}
+.sigc h3{font-size:24px}
+.sigc .jp{font-size:13px;display:block;margin-top:2px}
+.sigc .pr{font:500 20px var(--serif)}
+.sigc .tag{position:absolute;top:16px;left:16px;background:var(--paper);font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:8px 10px}
+/* menu */
+.menu{padding:110px 0 80px}
+.tabs{position:sticky;top:76px;z-index:40;background:var(--washi);border-bottom:1px solid var(--line);margin-bottom:40px}
+.tabs .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.tabbar{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.tabbar::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;padding:20px 18px;font:500 15px/1 var(--sans);letter-spacing:.06em;color:var(--mute);position:relative;white-space:nowrap;transition:color .3s}
+.tab span{font:400 12px var(--serif);display:block;margin-top:6px;letter-spacing:.2em;color:inherit;opacity:.75}
+.tab::after{content:"";position:absolute;left:18px;right:18px;bottom:-1px;height:2px;background:var(--shu);transform:scaleX(0);transition:transform .4s var(--ease)}
+.tab:hover{color:var(--sumi)}
+.tab.on{color:var(--sumi)}.tab.on::after{transform:scaleX(1)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.fchip{border:1px solid var(--line);background:var(--paper);padding:9px 14px;font-size:13px;border-radius:999px;display:flex;align-items:center;gap:8px;transition:all .3s}
+.fchip i{width:8px;height:8px;border-radius:50%;font-style:normal}
+.fchip.on{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.catintro{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+.catintro h3{font-size:34px}
+.catintro p{color:var(--mute);max-width:520px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 26px}
+.item{background:var(--paper);border:1px solid var(--line);text-align:left;padding:0;display:flex;flex-direction:column;transition:box-shadow .4s var(--ease),transform .4s var(--ease);animation:fadein .6s var(--ease) both}
+@keyframes fadein{from{opacity:0;transform:translateY(14px)}}
+.item:hover{box-shadow:0 30px 60px -36px rgba(27,25,22,.45);transform:translateY(-3px)}
+.item .im{aspect-ratio:4/3;overflow:hidden;position:relative}
+.item .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.item:hover .im img{transform:scale(1.05)}
+.item .bd{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.item .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.item h4{font:500 21px/1.25 var(--serif)}
+.item .pr{font:500 18px var(--serif);white-space:nowrap}
+.item .jp{font-size:12.5px;margin-top:2px}
+.item p{font-size:14.5px;color:var(--mute);margin:10px 0 16px;line-height:1.6}
+.item .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tg{font-size:11.5px;letter-spacing:.04em;padding:4px 9px;border-radius:999px;background:var(--kinari);color:var(--ink2)}
+.tg.sp{background:#F4DED8;color:var(--shu-d)}
+.tg.vg{background:#E3EBDD;color:#3F5A32}
+.tg.ch{background:var(--sumi);color:var(--washi)}
+.more{font-size:13px;letter-spacing:.08em;color:var(--shu);white-space:nowrap}
+.empty{grid-column:1/-1;text-align:center;padding:60px 0;color:var(--mute)}
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;pointer-events:none}
+.modal .scrim{position:absolute;inset:0;background:rgba(27,25,22,.55);opacity:0;transition:opacity .4s}
+.modal .box{position:relative;background:var(--paper);width:min(980px,100%);max-height:calc(100vh - 48px);overflow:auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);opacity:0;transform:translateY(20px) scale(.98);transition:opacity .4s var(--ease),transform .5s var(--ease)}
+.modal.open{pointer-events:auto}
+.modal.open .scrim{opacity:1}
+.modal.open .box{opacity:1;transform:none}
+.modal .mimg{min-height:100%;background:var(--kinari)}
+.modal .mimg img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.modal .mbd{padding:44px 40px 36px;display:flex;flex-direction:column}
+.modal h3{font-size:36px;line-height:1.15;margin:12px 0 2px}
+.modal .jp{font-size:15px}
+.modal .desc{margin:20px 0;color:var(--ink2)}
+.modal dl{display:grid;grid-template-columns:110px 1fr;gap:10px 18px;font-size:14px;border-top:1px solid var(--line);padding-top:18px;margin-bottom:24px}
+.modal dt{color:var(--mute);letter-spacing:.06em}
+.modal .buy{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:22px}
+.modal .buy b{font:500 28px var(--serif)}
+.qty{display:flex;align-items:center;border:1px solid var(--line)}
+.qty button{width:40px;height:44px;background:none;border:0;font-size:18px}
+.qty span{min-width:30px;text-align:center}
+.close{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;background:var(--paper);border:1px solid var(--line);z-index:2;font-size:20px;line-height:1}
+.nav2{display:flex;gap:10px;margin-top:16px}
+.nav2 button{background:none;border:0;font-size:13px;color:var(--mute);letter-spacing:.06em}
+.nav2 button:hover{color:var(--shu)}
+/* bag drawer */
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--paper);z-index:110;transform:translateX(100%);transition:transform .5s var(--ease),box-shadow .5s;display:flex;flex-direction:column}
+.drawer.open{box-shadow:-30px 0 60px -30px rgba(0,0,0,.4)}
+.drawer.open{transform:none}
+.drawer .hd{display:flex;justify-content:space-between;align-items:center;padding:26px 28px;border-bottom:1px solid var(--line)}
+.drawer .hd h3{font-size:26px}
+.drawer .list{flex:1;overflow:auto;padding:10px 28px}
+.bi{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.bi img{width:64px;height:64px;object-fit:cover}
+.bi b{font:500 16px var(--serif);display:block}
+.bi small{color:var(--mute)}
+.bi button{background:none;border:0;color:var(--mute);font-size:13px;text-decoration:underline}
+.drawer .ft{padding:22px 28px 28px;border-top:1px solid var(--line)}
+.drawer .tot{display:flex;justify-content:space-between;font:500 22px var(--serif);margin-bottom:16px}
+.drawer .btn{width:100%;justify-content:center}
+.drawer .note{font-size:12.5px;color:var(--mute);margin-top:12px;text-align:center}
+.toast{position:fixed;left:50%;bottom:70px;transform:translate(-50%,20px);background:var(--sumi);color:var(--washi);padding:14px 22px;font-size:14px;z-index:120;opacity:0;transition:all .4s var(--ease);pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+/* counter */
+.counter{background:var(--sumi);color:var(--washi);padding:0}
+.ctr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ctr .im{min-height:640px;overflow:hidden}
+.ctr .im img{width:100%;height:100%;object-fit:cover}
+.ctr .tx{padding:100px 80px;display:flex;flex-direction:column;justify-content:center}
+.ctr .label{color:#E4A397}
+.ctr h2{margin:18px 0 22px}
+.ctr p{color:#CFC7BA;max-width:460px}
+.courses{list-style:none;margin:30px 0 36px;border-top:1px solid rgba(246,242,234,.15)}
+.courses li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid rgba(246,242,234,.15);font-size:15px}
+.courses li span{color:#A9A195;font-family:var(--serif)}
+.ctr .btn{background:var(--washi);color:var(--sumi);border-color:var(--washi);align-self:flex-start}
+.ctr .btn:hover{background:var(--shu);color:#fff;border-color:var(--shu)}
+/* craft */
+.craft{padding:120px 0}
+.cgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
+.cg .im{aspect-ratio:3/4;overflow:hidden;margin-bottom:22px}
+.cg:nth-child(2){margin-top:60px}
+.cg img{width:100%;height:100%;object-fit:cover}
+.cg .n{font:500 14px var(--serif);color:var(--shu);letter-spacing:.2em}
+.cg h3{font-size:26px;margin:8px 0 10px}
+.cg p{color:var(--mute);font-size:15px}
+/* press */
+.press{border-block:1px solid var(--line);padding:70px 0}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:50px}
+.pq blockquote{font:500 21px/1.55 var(--serif)}
+.pq cite{display:block;margin-top:14px;font-style:normal;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+/* reserve */
+.reserve{padding:120px 0}
+.rgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:70px;align-items:start}
+.hours{margin-top:30px;border-top:1px solid var(--line)}
+.hours div{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.hours b{font-weight:500}
+.visitimg{margin-top:30px;aspect-ratio:16/10;overflow:hidden}
+.visitimg img{width:100%;height:100%;object-fit:cover}
+form{background:var(--paper);border:1px solid var(--line);padding:42px 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+form h3{grid-column:1/-1;font-size:30px}
+form .full{grid-column:1/-1}
+label{display:block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+input,select,textarea{width:100%;border:0;border-bottom:1px solid rgba(27,25,22,.3);background:transparent;padding:10px 0 12px;font:400 16px var(--sans);color:var(--sumi);outline:none;border-radius:0;-webkit-appearance:none;appearance:none;transition:border-color .3s}
+select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B1916'/%3E%3C/svg%3E") right 2px center no-repeat}
+input:focus,select:focus,textarea:focus{border-color:var(--shu)}
+textarea{resize:none;height:70px}
+.seat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.seat label{margin:0;text-transform:none;letter-spacing:0;cursor:pointer}
+.seat input{position:absolute;opacity:0;width:1px}
+.seat span{display:block;border:1px solid var(--line);padding:14px 12px;font-size:14px;color:var(--ink2);text-align:center;transition:all .3s}
+.seat span small{display:block;color:var(--mute);font-size:12px}
+.seat input:checked+span{border-color:var(--sumi);background:var(--sumi);color:var(--washi)}
+.seat input:checked+span small{color:#bdb5a8}
+.seat input:focus-visible+span{outline:2px solid var(--shu)}
+form .send{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+form .send small{color:var(--mute);font-size:13px}
+.done{display:none;grid-column:1/-1;text-align:center;padding:30px 0}
+.done .hanko{margin:0 auto 18px;width:56px;height:56px;font-size:18px}
+.done b{display:block;font:500 34px var(--serif);margin-bottom:8px}
+.done p{color:var(--mute)}
+form.sent>*:not(.done){display:none}form.sent .done{display:block}
 /* footer */
-footer{background:var(--ink);color:var(--paper);padding:80px 0 110px;border-top:3px solid var(--ink)}
-.fgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:50px;align-items:start}
-.hours{font:700 clamp(22px,2.6vw,34px)/1.5 var(--mono)}
-.hours span{color:var(--yellow)}
-.closed{display:inline-block;margin-top:20px;background:var(--pink);color:var(--paper);font:22px/1 var(--display);padding:12px 16px;transform:rotate(-3deg);border:2px solid var(--paper)}
-.map{background:var(--paper);border-radius:16px;padding:16px;border:3px solid var(--paper)}
-.map svg{width:100%}
-.addr{margin-top:14px;font:700 14px/1.6 var(--mono)}
-.credits{margin-top:56px;font:400 12px/1.8 var(--mono);color:#a9a49a}
+footer{background:var(--sumi);color:#CFC7BA;padding:80px 0 100px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer .logo b{color:var(--washi)}
+footer h4{font:500 12px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#E4A397;margin-bottom:16px}
+footer p,footer li{font-size:14.5px;list-style:none;line-height:2}
+.credits{margin-top:56px;padding-top:24px;border-top:1px solid rgba(246,242,234,.12);font-size:12px;color:#8C857A;line-height:1.9}
 .credits a{text-decoration:underline}
-.ribbon{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) rotate(-1deg);z-index:90;font:700 11px/1 var(--mono);text-transform:uppercase;background:var(--yellow);color:var(--ink);border:2.5px solid var(--ink);padding:9px 14px;border-radius:99px;box-shadow:3px 3px 0 var(--ink);white-space:nowrap}
-/* pop reveal */
-.pop{opacity:0;transform:scale(.85) rotate(-3deg) translateY(30px);transition:transform .7s var(--spring),opacity .35s}
-.pop.in{opacity:1;transform:none}
+.ribbon{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:90;font:500 11px/1 var(--sans);letter-spacing:.1em;background:var(--paper);color:var(--sumi);border:1px solid var(--line);padding:10px 16px;border-radius:99px;white-space:nowrap;box-shadow:0 10px 24px -14px rgba(0,0,0,.4)}
+.ribbon b{color:var(--shu);font-weight:500}
 /* responsive */
-@media(max-width:960px){
+@media(max-width:1020px){
 .nav nav{display:none}
-.hero .bottom{grid-template-columns:minmax(0,1fr)}
-.stamp{width:110px;height:110px;font-size:16px;right:0;top:-12%}
-.board .hdr{display:none}
-.row{grid-template-columns:minmax(0,1fr) auto;gap:8px 14px}
-.row .t{grid-column:1/-1}
-.row .sp{grid-column:1}
-.build,.tix,.fgrid{grid-template-columns:minmax(0,1fr)}
-.bowlbox{position:relative;top:0}
-.rgrid{grid-template-columns:minmax(0,1fr)}
+.hero{grid-template-columns:minmax(0,1fr);gap:50px;padding:50px 0 70px}
+.heroimg .card{left:16px;bottom:16px}
+.heroimg .vert{display:none}
+.sigrow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.sigc:first-child{grid-column:1/-1}.sigc:first-child .im{aspect-ratio:16/10}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tabs .wrap{flex-direction:column;align-items:stretch;gap:0}
+.filters{padding:0 0 14px}
+.ctr{grid-template-columns:minmax(0,1fr)}.ctr .im{min-height:380px}.ctr .tx{padding:70px 28px}
+.cgrid,.pgrid{grid-template-columns:minmax(0,1fr)}.cg:nth-child(2){margin-top:0}
+.rgrid{grid-template-columns:minmax(0,1fr);gap:50px}
+.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sechead,.catintro{flex-direction:column;align-items:start}
+.modal .box{grid-template-columns:minmax(0,1fr)}
+.modal .mimg img{min-height:0;aspect-ratio:16/10}
 }
-@media(max-width:600px){
-.wrap{width:calc(100% - 32px)}
-.hero{padding-top:24px;min-height:auto}
-.ramen{font-size:19vw}
-.poster{display:flex;flex-direction:column}.bowlwrap{position:relative;left:auto;top:auto;width:64vw;margin:26px auto 0;transform:scale(.6)!important}.on .bowlwrap{transform:none!important}.steam{display:none}.hero .bottom{margin-top:30px}
-.kanji{display:none}
-.stamp{width:92px;height:92px;font-size:13px;top:-24%}.stamp small{font-size:9px}
-.board{padding:16px 12px 10px}
-.f{width:1.05em;height:1.4em;font-size:14px}
-.ticket{grid-template-columns:minmax(0,1fr)}
-.ticket .main{grid-template-columns:minmax(0,1fr);padding:22px 18px}
-.stub{border-left:0;border-top:3px dashed var(--ink);flex-direction:row}
-.stub .v{writing-mode:horizontal-tb}
-.ticket::before,.ticket::after{display:none}
+@media(max-width:620px){
+.wrap{width:calc(100% - 36px)}
+.topbar .wrap span:last-child{display:none}
+.logo small{display:none}
+.navr .btn{display:none}
+.hero h1{font-size:44px}
+.facts b{font-size:24px}
+.sigrow,.grid{grid-template-columns:minmax(0,1fr)}
+.tab{padding:16px 12px}
+.modal{padding:0}
+.modal .box{max-height:100vh;height:100%}
+.modal .mbd{padding:28px 22px}
+.modal h3{font-size:28px}
+form{grid-template-columns:minmax(0,1fr);padding:30px 22px}
+.seat{grid-template-columns:minmax(0,1fr)}
+.fgrid{grid-template-columns:minmax(0,1fr)}
 .btn{white-space:normal}
-.ribbon{font-size:9px}
-.band div{font-size:20px}
+.ribbon{font-size:9.5px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pop{opacity:1;transform:none}.ramen span{opacity:1;transform:rotate(var(--r))}.bowlwrap{opacity:1;transform:translate(-50%,-48%)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div class="topbar"><div class="wrap"><span>Open tonight · 5:00pm – 11:00pm</span><span><span class="ph" title="Placeholder — your address">00 Street, City</span> · <span class="ph">(000) 000-0000</span></span></div></div>
 <header><div class="wrap nav">
- <a class="logo" href="#top">KŌBŌ <i>工房</i></a>
- <nav aria-label="Primary"><a href="#menu">Menu</a><a href="#build">Build a bowl</a><a href="#counter">The counter</a><a href="#rules">Rules</a></nav>
- <a class="btn sm" href="#seat">Grab a Seat</a>
+ <a class="logo" href="#top"><span class="hanko" aria-hidden="true">工房</span><span><b>KŌBŌ</b><small>Ramen House &amp; Izakaya</small></span></a>
+ <nav aria-label="Primary"><a href="#menu">Menu</a><a href="#counter">Chef's Counter</a><a href="#craft">Our Craft</a><a href="#reserve">Visit</a></nav>
+ <div class="navr">
+  <button class="bagbtn" id="bagBtn" aria-label="Open your order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><i id="bagCount">0</i></button>
+  <a class="btn sm" href="#reserve">Reserve a Table</a>
+ </div>
 </div></header>
 
 <main id="top">
-<section class="wrap hero" id="hero">
- <div class="top"><span>16 seats · <b>no laptops after 9</b></span><span><span class="ph" title="Placeholder — your address">00 Street, City</span></span><span>Est. <span class="ph">20XX</span></span></div>
- <div class="poster">
-    <h1 class="ramen" aria-label="Ramen"><span data-l="R">R</span><span data-l="A">A</span><span data-l="M">M</span><span data-l="E">E</span><span data-l="N">N</span></h1>
-  <div class="bowlwrap">
-   <svg class="steam" viewBox="0 0 200 120" aria-hidden="true"><path d="M50 110c-20-25 20-40 0-70s15-30 5-40"/><path d="M100 110c-20-25 20-40 0-70s15-30 5-40"/><path d="M150 110c-20-25 20-40 0-70s15-30 5-40"/></svg>
-   <img src="img/hero.png" alt="A bowl of ramen with soft eggs and chopsticks, printed in pink and blue">
-  </div>
-  <div class="stamp" aria-hidden="true"><div>OPEN<br>TIL 2AM<small>WED–SAT</small></div></div>
+<section class="wrap hero">
+ <div class="rv">
+  <span class="label">Ramen House &amp; Izakaya · <span class="ph" title="Placeholder — your city">City</span></span>
+  <h1>Eighteen hours<br>in every <em>bowl.</em></h1>
+  <p class="lead">Broths simmered overnight, noodles made by hand each morning and small plates built for sharing, with sake and Japanese whisky poured at the bar.</p>
+  <div class="acts"><a class="btn" href="#menu">Explore the Menu</a><a class="btn line" href="#reserve">Reserve a Table</a></div>
+  <div class="facts"><div><b>18 hrs</b><span>Tonkotsu broth</span></div><div><b>Daily</b><span>House-made noodles</span></div><div><b>30+</b><span>Sakes &amp; whiskies</span></div></div>
  </div>
- <div class="bottom">
-  <p>We boil bones for <mark>18 hours</mark> so you don't have to. Sixteen stools, one counter, and the best bowl you'll eat after midnight.</p>
-  <div class="acts"><a class="btn" href="#seat">Grab a Seat →</a><a class="mono" href="#menu">See tonight's bowls</a></div>
- </div>
-</section>
-
-<div class="band" aria-hidden="true"><div><span>SLURP LOUD</span><span>18-HOUR BROTH</span><span>NOODLES CUT DAILY</span><span>OPEN TIL 2AM</span><span>NO RESERVATIONS OVER 4</span><span>SLURP LOUD</span><span>18-HOUR BROTH</span><span>NOODLES CUT DAILY</span><span>OPEN TIL 2AM</span><span>NO RESERVATIONS OVER 4</span></div></div>
-
-<section class="wrap sec" id="menu">
- <h2 class="h2 pop"><span class="p">Tonight's</span> <span class="b">bowls</span><sup>LIVE</sup></h2>
- <div class="board pop" id="board" aria-label="Menu">
-  <div class="hdr"><span>Bowl</span><span>Price</span><span>Heat</span><span>Broth</span></div>
- </div>
- <p class="boardnote">Every bowl comes with an ajitama egg, nori and menma. Extra noodles (kaedama) are <span class="ph">$X</span>, just shout.</p>
-</section>
-
-<div class="band alt" aria-hidden="true"><div><span>BUILD YOUR OWN</span><span>EXTRA GARLIC ALWAYS</span><span>VEGAN BROTH TOO</span><span>BUILD YOUR OWN</span><span>EXTRA GARLIC ALWAYS</span><span>VEGAN BROTH TOO</span></div></div>
-
-<section class="wrap sec" id="build">
- <h2 class="h2 pop"><span class="b">Build</span> <span class="p">a bowl</span></h2>
- <div class="build">
-  <div class="opts pop">
-   <h3>Broth <i>pick 1</i></h3>
-   <div class="chips" data-group="broth" data-single>
-    <button class="chip on" data-v="tonkotsu" data-p="16">Tonkotsu<small>$16</small></button>
-    <button class="chip" data-v="shoyu" data-p="15">Shoyu<small>$15</small></button>
-    <button class="chip" data-v="miso" data-p="16">Miso<small>$16</small></button>
-    <button class="chip" data-v="shio" data-p="15">Vegan shio<small>$15</small></button>
-   </div>
-   <h3>Noodles <i>pick 1</i></h3>
-   <div class="chips" data-group="noodle" data-single>
-    <button class="chip" data-v="soft" data-p="0">Soft</button>
-    <button class="chip on" data-v="firm" data-p="0">Firm</button>
-    <button class="chip" data-v="barikata" data-p="0">Barikata (extra firm)</button>
-   </div>
-   <h3>Toppings <i>pile on</i></h3>
-   <div class="chips" data-group="top">
-    <button class="chip on" data-v="chashu" data-p="3">Chashu<small>+$3</small></button>
-    <button class="chip on" data-v="egg" data-p="2">Ajitama egg<small>+$2</small></button>
-    <button class="chip" data-v="menma" data-p="1">Menma<small>+$1</small></button>
-    <button class="chip on" data-v="nori" data-p="1">Nori<small>+$1</small></button>
-    <button class="chip" data-v="corn" data-p="1">Corn<small>+$1</small></button>
-    <button class="chip" data-v="garlic" data-p="0">Extra garlic<small>free</small></button>
-    <button class="chip on" data-v="scallion" data-p="0">Scallion<small>free</small></button>
-   </div>
-   <h3>Heat <i>0 to 🌶🌶🌶</i></h3>
-   <div class="chips" data-group="heat" data-single>
-    <button class="chip on" data-v="0" data-p="0">None</button>
-    <button class="chip" data-v="1" data-p="0">🌶</button>
-    <button class="chip" data-v="2" data-p="0">🌶🌶</button>
-    <button class="chip" data-v="3" data-p="0">🌶🌶🌶</button>
-   </div>
-  </div>
-  <div class="bowlbox pop">
-   <svg viewBox="0 0 400 400" id="bowl" aria-label="Your bowl, seen from above">
-    <circle cx="208" cy="208" r="186" fill="#0078BF" opacity=".9"/>
-    <circle cx="200" cy="200" r="186" fill="#fff" stroke="#1A1A1A" stroke-width="5"/>
-    <circle cx="200" cy="200" r="156" id="broth" fill="#E9C48A" stroke="#1A1A1A" stroke-width="3" style="transition:fill .5s"/>
-    <g id="noodles" stroke="#F6DE8D" stroke-width="7" fill="none" stroke-linecap="round" opacity=".95"><path d="M90 230c40-30 80 30 120 0s80 30 110 0"/><path d="M80 200c40-30 80 30 120 0s80 30 120 0"/><path d="M95 260c40-30 80 30 120 0s70 25 95 5"/><path d="M110 170c40-30 70 25 110 0s60 20 90 5"/></g>
-    <g class="tp" data-t="chashu"><ellipse cx="135" cy="140" rx="48" ry="40" fill="#C9764F" stroke="#1A1A1A" stroke-width="3"/><path d="M110 130c15 10 35 10 50 0M115 150c15 8 30 8 42 0" stroke="#F4D8B8" stroke-width="5" fill="none" stroke-linecap="round"/></g>
-    <g class="tp" data-t="egg"><ellipse cx="270" cy="150" rx="36" ry="30" fill="#fff" stroke="#1A1A1A" stroke-width="3"/><circle cx="270" cy="150" r="17" fill="#FF9F1C"/><ellipse cx="295" cy="200" rx="34" ry="28" fill="#fff" stroke="#1A1A1A" stroke-width="3"/><circle cx="295" cy="200" r="16" fill="#FF9F1C"/></g>
-    <g class="tp" data-t="nori"><rect x="250" y="250" width="70" height="90" rx="4" fill="#1F3A2B" stroke="#1A1A1A" stroke-width="3" transform="rotate(-18 285 295)"/></g>
-    <g class="tp" data-t="menma"><g fill="#B98A4A" stroke="#1A1A1A" stroke-width="2.5"><rect x="150" y="270" width="14" height="50" rx="3" transform="rotate(20 157 295)"/><rect x="172" y="268" width="14" height="50" rx="3" transform="rotate(8 179 293)"/><rect x="194" y="270" width="14" height="50" rx="3" transform="rotate(-6 201 295)"/></g></g>
-    <g class="tp" data-t="corn"><g fill="#FFE800" stroke="#1A1A1A" stroke-width="1.5"><circle cx="205" cy="125" r="6"/><circle cx="218" cy="132" r="6"/><circle cx="208" cy="140" r="6"/><circle cx="222" cy="118" r="6"/><circle cx="194" cy="134" r="6"/><circle cx="230" cy="138" r="6"/></g></g>
-    <g class="tp" data-t="scallion"><g fill="#7BC043" stroke="#1A1A1A" stroke-width="1.5"><circle cx="190" cy="205" r="7"/><circle cx="208" cy="215" r="6"/><circle cx="222" cy="198" r="7"/><circle cx="178" cy="222" r="6"/><circle cx="235" cy="225" r="6"/><circle cx="200" cy="232" r="5"/></g></g>
-    <g class="tp" data-t="garlic"><g fill="#fff" stroke="#1A1A1A" stroke-width="2"><path d="M90 205c4-14 22-14 26 0-6 8-20 8-26 0z"/><path d="M98 228c4-12 20-12 24 0-5 7-19 7-24 0z"/></g></g>
-    <g class="tp" data-t="chili"><g fill="#E63946"><circle cx="160" cy="190" r="4"/><circle cx="250" cy="250" r="4"/><circle cx="215" cy="175" r="3"/><circle cx="140" cy="240" r="4"/><circle cx="260" cy="110" r="3"/><circle cx="120" cy="190" r="3"/><circle cx="230" cy="290" r="4"/></g></g>
-    <g><path d="M300 40 L380 0" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/><path d="M312 52 L392 12" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round"/></g>
-   </svg>
-   <div class="receipt" id="receipt" aria-live="polite"></div>
-  </div>
+ <div class="heroimg rv">
+  <div class="main"><img src="img/hero.jpg" alt="Noodles lifted from a bowl of ramen with chopsticks" fetchpriority="high"></div>
+  <span class="vert" aria-hidden="true">ラーメン工房</span>
+  <button class="card" data-open="blackgarlic"><img src="img/blackgarlic.jpg" alt=""><span><small>Tonight's signature</small><b>Black Garlic Tonkotsu</b><span>View dish →</span></span></button>
  </div>
 </section>
 
-<section class="sec" id="counter" style="padding-bottom:80px">
- <div class="wrap"><h2 class="h2 pop"><span class="p">The</span> <span class="b">counter</span><sup>16 STOOLS</sup></h2></div>
- <div class="strip">
-  <figure style="--r:-3deg"><div class="torn"><img src="img/pull.jpg" alt="Noodles lifted from a bowl with chopsticks" loading="lazy"><figcaption>the noodle pull ↑</figcaption></div></figure>
-  <figure style="--r:2deg"><div class="torn"><img src="img/chef.jpg" alt="The chef working at the counter" loading="lazy" style="object-position:35% 50%"><figcaption>Chef <span class="ph">Name</span>, 4am prep</figcaption></div></figure>
-  <figure style="--r:-1.5deg"><div class="torn"><img src="img/counter.jpg" alt="Regulars sitting at a busy late-night counter" loading="lazy"><figcaption>regulars, every night</figcaption></div></figure>
-  <figure style="--r:3deg"><div class="torn"><img src="img/lanterns.jpg" alt="Glowing paper lanterns outside at night" loading="lazy"><figcaption>look for the lanterns</figcaption></div></figure>
-  <figure style="--r:-2.5deg"><div class="torn"><img src="img/beer.jpg" alt="A bowl of ramen next to a cold beer" loading="lazy"><figcaption>bowl + beer = $<span class="ph">XX</span></figcaption></div></figure>
-  <figure style="--r:1.5deg"><div class="torn"><img src="img/shop.jpg" alt="A ramen shop storefront glowing at night" loading="lazy" style="object-position:50% 40%"><figcaption>open til 2, we mean it</figcaption></div></figure>
- </div>
-</section>
-
-<section class="sec rules" id="rules">
+<section class="sig">
  <div class="wrap">
-  <h2 class="h2 pop">Rules of the counter</h2>
-  <div class="rgrid">
-   <div class="rule pop"><b>01</b><h3>Slurp loudly.</h3><p>It cools the noodles and it's a compliment to the chef. Silence makes us nervous.</p></div>
-   <div class="rule pop"><b>02</b><h3>Eat it hot.</h3><p>The noodles won't wait for your photo. Snap fast, slurp faster.</p></div>
-   <div class="rule pop"><b>03</b><h3>No laptops after 9.</h3><p>Sixteen stools, lots of hungry people. The counter is for eating, not emails.</p></div>
-   <div class="rule pop"><b>04</b><h3>Last call 1:30am.</h3><p>Kitchen closes at 1:30, doors at 2. Be nice to the dishwasher.</p></div>
+  <div class="sechead rv"><div><span class="label">Signature Bowls</span><h2>The bowls we're known for</h2></div><p>Three bowls that have been on the menu since day one. Tap any dish to see what goes into it.</p></div>
+  <div class="sigrow">
+   <button class="sigc rv" data-open="tonkotsu"><span class="tag">Most ordered</span><div class="im"><img src="img/tonkotsu.jpg" alt="Tonkotsu ramen with chashu pork and soft eggs" loading="lazy"></div><div class="meta"><div><h3>Kōbō Tonkotsu</h3><span class="jp">豚骨ラーメン</span></div><span class="pr">$18</span></div></button>
+   <button class="sigc rv" data-open="blackgarlic"><div class="im"><img src="img/blackgarlic.jpg" alt="Black garlic tonkotsu ramen" loading="lazy"></div><div class="meta"><div><h3>Black Garlic</h3><span class="jp">マー油豚骨</span></div><span class="pr">$19</span></div></button>
+   <button class="sigc rv" data-open="tantan"><div class="im"><img src="img/tantan.jpg" alt="Spicy tantanmen ramen with minced pork" loading="lazy"></div><div class="meta"><div><h3>Spicy Tantanmen</h3><span class="jp">担々麺</span></div><span class="pr">$18</span></div></button>
   </div>
  </div>
 </section>
 
-<section class="wrap sec">
- <h2 class="h2 pop"><span class="b">Overheard</span> <span class="p">at the counter</span></h2>
- <div class="stickers">
-  <figure class="st pop" style="--r:-4deg"><p>"Came in at 1am after a shift. Left a different person. That tonkotsu is a hug."</p><cite>— <span class="ph">Name</span>, line cook</cite></figure>
-  <figure class="st p pop" style="--r:3deg"><p>"The departure board menu made me laugh. The miso made me cry."</p><cite>— <span class="ph">Name</span>, regular</cite></figure>
-  <figure class="st y pop" style="--r:-2deg"><p>"Best bowl in town and it's not close. Extra garlic, always."</p><cite>— <span class="ph">Local paper</span></cite></figure>
+<section class="menu" id="menu">
+ <div class="wrap sechead rv" style="margin-bottom:34px"><div><span class="label">The Menu</span><h2>Everything we make</h2></div><p>Browse by category, filter for what you like, and tap any dish for ingredients, allergens and pairings. Order for pickup or save it for your visit.</p></div>
+ <div class="tabs"><div class="wrap">
+  <div class="tabbar" id="tabs" role="tablist"></div>
+  <div class="filters" id="filters">
+   <button class="fchip" data-f="vg"><i style="background:#5C8048"></i>Vegetarian</button>
+   <button class="fchip" data-f="sp"><i style="background:var(--shu)"></i>Spicy</button>
+   <button class="fchip" data-f="ch"><i style="background:var(--sumi)"></i>Chef's pick</button>
+  </div>
+ </div></div>
+ <div class="wrap">
+  <div class="catintro" id="catintro"></div>
+  <div class="grid" id="grid"></div>
  </div>
 </section>
 
-<section class="wrap sec" id="seat">
- <div class="tix">
-  <div class="pop">
-   <h2 class="h2"><span class="p">Grab</span> <span class="b">a seat</span></h2>
-   <p class="lead">Walk-ins welcome, always. Want to skip the line? Hold a stool for up to four people.</p>
-   <ul><li>Counter seating only</li><li>Holds kept 10 minutes</li><li>Groups of 5+: just come early</li></ul>
+<section class="counter" id="counter">
+ <div class="ctr">
+  <div class="im"><img src="img/chef.jpg" alt="The chef preparing a course at the counter" loading="lazy"></div>
+  <div class="tx rv">
+   <span class="label">The Chef's Counter</span>
+   <h2>Eight courses,<br>eight seats.</h2>
+   <p>Thursday to Saturday, Chef <span class="ph">Name</span> cooks a seasonal tasting menu at the counter, from raw fish to a final half-bowl of ramen, with an optional sake pairing.</p>
+   <ul class="courses">
+    <li>Seasonal sashimi <span>刺身</span></li><li>Chawanmushi, dashi custard <span>茶碗蒸し</span></li><li>Charcoal-grilled wagyu skewer <span>串焼き</span></li><li>Half bowl, chef's broth of the week <span>ラーメン</span></li><li>Matcha &amp; black sesame <span>甘味</span></li>
+   </ul>
+   <a class="btn" href="#reserve" data-seat="counter">Book the Counter · <span class="ph">$XXX</span></a>
   </div>
-  <form class="ticket pop" id="ticket" novalidate>
-   <div class="main">
-    <h3>Admit ___</h3>
-    <div class="full"><label>Party size</label><div class="party">
-     <label><input type="radio" name="party" value="1"><span>1</span></label>
-     <label><input type="radio" name="party" value="2" checked><span>2</span></label>
-     <label><input type="radio" name="party" value="3"><span>3</span></label>
-     <label><input type="radio" name="party" value="4"><span>4</span></label>
-    </div></div>
-    <div><label for="night">Night</label><select id="night" name="night"><option>Tonight</option><option>Tomorrow</option><option>This Friday</option><option>This Saturday</option></select></div>
-    <div><label for="time">Time</label><select id="time" name="time"><option>6:00pm</option><option>8:00pm</option><option>10:00pm</option><option>Midnight</option><option>1:00am</option></select></div>
-    <div><label for="name">Name</label><input id="name" name="name" autocomplete="given-name" required></div>
-    <div><label for="phone">Phone (we'll text)</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
-    <button class="btn pink" type="submit">Tear off my ticket ✂</button>
-    <div class="done"><p>YOUR TICKET</p><b id="tno">#000</b><p>We'll text you when your stool is ready. (Sample site: nothing sent.)</p></div>
+ </div>
+</section>
+
+<section class="wrap craft" id="craft">
+ <div class="sechead rv"><div><span class="label">Our Craft</span><h2>Three things we never rush</h2></div></div>
+ <div class="cgrid">
+  <div class="cg rv"><div class="im"><img src="img/pull2.jpg" alt="Ramen with chopsticks and condiments" loading="lazy"></div><span class="n">01 · 出汁</span><h3>The broth</h3><p>Pork bones roll at a hard boil for eighteen hours until the broth turns rich and creamy. Our shio and vegan broths are built on kombu and shiitake.</p></div>
+  <div class="cg rv"><div class="im"><img src="img/counter.jpg" alt="Diners at the counter" loading="lazy"></div><span class="n">02 · 麺</span><h3>The noodles</h3><p>Made every morning in-house with high-protein flour and kansui, cut thin for tonkotsu and wavy for miso so each holds its broth.</p></div>
+  <div class="cg rv"><div class="im"><img src="img/interior.jpg" alt="The dining room with paper lanterns" loading="lazy"></div><span class="n">03 · 店</span><h3>The room</h3><p>A long cedar counter, paper lanterns and a small bar. Come for a quick bowl or settle in for small plates and sake.</p></div>
+ </div>
+</section>
+
+<section class="press">
+ <div class="wrap pgrid">
+  <figure class="pq rv"><blockquote>"The tonkotsu is as good as anything we've had outside Fukuoka."</blockquote><cite><span class="ph">Publication</span></cite></figure>
+  <figure class="pq rv"><blockquote>"A serious kitchen in a calm, beautiful room. Order the gyoza twice."</blockquote><cite><span class="ph">Local critic</span></cite></figure>
+  <figure class="pq rv"><blockquote>"The chef's counter is one of the best evenings in the city."</blockquote><cite><span class="ph">Guide name</span></cite></figure>
+ </div>
+</section>
+
+<section class="wrap reserve" id="reserve">
+ <div class="rgrid">
+  <div class="rv">
+   <span class="label">Visit</span>
+   <h2 style="margin:16px 0 18px">Reserve a table</h2>
+   <p style="color:var(--mute)">Walk-ins are always welcome at the bar. For tables and the Chef's Counter, we recommend booking ahead.</p>
+   <div class="hours">
+    <div><span>Tuesday – Thursday</span><b>5:00pm – 10:00pm</b></div>
+    <div><span>Friday – Saturday</span><b>5:00pm – 11:00pm</b></div>
+    <div><span>Sunday</span><b>12:00pm – 9:00pm</b></div>
+    <div><span>Monday</span><b>Closed</b></div>
    </div>
-   <div class="stub" aria-hidden="true"><span class="v">KŌBŌ</span><small>ADMIT ONE BOWL</small></div>
+   <div class="visitimg"><img src="img/lanterns.jpg" alt="Paper lanterns glowing at the entrance" loading="lazy"></div>
+  </div>
+  <form class="rv" id="resForm" novalidate>
+   <h3>Book your evening</h3>
+   <div><label for="date">Date</label><input id="date" type="date" required></div>
+   <div><label for="time">Time</label><select id="time"><option>5:00pm</option><option>6:00pm</option><option selected>7:00pm</option><option>8:00pm</option><option>9:00pm</option></select></div>
+   <div><label for="guests">Guests</label><select id="guests"><option>1 guest</option><option selected>2 guests</option><option>3 guests</option><option>4 guests</option><option>5 guests</option><option>6 guests</option><option>7+ (we'll call you)</option></select></div>
+   <div><label for="occ">Occasion</label><select id="occ"><option>None</option><option>Birthday</option><option>Anniversary</option><option>Business</option></select></div>
+   <div class="full"><label>Seating</label><div class="seat">
+    <label><input type="radio" name="seat" value="table" checked><span>Dining room<small>Tables</small></span></label>
+    <label><input type="radio" name="seat" value="bar"><span>Bar<small>Ramen &amp; sake</small></span></label>
+    <label><input type="radio" name="seat" value="counter"><span>Chef's Counter<small>8 courses</small></span></label>
+   </div></div>
+   <div><label for="name">Name</label><input id="name" autocomplete="name" required></div>
+   <div><label for="phone">Phone</label><input id="phone" type="tel" autocomplete="tel" required></div>
+   <div class="full"><label for="notes">Allergies or requests</label><textarea id="notes" placeholder="Shellfish allergy, high chair, a quiet table…"></textarea></div>
+   <div class="full send"><small>We'll text to confirm within the hour.</small><button class="btn" type="submit">Request Reservation</button></div>
+   <div class="done"><div class="hanko" aria-hidden="true">予約</div><b>Thank you. We'll see you soon.</b><p>We'll text you to confirm. (Sample site: nothing was sent.)</p></div>
   </form>
  </div>
 </section>
@@ -374,58 +402,119 @@ footer{background:var(--ink);color:var(--paper);padding:80px 0 110px;border-top:
 
 <footer><div class="wrap">
  <div class="fgrid">
-  <div>
-   <div class="logo" style="font-size:44px;margin-bottom:26px">KŌBŌ <i>工房</i></div>
-   <div class="hours">WED–THU <span>6PM–1AM</span><br>FRI–SAT <span>6PM–2AM</span><br>MON–TUE <span>6PM–11PM</span></div>
-   <div class="closed">定休日 · CLOSED SUNDAYS</div>
-  </div>
-  <div>
-   <div class="map"><svg viewBox="0 0 400 240" aria-label="Hand-drawn map to Kōbō"><g fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"><path d="M10 80 C120 76 260 86 390 80"/><path d="M10 170 C140 166 270 176 390 168"/><path d="M120 10 C116 90 124 160 118 230"/><path d="M290 10 C296 90 284 160 292 230"/></g><g font-family="Permanent Marker" font-size="15" fill="#1A1A1A"><text x="20" y="70">Main St</text><text x="20" y="160">2nd Ave</text><text x="128" y="230" transform="rotate(-90 128 230)">Oak St</text></g><circle cx="205" cy="124" r="22" fill="#FF48B0" stroke="#1A1A1A" stroke-width="3"/><text x="205" y="131" font-family="Dela Gothic One" font-size="16" fill="#F4EFE4" text-anchor="middle">K</text><path d="M232 112 C260 96 270 70 300 60" fill="none" stroke="#0078BF" stroke-width="3" stroke-dasharray="6 6"/><text x="300" y="50" font-family="Permanent Marker" font-size="16" fill="#0078BF">we're here! (red lanterns)</text><text x="300" y="140" font-family="Permanent Marker" font-size="14" fill="#1A1A1A">parking →</text></svg></div>
-   <p class="addr"><span class="ph">00 Street, City, ST 00000</span><br><span class="ph">(000) 000-0000</span> · <span class="ph">@koboramen</span></p>
-  </div>
+  <div><a class="logo" href="#top"><span class="hanko" aria-hidden="true">工房</span><b>KŌBŌ</b></a><p style="margin-top:18px;max-width:300px">Ramen house &amp; izakaya. Broths, noodles and small plates made by hand, every day.</p></div>
+  <div><h4>Visit</h4><p class="ph">00 Street<br>City, ST 00000</p></div>
+  <div><h4>Hours</h4><p>Tue–Thu 5–10pm<br>Fri–Sat 5–11pm<br>Sun 12–9pm</p></div>
+  <div><h4>Contact</h4><p><span class="ph">(000) 000-0000</span><br><span class="ph">hello@kobo.example</span><br><span class="ph">@koboramen</span></p></div>
  </div>
- <p class="credits">Photos via Unsplash, reprinted in two-ink riso style for this sample: <a href="https://unsplash.com/@mab_studio">Michele Blackwell</a>, <a href="https://unsplash.com/@nahimaaparicio">Nahima Aparicio</a>, <a href="https://unsplash.com/@thomas">Thomas Marban</a>, <a href="https://unsplash.com/@dokae">PJH</a>, <a href="https://unsplash.com/@charamelon">Ben Kim</a>, <a href="https://unsplash.com/@diegonacho">Diego Lozano</a>, <a href="https://unsplash.com/@alexander_kaufmann">Alexander Kaufmann</a>. Kōbō is a fictional restaurant built as a Sitemind sample.</p>
+ <p class="credits">Photography via Unsplash: Huyen Bui, Frank from 5 AM Ramen, Famery Fialiwan, Poul Hoang, Bon Vivant, Michele Blackwell, ikhsan baihaqi, Mikey Frost, Kevin kevin, Moonyang Lin, Daniel Brubaker, Stefen Tan, Kat, Max Griss, shiyun, Jason Leung, Nichika Sakurai, Zaji Kanamajina, Payoon Gerinto, Olena Bohovyk, Diego Lozano, Nahima Aparicio, Thomas Marban, PJH, hiding ninja, Ben Kim, Christian Dala. Kōbō is a fictional restaurant built as a Sitemind sample; prices are illustrative.</p>
 </div></footer>
 
-<a class="ribbon" href="/examples/#food">Sitemind sample · dotted = placeholder</a>
+<div class="modal" id="modal" aria-hidden="true">
+ <div class="scrim" data-close></div>
+ <div class="box" role="dialog" aria-modal="true" aria-labelledby="mName">
+  <button class="close" data-close aria-label="Close">×</button>
+  <div class="mimg"><img id="mImg" alt=""></div>
+  <div class="mbd">
+   <span class="label" id="mCat"></span>
+   <h3 id="mName"></h3><span class="jp" id="mJp"></span>
+   <div class="tags" id="mTags" style="margin-top:14px"></div>
+   <p class="desc" id="mDesc"></p>
+   <dl><dt>In the bowl</dt><dd id="mIng"></dd><dt>Allergens</dt><dd id="mAll"></dd><dt>Pairs with</dt><dd id="mPair"></dd></dl>
+   <div class="buy"><b id="mPrice"></b><div class="qty"><button id="qm" aria-label="Less">−</button><span id="qn">1</span><button id="qp" aria-label="More">+</button></div><button class="btn" id="mAdd">Add to Order</button></div>
+   <div class="nav2"><button id="mPrev">← Previous dish</button><button id="mNext">Next dish →</button></div>
+  </div>
+ </div>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="Your order">
+ <div class="hd"><h3>Your order</h3><button class="close" style="position:static" id="dClose" aria-label="Close order">×</button></div>
+ <div class="list" id="dList"></div>
+ <div class="ft"><div class="tot"><span>Subtotal</span><span id="dTot">$0</span></div><button class="btn" id="checkout">Order for Pickup</button><p class="note">Ready in about 20 minutes. (Sample: no order is placed.)</p></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<a class="ribbon" href="/examples/#food">Sitemind sample · <b>dotted text = placeholder</b></a>
 
 <script>
 (()=>{
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
-setTimeout(()=>document.getElementById('hero').classList.add('on'),80);
+document.body.classList.add('loaded');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.pop').forEach(el=>io.observe(el));
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
-/* departure board */
-const MENU=[['TONKOTSU','$16','🌶','18 hrs · pork bone'],['SHOYU','$15','','12 hrs · chicken + soy'],['MISO','$16','🌶','14 hrs · red + white miso'],['SPICY TANTAN','$17','🌶🌶🌶','sesame · chili oil'],['VEGAN SHIO','$15','','8 hrs · kombu + shiitake']];
-const board=document.getElementById('board'),CH='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-MENU.forEach(m=>{const r=document.createElement('div');r.className='row';r.innerHTML=`<div class="flaps" aria-label="${m[0]}">${[...m[0]].map(c=>`<span class="f${c===' '?' sp':''}" data-c="${c}">${c===' '?'':'·'}</span>`).join('')}</div><span class="pr">${m[1]}</span><span class="sp">${m[2]||'—'}</span><span class="t">${m[3]}</span>`;board.append(r)});
-let flipped=false;
-new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting||flipped)return;flipped=true;o.disconnect();
- board.querySelectorAll('.f:not(.sp)').forEach((f,i)=>{const tgt=f.dataset.c;if(RM){f.textContent=tgt;return}let n=6+Math.floor(Math.random()*10)+Math.floor(i/3);
-  setTimeout(function tick(){f.classList.remove('flip');void f.offsetWidth;f.classList.add('flip');if(--n<=0){f.textContent=tgt;return}f.textContent=CH[Math.floor(Math.random()*26)];setTimeout(tick,55)},i*25)})},{threshold:.3}).observe(board);
-
-/* build a bowl */
-const sel={broth:'tonkotsu',noodle:'firm',top:new Set(['chashu','egg','nori','scallion']),heat:'0'};
-const BROTH={tonkotsu:'#EFDCC0',shoyu:'#B9783D',miso:'#D9A45B',shio:'#F1E3A8'};
-const price=g=>[...document.querySelectorAll(`[data-group=${g}] .chip.on`)].reduce((s,c)=>s+ +c.dataset.p,0);
-document.querySelectorAll('.chips').forEach(grp=>grp.addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;const g=grp.dataset.group;
- if(grp.hasAttribute('data-single')){grp.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));sel[g]=c.dataset.v}
- else{c.classList.toggle('on');sel.top.has(c.dataset.v)?sel.top.delete(c.dataset.v):sel.top.add(c.dataset.v)}
- render()}));
-function render(){document.getElementById('broth').setAttribute('fill',BROTH[sel.broth]);
- document.querySelectorAll('.tp').forEach(t=>{const k=t.dataset.t;const on=k==='chili'?sel.heat!=='0':sel.top.has(k);t.classList.toggle('hide',!on)});
- const base=price('broth'),tops=price('top'),tot=base+tops;
- const names={tonkotsu:'Tonkotsu',shoyu:'Shoyu',miso:'Miso',shio:'Vegan shio'};
- document.getElementById('receipt').innerHTML=`<div class="line"><span>${names[sel.broth]} · ${sel.noodle}</span><span>$${base}</span></div>`+
-  [...document.querySelectorAll('[data-group=top] .chip.on')].map(c=>`<div class="line"><span>+ ${c.childNodes[0].textContent}</span><span>${+c.dataset.p?'$'+c.dataset.p:'free'}</span></div>`).join('')+
-  `<div class="line"><span>Heat</span><span>${sel.heat==='0'?'none':'🌶'.repeat(+sel.heat)}</span></div><div class="tot"><span>TOTAL</span><span>$${tot}</span></div>`}
+const CATS=[
+ {id:'all',name:'All Dishes',jp:'全品',intro:'The full Kōbō menu, from broth to sake.'},
+ {id:'ramen',name:'Ramen',jp:'ラーメン',intro:'Every bowl comes with house-made noodles. Ask for kaedama, an extra serving of noodles, for $3.'},
+ {id:'small',name:'Small Plates',jp:'小皿',intro:'Built for sharing. Most tables order two or three.'},
+ {id:'rice',name:'Rice',jp:'ご飯',intro:'Hand-pressed onigiri and comforting rice dishes.'},
+ {id:'sweets',name:'Sweets',jp:'甘味',intro:'Something gentle to finish.'},
+ {id:'drinks',name:'Drinks',jp:'飲み物',intro:'Sake, Japanese beer and tea, chosen to go with broth.'}];
+const M=[
+ {id:'tonkotsu',c:'ramen',n:'Kōbō Tonkotsu',jp:'豚骨ラーメン',p:18,img:'tonkotsu',t:['ch'],d:'Our signature. Pork bone broth simmered eighteen hours until creamy, with thin noodles, two cuts of chashu and a soy-marinated egg.',i:'Tonkotsu broth, thin noodles, pork belly chashu, ajitama egg, menma, nori, scallion',a:'Wheat, soy, egg, sesame',pr:'Junmai sake or Japanese lager'},
+ {id:'blackgarlic',c:'ramen',n:'Black Garlic Tonkotsu',jp:'マー油豚骨',p:19,img:'blackgarlic',t:['ch'],d:'Our tonkotsu finished with mayu, a black garlic oil we roast slowly in-house. Smoky, deep and a little bittersweet.',i:'Tonkotsu broth, black garlic oil, thin noodles, chashu, egg, wood ear mushroom, scallion',a:'Wheat, soy, egg, sesame',pr:'Smoky Japanese whisky highball'},
+ {id:'shoyu',c:'ramen',n:'Tokyo Shoyu',jp:'醤油ラーメン',p:16,img:'shoyu',t:[],d:'A clear chicken and dashi broth seasoned with aged soy. Light, savory and nostalgic, with wavy noodles and naruto.',i:'Chicken & dashi broth, shoyu tare, wavy noodles, chashu, naruto, menma, greens',a:'Wheat, soy, fish',pr:'Dry junmai sake'},
+ {id:'tantan',c:'ramen',n:'Spicy Tantanmen',jp:'担々麺',p:18,img:'tantan',t:['sp'],d:'Sesame-rich broth with chili oil, sansho pepper and seasoned minced pork. Numbing, nutty and built for cold nights.',i:'Sesame broth, chili oil, minced pork, bok choy, thick noodles, egg',a:'Wheat, soy, sesame, egg',pr:'Iced matcha or lager'},
+ {id:'miso',c:'ramen',n:'Red Miso',jp:'味噌ラーメン',p:17,img:'miso',t:['sp'],d:'A blend of red and white miso, wok-tossed with garlic and chili and finished with scallions.',i:'Miso broth, wavy noodles, chashu, egg, chili, scallion',a:'Wheat, soy, egg',pr:'Japanese lager'},
+ {id:'yuzu',c:'ramen',n:'Yuzu Shrimp Shio',jp:'柚子塩ラーメン',p:19,img:'yuzu',t:[],d:'A bright salt broth lifted with fresh yuzu, topped with seared shrimp, snap peas and soft eggs.',i:'Shio chicken broth, yuzu, shrimp, snap peas, egg, sesame',a:'Wheat, shellfish, egg, sesame',pr:'Sparkling sake'},
+ {id:'vegan',c:'ramen',n:'Garden Shio',jp:'野菜塩ラーメン',p:16,img:'vegan',t:['vg'],d:'Fully plant-based. Kombu and shiitake broth with roasted corn, seasonal vegetables and crispy tofu.',i:'Kombu-shiitake broth, wavy noodles, corn, mushrooms, greens, tofu',a:'Wheat, soy',pr:'Cold-brewed green tea'},
+ {id:'gyoza',c:'small',n:'Pork Gyoza',jp:'焼き餃子',p:10,img:'gyoza',t:['ch'],d:'Six pan-fried dumplings with a crisp lattice skirt, filled with pork, cabbage and ginger.',i:'Pork, cabbage, garlic chives, ginger; soy-vinegar-chili dip',a:'Wheat, soy, sesame',pr:'Japanese lager'},
+ {id:'veggyoza',c:'small',n:'Vegetable Gyoza',jp:'野菜餃子',p:9,img:'veggyoza',t:['vg'],d:'Six dumplings filled with shiitake, tofu and greens, steamed then seared.',i:'Shiitake, tofu, cabbage, scallion',a:'Wheat, soy, sesame',pr:'Junmai sake'},
+ {id:'karaage',c:'small',n:'Chicken Karaage',jp:'唐揚げ',p:12,img:'karaage',t:[],d:'Thigh pieces marinated in soy, sake and ginger, double-fried until crackling, with kewpie and lemon.',i:'Chicken thigh, potato starch, ginger, garlic; kewpie mayo',a:'Wheat, soy, egg',pr:'Whisky highball'},
+ {id:'wings',c:'small',n:'Tebasaki Wings',jp:'手羽先',p:12,img:'wings',t:['sp'],d:'Nagoya-style wings glazed in sweet soy and black pepper, finished with sesame.',i:'Chicken wings, soy-mirin glaze, black pepper, sesame',a:'Wheat, soy, sesame',pr:'Japanese lager'},
+ {id:'edamame',c:'small',n:'Edamame',jp:'枝豆',p:6,img:'edamame',t:['vg'],d:'Steamed soybeans with flaky salt. Ask for them tossed in garlic chili oil.',i:'Edamame, sea salt',a:'Soy',pr:'Anything cold'},
+ {id:'katsu',c:'rice',n:'Katsu Curry',jp:'カツカレー',p:17,img:'katsu',t:[],d:'A crisp panko pork cutlet over rice with our slow-cooked Japanese curry.',i:'Pork loin, panko, rice, Japanese curry, pickles',a:'Wheat, soy, egg, milk',pr:'Japanese lager'},
+ {id:'onigiri',c:'rice',n:'Onigiri Trio',jp:'おにぎり',p:9,img:'onigiri',t:[],d:'Three hand-pressed rice balls: salmon, umeboshi and kombu, wrapped in crisp nori.',i:'Rice, nori, salmon, pickled plum, kombu',a:'Fish',pr:'Hot genmaicha'},
+ {id:'onigiri2',c:'rice',n:'Sesame Onigiri',jp:'胡麻おにぎり',p:5,img:'onigiri2',t:['vg'],d:'A single onigiri rolled in toasted black and white sesame. Perfect with any bowl.',i:'Rice, sesame, nori, salt',a:'Sesame',pr:'Any ramen'},
+ {id:'dango',c:'sweets',n:'Shiratama in Ginger Syrup',jp:'白玉',p:8,img:'dango',t:['vg'],d:'Soft, chewy rice dumplings in warm ginger syrup. Gentle and soothing after a rich bowl.',i:'Glutinous rice, ginger, cane sugar',a:'None',pr:'Hojicha'},
+ {id:'affogato',c:'sweets',n:'Matcha Affogato',jp:'抹茶アフォガート',p:9,img:'affogato',t:['ch'],d:'Vanilla soft serve drowned in a shot of ceremonial-grade matcha, finished with kinako.',i:'Soft serve, matcha, kinako',a:'Milk, soy',pr:'Umeshu'},
+ {id:'sake',c:'drinks',n:'Sake Flight',jp:'利き酒',p:18,img:'sake',t:['ch'],d:'Three two-ounce pours chosen by our staff, from crisp and dry to rich and fruity.',i:'Three rotating sakes',a:'None',pr:'Small plates'},
+ {id:'sakebottles',c:'drinks',n:'Bottled Sake',jp:'日本酒',p:24,img:'sakebottles',t:[],d:'Thirty-plus sakes by the bottle, from approachable junmai to rare daiginjo. Ask your server.',i:'Varies; from $24 per bottle',a:'None',pr:'Ramen & chef’s counter'},
+ {id:'beer',c:'drinks',n:'Japanese Lager',jp:'生ビール',p:7,img:'beer',t:[],d:'Ice-cold draft lager, poured with a thick, creamy head.',i:'Draft lager',a:'Wheat (barley)',pr:'Gyoza, karaage'},
+ {id:'matcha',c:'drinks',n:'Ceremonial Matcha',jp:'抹茶',p:6,img:'matcha',t:['vg'],d:'Whisked to order from first-harvest Uji matcha.',i:'Matcha, water',a:'None',pr:'Sweets'},
+ {id:'icedmatcha',c:'drinks',n:'Iced Matcha Latte',jp:'抹茶ラテ',p:6,img:'icedmatcha',t:['vg'],d:'Matcha over oat milk and ice, lightly sweetened.',i:'Matcha, oat milk',a:'Oat',pr:'Spicy Tantanmen'}];
+const TAG={vg:['vg','Vegetarian'],sp:['sp','Spicy'],ch:['ch',"Chef's pick"]};
+let cat='all',filt=new Set();
+const tabs=document.getElementById('tabs'),grid=document.getElementById('grid'),intro=document.getElementById('catintro');
+tabs.innerHTML=CATS.map(c=>`<button class="tab${c.id==='all'?' on':''}" role="tab" data-c="${c.id}">${c.name}<span>${c.jp}</span></button>`).join('');
+const tagHtml=t=>t.map(k=>`<span class="tg ${TAG[k][0]}">${TAG[k][1]}</span>`).join('');
+function list(){return M.filter(m=>(cat==='all'||m.c===cat)&&[...filt].every(f=>m.t.includes(f)))}
+function render(){const c=CATS.find(x=>x.id===cat),L=list();
+ intro.innerHTML=`<div><h3>${c.name} <span class="jp" style="font-size:18px">${c.jp}</span></h3></div><p>${c.intro} <span style="color:var(--sumi)">${L.length} dish${L.length===1?'':'es'}</span></p>`;
+ grid.innerHTML=L.length?L.map((m,i)=>`<button class="item" data-open="${m.id}" style="animation-delay:${Math.min(i,8)*50}ms"><div class="im"><img src="img/${m.img}.jpg" alt="${m.n}" loading="lazy"></div><div class="bd"><div class="top"><h4>${m.n}</h4><span class="pr">$${m.p}</span></div><span class="jp">${m.jp}</span><p>${m.d.split('. ')[0]}.</p><div class="ft"><div class="tags">${tagHtml(m.t)}</div><span class="more">Details →</span></div></div></button>`).join(''):'<p class="empty">No dishes match those filters. Try removing one.</p>'}
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;cat=b.dataset.c;tabs.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t===b));render();
+ const top=document.getElementById('menu').querySelector('.tabs').getBoundingClientRect().top;if(top<0||top>200)document.querySelector('.tabs').scrollIntoView({behavior:RM?'auto':'smooth'})});
+document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.fchip');if(!b)return;const f=b.dataset.f;filt.has(f)?filt.delete(f):filt.add(f);b.classList.toggle('on');render()});
 render();
 
-/* ticket */
-const t=document.getElementById('ticket');
-t.addEventListener('submit',e=>{e.preventDefault();let ok=true;t.querySelectorAll('[required]').forEach(i=>{const bad=!i.value.trim();i.style.background=bad?'#ffd6ea':'';if(bad)ok=false});if(!ok)return;
- t.classList.add('torn');document.getElementById('tno').textContent='#'+String(Math.floor(Math.random()*900)+100);setTimeout(()=>t.classList.add('sent'),RM?0:500)});
+/* modal */
+const modal=document.getElementById('modal');let cur=null,qty=1,last=null;
+const $=id=>document.getElementById(id);
+function open(id){const m=M.find(x=>x.id===id);if(!m)return;cur=m;qty=1;$('qn').textContent=1;
+ $('mImg').src=`img/${m.img}.jpg`;$('mImg').alt=m.n;$('mCat').textContent=CATS.find(c=>c.id===m.c).name;$('mName').textContent=m.n;$('mJp').textContent=m.jp;$('mTags').innerHTML=tagHtml(m.t);$('mDesc').textContent=m.d;$('mIng').textContent=m.i;$('mAll').textContent=m.a;$('mPair').textContent=m.pr;$('mPrice').textContent='$'+m.p;
+ if(!modal.classList.contains('open')){last=document.activeElement;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>modal.querySelector('.close').focus(),50)}}
+function close(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';last&&last.focus()}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){open(o.dataset.open);return}if(e.target.closest('[data-close]'))close()});
+document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+function step(d){const L=list().length&&list().some(x=>x.id===cur.id)?list():M;const i=L.findIndex(x=>x.id===cur.id);open(L[(i+d+L.length)%L.length].id)}
+$('mPrev').onclick=()=>step(-1);$('mNext').onclick=()=>step(1);
+$('qm').onclick=()=>{qty=Math.max(1,qty-1);$('qn').textContent=qty};$('qp').onclick=()=>{qty=Math.min(9,qty+1);$('qn').textContent=qty};
+
+/* bag */
+const bag=new Map();const drawer=$('drawer');
+function toast(t){const el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2200)}
+function renderBag(){let n=0,tot=0;$('dList').innerHTML=[...bag].map(([id,q])=>{const m=M.find(x=>x.id===id);n+=q;tot+=q*m.p;return`<div class="bi"><img src="img/${m.img}.jpg" alt=""><div><b>${m.n}</b><small>${q} × $${m.p}</small></div><button data-rm="${id}">Remove</button></div>`}).join('')||'<p style="color:var(--mute);padding:30px 0">Your order is empty. Tap any dish to add it.</p>';
+ $('dTot').textContent='$'+tot;const c=$('bagCount');c.textContent=n;c.classList.toggle('on',n>0)}
+$('mAdd').onclick=()=>{bag.set(cur.id,(bag.get(cur.id)||0)+qty);renderBag();toast(`${qty} × ${cur.n} added to your order`);close()};
+$('dList').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(b){bag.delete(b.dataset.rm);renderBag()}});
+$('bagBtn').onclick=()=>{drawer.classList.add('open')};$('dClose').onclick=()=>drawer.classList.remove('open');
+$('checkout').onclick=()=>{if(!bag.size){toast('Add a dish first');return}bag.clear();renderBag();drawer.classList.remove('open');toast('Pickup order received (sample: nothing was placed)')};
+renderBag();
+
+/* reservation */
+document.querySelectorAll('[data-seat]').forEach(a=>a.addEventListener('click',()=>{const r=document.querySelector(`[name=seat][value=${a.dataset.seat}]`);if(r)r.checked=true}));
+const f=$('resForm'),d=$('date');d.min=new Date().toISOString().slice(0,10);
+f.addEventListener('submit',e=>{e.preventDefault();let ok=true;f.querySelectorAll('[required]').forEach(i=>{const bad=!i.value.trim();i.style.borderColor=bad?'var(--shu)':'';if(bad)ok=false});if(ok)f.classList.add('sent')});
 })();
 </script>
 </body>
