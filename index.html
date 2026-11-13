@@ -56,8 +56,13 @@
     .logo{width:32px;height:32px;font-size:14px}
     .links a{padding:8px 10px;font-size:13px}
     .cta{padding:8px 12px;font-size:13px;margin-left:2px}
+    .nav{max-width:calc(100vw - 16px)}
+    .links{min-width:0;overflow-x:auto;scrollbar-width:none}
+    .links::-webkit-scrollbar{display:none}
+    .links a[href="#top"],.links a[href="#work"]{display:none}
+    .links a{padding:8px 8px}.cta .arr{display:none}
   }
-  @media (max-width:350px){.cta .arr{display:none}.links a{padding:8px 8px}}
+  @media (max-width:375px){.links a{padding:8px 6px;font-size:12.5px}.cta{padding:8px 10px}}
 
   /* hero */
   .hero{position:relative;min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden}
@@ -221,6 +226,7 @@
     <a href="#work">Work</a>
     <a href="#pricing">Pricing</a>
     <a href="/examples/">Examples</a>
+    <a href="/customers/">Customers</a>
   </div>
   <a href="#contact" class="cta">Get started <span class="arr">↗</span></a>
 </nav>
