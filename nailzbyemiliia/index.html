@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nailz by Emiliia · Gel-X, Builder Gel & Nail Art in Anchorage, AK</title>
+<meta name="description" content="Private home nail studio in Anchorage, Alaska. Gel-X extensions, builder gel and hand-painted nail art by Emiliia. Text 907-250-8559 or DM to book.">
+<meta name="theme-color" content="#F7F2EE">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Nailz by Emiliia · Anchorage nail studio">
+<meta property="og:description" content="Gel-X extensions, builder gel and nail art in a private Anchorage studio.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"NailSalon","name":"Nailz by Emiliia","description":"Home-based nail studio offering Gel-X extensions, builder gel and nail art.","telephone":"+1-907-250-8559","address":{"@type":"PostalAddress","addressLocality":"Anchorage","addressRegion":"AK","addressCountry":"US"},"sameAs":["https://www.instagram.com/nailzbyemiliia/"],"priceRange":"$$"}
+</script>
+<style>
+/* ============================================================
+   NAILZ BY EMILIIA — design system
+   Celestial-minimal: ivory paper, ink black, glove-blush pink,
+   champagne hairlines, tall Bodoni display + geometric Jost.
+   Motif: the four-point star from her logo, arched photo frames.
+   ============================================================ */
+:root{
+  --paper:#F7F2EE; --paper2:#FFFCF9; --blush:#F3D3DA; --blush2:#E9B4C1; --rose:#A9536F;
+  --ink:#151316; --ink2:#2A262B; --mu:#6E6670; --fa:#9C939D; --line:rgba(21,19,22,.12); --gold:#BFA98A;
+  --ez:cubic-bezier(.2,.7,.2,1); --r:22px;
+  --disp:"Bodoni Moda",Didot,Georgia,serif; --body:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:6px}
+::selection{background:var(--blush2);color:var(--ink)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.cap{font:500 12px/1 var(--body);letter-spacing:.32em;text-transform:uppercase}
+.star{display:inline-block;width:.8em;height:.8em;vertical-align:-.05em}
+h1,h2,h3{font-family:var(--disp);font-weight:400;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:clamp(40px,5.4vw,72px)}
+h2 em,h1 em{font-style:italic}
+.lead{color:var(--mu);font-size:18px;max-width:560px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font:500 13px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;transition:transform .3s var(--ez),background .3s,color .3s,box-shadow .3s,border-color .3s;white-space:nowrap}
+.btn-ink{background:var(--ink);color:var(--paper2);box-shadow:0 14px 30px -18px rgba(21,19,22,.8)}
+.btn-ink:hover{background:#000;transform:translateY(-2px)}
+.btn-line{border:1px solid var(--ink);}
+.btn-line:hover{background:var(--ink);color:var(--paper2)}
+.btn-blush{background:var(--blush);color:var(--ink)}
+.btn-blush:hover{background:var(--blush2)}
+.btn svg{width:16px;height:16px}
+
+/* ---------- header ---------- */
+.hd{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,height .4s;height:84px}
+.hd.scr{background:rgba(247,242,238,.86);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 var(--line);height:70px}
+.hd .wrap{height:100%;display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
+.logo span{font:500 12.5px/1.2 var(--body);letter-spacing:.3em}
+.logo small{display:block;font-size:10px;letter-spacing:.32em;color:var(--fa);margin-top:3px}
+.nav{margin-left:auto;display:flex;gap:30px}
+.nav a{font:500 12px var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--ink2);position:relative;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ez)}
+.nav a:hover::after{transform:scaleX(1)}
+.hd .btn{height:44px;padding:0 22px;font-size:11.5px}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);place-items:center}
+.burger i{display:block;width:16px;height:1.5px;background:var(--ink);box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink)}
+.drawer{position:fixed;inset:0;z-index:60;background:var(--paper);display:flex;flex-direction:column;padding:28px 24px;transform:translateY(-100%);visibility:hidden;transition:transform .55s var(--ez),visibility 0s .55s}
+.drawer.open{transform:none;visibility:visible;transition:transform .55s var(--ez)}
+.drawer .x{align-self:flex-end;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);font-size:22px}
+.drawer nav{display:flex;flex-direction:column;gap:6px;margin-top:40px}
+.drawer nav a{font:400 italic 44px/1.2 var(--disp)}
+.drawer .btn{margin-top:auto}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:150px 0 70px;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-12%;top:-10%;width:70vw;height:70vw;max-width:1000px;max-height:1000px;border-radius:50%;background:radial-gradient(closest-side,rgba(243,211,218,.75),rgba(243,211,218,0));pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative}
+.hero .cap{color:var(--mu);display:flex;align-items:center;gap:12px}
+.hero .cap::before{content:"";width:34px;height:1px;background:var(--gold)}
+.hero h1{font-size:clamp(54px,7.4vw,112px);margin:26px 0 26px}
+.hero h1 .l2{display:block;font-style:italic;color:var(--rose);padding-left:.9em}
+.hero p.lead{font-size:19px}
+.hero .ctas{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
+.hero .meta{display:flex;gap:30px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero .meta div{font-size:14px;color:var(--mu)}
+.hero .meta b{display:block;font:400 italic 26px/1.1 var(--disp);color:var(--ink);margin-bottom:4px}
+.arches{position:relative;height:min(78vh,700px);min-height:520px}
+.arch{position:absolute;overflow:hidden;border-radius:999px 999px 26px 26px;box-shadow:0 40px 80px -40px rgba(21,19,22,.55)}
+.arch img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s var(--ez)}
+.arch.in img{transform:scale(1)}
+.a1{left:4%;top:0;width:56%;height:84%;z-index:2}
+.a2{right:0;bottom:0;width:48%;height:66%;z-index:3;border:8px solid var(--paper)}
+.a3{right:8%;top:2%;width:26%;height:30%;border-radius:999px;z-index:1;opacity:.95}
+.badge{position:absolute;left:0;bottom:6%;z-index:4;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--paper2);display:grid;place-items:center;text-align:center}
+.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.badge b{font:400 italic 30px/1 var(--disp)}
+.badge small{display:block;font:500 9.5px var(--body);letter-spacing:.24em;margin-top:6px;color:var(--blush)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tw{position:absolute;color:var(--gold);animation:twinkle 3.2s ease-in-out infinite}
+.tw svg{width:100%;height:100%}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+
+/* marquee */
+.marq{border-block:1px solid var(--line);background:var(--paper2);overflow:hidden;white-space:nowrap}
+.marq-in{display:inline-flex;align-items:center;gap:42px;padding:22px 0;animation:mq 38s linear infinite}
+.marq span{font:400 italic 30px/1 var(--disp)}
+.marq i{color:var(--rose);font-style:normal;font-size:18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:130px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.sh .cap{color:var(--rose);margin-bottom:18px;display:block}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ez),transform 1s var(--ez)}
+.rv.in{opacity:1;transform:none}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.sv{position:relative}
+.sv .ph{aspect-ratio:3/4;overflow:hidden;border-radius:999px 999px 18px 18px;background:var(--blush)}
+.sv .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ez)}
+.sv:hover .ph img{transform:scale(1.05)}
+.sv .num{position:absolute;top:22px;left:50%;transform:translateX(-50%);font:500 11px var(--body);letter-spacing:.3em;color:var(--paper2);background:rgba(21,19,22,.45);backdrop-filter:blur(6px);padding:7px 12px;border-radius:999px}
+.sv h3{font-size:36px;margin:26px 0 10px}
+.sv h3 em{font-style:italic}
+.sv p{color:var(--mu);font-size:16px}
+.sv .from{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--mu)}
+.sv .from b{font:400 italic 24px var(--disp);color:var(--ink)}
+
+/* about */
+.about{background:var(--ink);color:var(--paper2);position:relative;overflow:hidden}
+.about::after{content:"";position:absolute;left:-10%;bottom:-40%;width:60%;height:120%;background:radial-gradient(closest-side,rgba(233,180,193,.18),transparent);pointer-events:none}
+.ab{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.ab .ph{position:relative}
+.ab .ph img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.ab .ph .lg{position:absolute;right:-34px;bottom:-34px;width:130px;height:130px;border-radius:50%;border:6px solid var(--ink)}
+.ab .cap{color:var(--blush)}
+.ab h2{margin:20px 0 28px}
+.ab p{color:#CFC7CF;font-size:18px;margin-top:16px;max-width:560px}
+.ab ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;margin-top:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)}
+.ab li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:#E9E3E9}
+.ab li svg{flex:none;width:14px;height:14px;color:var(--blush2);margin-top:6px}
+
+/* quote */
+.quote{text-align:center;padding:120px 0}
+.quote p{font:400 italic clamp(34px,4.6vw,62px)/1.12 var(--disp);max-width:980px;margin:0 auto}
+.quote p span{color:var(--rose)}
+.quote .cap{display:block;margin-top:30px;color:var(--fa)}
+
+/* pricing */
+.price{background:var(--paper2);border-block:1px solid var(--line)}
+.pr{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+.pr .side{position:sticky;top:110px}
+.pr .side p{color:var(--mu);margin-top:20px}
+.callcard{margin-top:30px;padding:26px;border-radius:var(--r);background:var(--blush)}
+.callcard .cap{color:var(--rose)}
+.callcard a.ph{display:block;font:400 italic 36px/1.1 var(--disp);margin:12px 0 6px}
+.callcard small{color:var(--ink2);font-size:14px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--line);font:500 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--mu);transition:.25s}
+.tabs button:hover{color:var(--ink);border-color:var(--ink)}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper2)}
+.list{display:none}
+.list.on{display:block;animation:fade .5s var(--ez)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.it{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.it:first-child{border-top:1px solid var(--line)}
+.it h4{font:400 26px/1.15 var(--disp);display:flex;align-items:baseline;gap:14px}
+.it h4::after{content:"";flex:1;border-bottom:1px dotted rgba(21,19,22,.3);transform:translateY(-6px);min-width:30px}
+.it .p{font:400 italic 26px var(--disp);color:var(--rose);text-align:right}
+.it p{grid-column:1/-1;color:var(--mu);font-size:15px}
+.tag{display:inline-block;font:500 10px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--rose);border:1px solid rgba(169,83,111,.35);border-radius:999px;padding:4px 9px;margin-left:10px;vertical-align:4px;font-style:normal}
+.note{margin-top:22px;font-size:14px;color:var(--fa)}
+
+/* gallery */
+.gh{text-align:center;margin-bottom:56px}
+.gh .cap{color:var(--rose);display:block;margin-bottom:16px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gal button{display:block;aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;background:var(--blush)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ez)}
+.gal button:hover img{transform:scale(1.05)}
+.gal button::after{content:"View";position:absolute;left:14px;bottom:14px;font:500 11px var(--body);letter-spacing:.24em;text-transform:uppercase;color:#fff;background:rgba(21,19,22,.5);backdrop-filter:blur(6px);padding:8px 13px;border-radius:999px;opacity:0;transform:translateY(6px);transition:.35s var(--ez)}
+.gal button:hover::after,.gal button:focus-visible::after{opacity:1;transform:none}
+.gal-cta{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:46px;flex-wrap:wrap}
+.gal-cta p{color:var(--mu)}
+.lb{position:fixed;inset:0;z-index:80;background:rgba(14,12,15,.92);display:none;align-items:center;justify-content:center;padding:30px}
+.lb.open{display:flex;animation:fade .3s}
+.lb img{max-height:86vh;max-width:min(900px,92vw);border-radius:16px;box-shadow:0 40px 80px -30px #000}
+.lb button{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;font-size:22px;display:grid;place-items:center}
+.lb .c{top:22px;right:22px}.lb .pv{left:22px;top:50%;transform:translateY(-50%)}.lb .nx{right:22px;top:50%;transform:translateY(-50%)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:s}
+.step{padding:30px 26px;border-radius:var(--r);background:var(--paper2);border:1px solid var(--line);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:400 italic 46px/1 var(--disp);color:var(--blush2)}
+.step h4{font:400 26px/1.15 var(--disp);margin:20px 0 8px}
+.step p{color:var(--mu);font-size:15.5px}
+
+/* policies */
+.pol{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.acc{border-top:1px solid var(--line)}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font:400 28px/1.15 var(--disp)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary i{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;font-family:var(--body);font-size:20px;transition:transform .35s var(--ez),background .3s}
+.acc details[open] summary i{transform:rotate(45deg);background:var(--blush)}
+.acc .ans{padding:0 60px 28px 0;color:var(--mu);font-size:16.5px}
+.acc .ans b{color:var(--ink);font-weight:500}
+
+/* booking */
+.book{background:var(--ink);color:var(--paper2);position:relative;overflow:hidden}
+.book::before{content:"";position:absolute;right:-15%;top:-30%;width:70%;height:140%;background:radial-gradient(closest-side,rgba(233,180,193,.2),transparent)}
+.bk{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;position:relative;z-index:1}
+.bk .cap{color:var(--blush)}
+.bk h2{margin:20px 0 24px}
+.bk p{color:#CFC7CF}
+.contact{margin-top:38px;display:grid;gap:14px}
+.contact a{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.14);transition:background .3s,border-color .3s}
+.contact a:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.3)}
+.contact .ic{width:44px;height:44px;border-radius:50%;background:var(--blush);color:var(--ink);display:grid;place-items:center;flex:none}
+.contact .ic svg{width:18px;height:18px}
+.contact b{display:block;font-weight:500;letter-spacing:.02em}
+.contact small{color:#A9A1AA;font-size:14px}
+form.req{padding:38px;border-radius:26px;background:var(--paper2);color:var(--ink);box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+form.req h3{font-size:34px}
+form.req>p{color:var(--mu);font-size:15px;margin:8px 0 24px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:8px}
+.f.full{grid-column:1/-1}
+.f label{font:500 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--mu)}
+.f input,.f select,.f textarea{height:52px;border-radius:14px;border:1px solid var(--line);background:var(--paper);padding:0 16px;font-size:16px;outline:0;transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}
+.f textarea{height:110px;padding:14px 16px;resize:vertical}
+.f select{background-image:linear-gradient(45deg,transparent 50%,#6E6670 50%),linear-gradient(135deg,#6E6670 50%,transparent 50%);background-position:calc(100% - 22px) 23px,calc(100% - 17px) 23px;background-size:5px 5px;background-repeat:no-repeat;padding-right:40px}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(169,83,111,.12)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;transition:.2s}
+.chips input:checked+span{background:var(--ink);color:var(--paper2);border-color:var(--ink)}
+.chips input:focus-visible+span{outline:2px solid var(--rose);outline-offset:2px}
+.send{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.send .btn{width:100%}
+.fine{font-size:13px;color:var(--fa);margin-top:14px}
+.err{color:#B4233F;font-size:14px;margin-top:10px;min-height:20px}
+
+/* footer */
+.ft{padding:90px 0 40px}
+.ft-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid var(--line)}
+.ft h5{font:500 11px var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--fa);margin-bottom:18px}
+.ft p,.ft a{color:var(--ink2);font-size:15.5px}
+.ft li{list-style:none;margin-bottom:10px}
+.ft a:hover{color:var(--rose)}
+.big{font:400 italic clamp(60px,12vw,190px)/.9 var(--disp);letter-spacing:-.02em;margin-top:60px;color:var(--ink);white-space:nowrap;overflow:hidden}
+.big span{color:var(--blush2)}
+.ft-b{display:flex;justify-content:space-between;gap:20px;margin-top:30px;font-size:13px;color:var(--fa);flex-wrap:wrap}
+
+/* mobile book bar */
+.mbar{display:none}
+
+/* responsive */
+@media (max-width:1060px){
+  .hero-grid,.ab,.pr,.pol,.bk{grid-template-columns:1fr;gap:56px}
+  .pr .side{position:static}
+  .steps{grid-template-columns:1fr 1fr}
+  .ft-top{grid-template-columns:1fr 1fr}
+  .arches{height:560px;max-width:600px}
+}
+@media (max-width:860px){
+  .nav,.hd .btn{display:none}.burger{display:grid;margin-left:auto}
+  .svc{grid-template-columns:1fr;gap:56px}
+  .gal{grid-template-columns:repeat(3,1fr)}
+  .sv .ph{aspect-ratio:4/5}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  section{padding:90px 0}
+  .hd{height:72px}
+  .hero{padding:110px 0 50px;min-height:0}
+  .hero h1{font-size:52px}
+  .hero h1 .l2{padding-left:.4em}
+  .hero .ctas .btn{flex:1 1 100%}
+  .arches{height:440px;min-height:0}
+  .badge{width:112px;height:112px}.badge b{font-size:22px}
+  .ab ul{grid-template-columns:1fr}
+  .ab .ph .lg{width:96px;height:96px;right:-10px;bottom:-26px}
+  .it h4,.it .p{font-size:22px}
+  .acc summary{font-size:23px}.acc .ans{padding-right:0}
+  .steps{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;gap:10px}.gal button{border-radius:12px}
+  form.req{padding:26px 20px}.fg,.send{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45;padding:8px;border-radius:999px;background:rgba(21,19,22,.92);backdrop-filter:blur(12px);transform:translateY(140%);transition:transform .5s var(--ez)}
+  .mbar.show{transform:none}
+  .mbar a{height:48px;border-radius:999px;display:grid;place-items:center;font:500 12px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--paper2)}
+  .mbar a.b{background:var(--blush);color:var(--ink)}
+  .ft{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="s" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.6 6.4 5.6 11.4 12 12-6.4.6-11.4 5.6-12 12-.6-6.4-5.6-11.4-12-12C6.4 11.4 11.4 6.4 12 0z"/></symbol>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="hd" id="hd"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Nailz by Emiliia, home"><img src="assets/logo.png" alt="" width="40" height="40"><span>NAILZ BY EMILIIA<small>ANCHORAGE · AK</small></span></a>
+  <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#gallery">Gallery</a><a href="#policies">Policies</a><a href="#book">Contact</a></nav>
+  <a class="btn btn-ink" href="#book">Book now</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i></button>
+</div></header>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <button class="x" id="dx" aria-label="Close menu">×</button>
+  <nav aria-label="Mobile"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#gallery">Gallery</a><a href="#policies">Policies</a><a href="#book">Contact</a></nav>
+  <a class="btn btn-ink" href="#book">Book an appointment</a>
+</div>
+
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="cap rv">Home nail studio · Anchorage, Alaska</p>
+      <h1 id="h1" class="rv">Soft, sculpted,<span class="l2">made to last.</span></h1>
+      <p class="lead rv">Gel-X extensions, builder gel and hand-painted nail art, done one client at a time in a calm, private studio.</p>
+      <div class="ctas rv">
+        <a class="btn btn-ink" href="#book">Book an appointment</a>
+        <a class="btn btn-line" href="#pricing">View prices</a>
+      </div>
+      <div class="meta rv">
+        <div><b>Gel-X</b>Extensions</div>
+        <div><b>Builder Gel</b>Natural nail strength</div>
+        <div><b>Nail Art</b>Hand-painted details</div>
+      </div>
+    </div>
+    <div class="arches" aria-hidden="true">
+      <div class="arch a3"><img src="assets/n3.jpg" alt=""></div>
+      <div class="arch a1"><img src="assets/n2.jpg" alt=""></div>
+      <div class="arch a2"><img src="assets/n1.jpg" alt=""></div>
+      <div class="badge"><svg viewBox="0 0 150 150"><defs><path id="c" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><text font-family="Jost" font-size="10.5" letter-spacing="4.2" fill="#F3D3DA"><textPath href="#c">BY APPOINTMENT ✦ ANCHORAGE ✦ ALASKA ✦ </textPath></text></svg><div><b>N✦E</b><small>STUDIO</small></div></div>
+      <span class="tw" style="left:62%;top:6%;width:22px;height:22px"><svg><use href="#s"/></svg></span>
+      <span class="tw" style="left:-2%;top:30%;width:16px;height:16px;animation-delay:1.1s"><svg><use href="#s"/></svg></span>
+      <span class="tw" style="right:-1%;top:44%;width:28px;height:28px;animation-delay:2s"><svg><use href="#s"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="marq-in" id="marq">
+  <span>Gel-X Extensions</span><i>✦</i><span>Builder Gel</span><i>✦</i><span>Hand-Painted Art</span><i>✦</i><span>Soft French</span><i>✦</i><span>Chrome & Charms</span><i>✦</i><span>Celestial Details</span><i>✦</i>
+</div></div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" aria-labelledby="sv-h">
+  <div class="wrap">
+    <div class="sh rv"><div><span class="cap">The services</span><h2 id="sv-h">Three things,<br><em>done beautifully.</em></h2></div><p class="lead">Every set starts with careful prep and a shape that suits your hands, then gets built to hold up to Alaska winters and everyday life.</p></div>
+    <div class="svc">
+      <article class="sv rv"><div class="ph"><img src="assets/n6.jpg" alt="Long almond Gel-X extensions with blue and gold hand-painted art" loading="lazy"></div><span class="num">01</span>
+        <h3>Gel-X <em>Extensions</em></h3><p>Full soft-gel tips in the length and shape you want, from short squoval to long almond. Lightweight, flexible and gentle on your natural nails.</p>
+        <div class="from"><span>Starting at</span><b>$60</b></div></article>
+      <article class="sv rv"><div class="ph"><img src="assets/n2.jpg" alt="Short natural nails with builder gel and a soft white French tip" loading="lazy"></div><span class="num">02</span>
+        <h3>Builder <em>Gel</em></h3><p>A structured overlay on your own nails for strength and a clean, glossy finish. Ideal for growing out natural nails without extensions.</p>
+        <div class="from"><span>Starting at</span><b>$50</b></div></article>
+      <article class="sv rv"><div class="ph"><img src="assets/n5.jpg" alt="Square nails with black and white hand-painted line art" loading="lazy"></div><span class="num">03</span>
+        <h3>Nail <em>Art</em></h3><p>Hand-painted lines, celestial stars and moons, chrome, charms and full statement sets. Bring your inspo or let Emiliia design it with you.</p>
+        <div class="from"><span>Add-on from</span><b>$5</b></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" aria-labelledby="ab-h">
+  <div class="wrap ab">
+    <div class="ph rv"><img src="assets/n3.jpg" alt="Gel nails with silver chrome star and moon details" loading="lazy"><img class="lg" src="assets/logo.png" alt="Nailz by Emiliia logo"></div>
+    <div class="rv">
+      <span class="cap">Meet the studio</span>
+      <h2 id="ab-h">One chair,<br><em>your full attention.</em></h2>
+      <p>Nailz by Emiliia is a private, home-based studio in Anchorage. There's no rush and no crowded salon, just one appointment at a time with someone who cares about the details.</p>
+      <p>Every set gets proper cuticle prep, careful shaping and a finish built to last, so your nails look as good on week three as they did on day one.</p>
+      <ul>
+        <li><svg><use href="#s"/></svg>One client at a time</li>
+        <li><svg><use href="#s"/></svg>Clean, sanitized tools every visit</li>
+        <li><svg><use href="#s"/></svg>Designs made from your inspo</li>
+        <li><svg><use href="#s"/></svg>Retention guarantee on every set</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE ============ -->
+<div class="quote"><div class="wrap rv"><p>“Nails that look <span>effortless</span>, built with a lot of effort.”</p><span class="cap">The Nailz by Emiliia standard</span></div></div>
+
+<!-- ============ PRICING ============ -->
+<section class="price" id="pricing" aria-labelledby="pr-h">
+  <div class="wrap pr">
+    <div class="side rv">
+      <span class="cap" style="color:var(--rose)">Price list</span>
+      <h2 id="pr-h" style="margin-top:18px">Simple,<br><em>honest pricing.</em></h2>
+      <p>Prices are starting points. Final cost depends on length, shape and how detailed your design is. Send your inspo and you'll get an exact quote before you book.</p>
+      <div class="callcard">
+        <span class="cap">Questions? Text first</span>
+        <a class="ph" href="sms:+19072508559">907·250·8559</a>
+        <small>Texts and Instagram DMs are the fastest way to book.</small>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="tabs" role="tablist" aria-label="Price categories">
+        <button role="tab" aria-selected="true" aria-controls="p1" id="t1">Extensions</button>
+        <button role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">Builder Gel</button>
+        <button role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">Art & Add-ons</button>
+        <button role="tab" aria-selected="false" aria-controls="p4" id="t4" tabindex="-1">Removal</button>
+      </div>
+      <div class="list on" id="p1" role="tabpanel" aria-labelledby="t1">
+        <div class="it"><h4>Gel-X · Short</h4><span class="p">$60</span><p>Full set of soft-gel extensions in a short length with solid color or nude.</p></div>
+        <div class="it"><h4>Gel-X · Medium <span class="tag">Most booked</span></h4><span class="p">$70</span><p>The everyday length. Almond, coffin, square or oval.</p></div>
+        <div class="it"><h4>Gel-X · Long & XL</h4><span class="p">$80+</span><p>Statement length. Extra time is built in for shaping and balance.</p></div>
+        <div class="it"><h4>Gel-X French Set</h4><span class="p">+$10</span><p>Classic, micro or deep French on any length.</p></div>
+      </div>
+      <div class="list" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+        <div class="it"><h4>Builder Gel Overlay</h4><span class="p">$50</span><p>Strengthening overlay on your natural nails with color or a sheer finish.</p></div>
+        <div class="it"><h4>Builder Gel Fill <span class="tag">2–3 weeks</span></h4><span class="p">$45</span><p>Rebalance and refresh. Keeps your natural nails growing strong.</p></div>
+        <div class="it"><h4>Builder Gel + French</h4><span class="p">$60</span><p>The soft, clean look shown throughout the gallery.</p></div>
+      </div>
+      <div class="list" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+        <div class="it"><h4>Simple Art</h4><span class="p">+$5</span><p>Dots, a few lines or one or two accent nails.</p></div>
+        <div class="it"><h4>Detailed Art</h4><span class="p">+$10–20</span><p>Hand-painted celestial details, line work and characters.</p></div>
+        <div class="it"><h4>Full Statement Set</h4><span class="p">+$25+</span><p>Art on every nail. Quoted from your inspo photos.</p></div>
+        <div class="it"><h4>Chrome or Cat-Eye</h4><span class="p">+$10</span><p>Mirror chrome, pearl or magnetic cat-eye finish.</p></div>
+        <div class="it"><h4>Charms & Rhinestones</h4><span class="p">$1–3 each</span><p>Gems, pearls, stars and 3D charms.</p></div>
+      </div>
+      <div class="list" id="p4" role="tabpanel" aria-labelledby="t4" hidden>
+        <div class="it"><h4>Removal · Emiliia's work</h4><span class="p">$10</span><p>Gentle soak-off and natural nail care.</p></div>
+        <div class="it"><h4>Removal · Another salon's</h4><span class="p">$20</span><p>Includes safe removal of acrylic, dip or hard gel.</p></div>
+        <div class="it"><h4>Single Nail Repair</h4><span class="p">$5</span><p>Free within the retention window. See policies.</p></div>
+      </div>
+      <p class="note">Prices may change. Your quote by text is the final price.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" aria-labelledby="ga-h">
+  <div class="wrap">
+    <div class="gh rv"><span class="cap">Gallery</span><h2 id="ga-h">Our <em>portfolio.</em></h2></div>
+    <div class="gal rv" id="gal">
+      <button data-i="0"><img src="assets/n6.jpg" alt="Long almond extensions with turquoise and gold hand-painted art" loading="lazy"></button>
+      <button data-i="1"><img src="assets/g1.jpg" alt="Burgundy ombré stiletto nails with white lace art" loading="lazy"></button>
+      <button data-i="2"><img src="assets/g2.jpg" alt="Magenta almond nails with glitter and rhinestone accents" loading="lazy"></button>
+      <button data-i="3"><img src="assets/n2.jpg" alt="Soft French builder gel with a moon and star accent" loading="lazy"></button>
+      <button data-i="4"><img src="assets/g4.jpg" alt="Black French stiletto tips with a hand-painted flower accent" loading="lazy"></button>
+      <button data-i="5"><img src="assets/n3.jpg" alt="Sheer gel nails with silver chrome celestial charms" loading="lazy"></button>
+      <button data-i="6"><img src="assets/g6.jpg" alt="Purple leopard French tips with gold chrome swirls" loading="lazy"></button>
+      <button data-i="7"><img src="assets/g3.jpg" alt="Classic white French on natural nails" loading="lazy"></button>
+      <button data-i="8"><img src="assets/n5.jpg" alt="Square nails with black and white line art" loading="lazy"></button>
+      <button data-i="9"><img src="assets/g5.jpg" alt="Red and tortoiseshell almond set" loading="lazy"></button>
+      <button data-i="10"><img src="assets/g7.jpg" alt="Sheer nails with gold chrome outlines" loading="lazy"></button>
+      <button data-i="11"><img src="assets/n1.jpg" alt="French manicure with celestial and cat accent nails" loading="lazy"></button>
+    </div>
+    <div class="gal-cta rv"><p>New sets every week on Instagram.</p><a class="btn btn-ink" href="https://www.instagram.com/nailzbyemiliia/" target="_blank" rel="noopener">Follow @nailzbyemiliia</a></div>
+  </div>
+</section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="c" id="lbc" aria-label="Close">×</button><button class="pv" id="lbp" aria-label="Previous">‹</button><img id="lbi" alt=""><button class="nx" id="lbn" aria-label="Next">›</button></div>
+
+<!-- ============ HOW BOOKING WORKS ============ -->
+<section style="padding-top:20px" aria-labelledby="st-h">
+  <div class="wrap">
+    <div class="sh rv"><div><span class="cap">How it works</span><h2 id="st-h">Booking, <em>step by step.</em></h2></div></div>
+    <div class="steps">
+      <div class="step rv"><h4>Choose your set</h4><p>Pick a service and length from the price list.</p></div>
+      <div class="step rv"><h4>Send your inspo</h4><p>Text or DM a photo of the look you love.</p></div>
+      <div class="step rv"><h4>Lock in your time</h4><p>Get your exact quote, then a small deposit holds your spot.</p></div>
+      <div class="step rv"><h4>Come relax</h4><p>The studio address is sent with your confirmation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICIES ============ -->
+<section id="policies" class="price" aria-labelledby="po-h">
+  <div class="wrap pol">
+    <div class="rv"><span class="cap" style="color:var(--rose)">Studio policies</span><h2 id="po-h" style="margin-top:18px">Good to know <em>before you come.</em></h2><p class="lead" style="margin-top:20px">A few simple policies keep the schedule fair for everyone.</p></div>
+    <div class="acc rv">
+      <details open><summary>Deposits<i>+</i></summary><div class="ans">A <b>$20 deposit</b> secures your appointment and goes toward your total. It's non-refundable if you cancel late or don't show.</div></details>
+      <details><summary>Late arrivals<i>+</i></summary><div class="ans">There's a <b>15-minute grace period</b>. After that, your design may need to be simplified, or the appointment rescheduled so the next client isn't delayed.</div></details>
+      <details><summary>Cancellations<i>+</i></summary><div class="ans">Please give at least <b>24 hours' notice</b> to cancel or reschedule. Your deposit moves to your new date.</div></details>
+      <details><summary>Retention guarantee<i>+</i></summary><div class="ans">If a nail lifts or breaks within <b>5 days</b> and it isn't from an accident or damage, text a photo and it'll be fixed free of charge.</div></details>
+      <details><summary>Studio etiquette<i>+</i></summary><div class="ans">This is a private home studio, so please come <b>solo</b> unless arranged ahead of time. Arrive with clean, bare nails, or book a removal.</div></details>
+      <details><summary>Payment<i>+</i></summary><div class="ans">Cash and common payment apps are accepted. Payment details are shared when your appointment is confirmed.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="book" id="book" aria-labelledby="bk-h">
+  <div class="wrap bk">
+    <div class="rv">
+      <span class="cap">Book an appointment</span>
+      <h2 id="bk-h">Let's make your<br><em>next set.</em></h2>
+      <p>Fill in the form and it'll open a ready-to-send text, or reach out directly. Appointments are by request only.</p>
+      <div class="contact">
+        <a href="sms:+19072508559"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg></span><span><b>Text 907-250-8559</b><small>Fastest reply</small></span></a>
+        <a href="tel:+19072508559"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg></span><span><b>Call the studio</b><small>If no answer, leave a text</small></span></a>
+        <a href="https://ig.me/m/nailzbyemiliia" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span><b>DM @nailzbyemiliia</b><small>Send your inspo photos</small></span></a>
+      </div>
+    </div>
+    <form class="req rv" id="req" novalidate>
+      <h3>Request a time</h3>
+      <p>Takes 30 seconds. Nothing is sent until you hit send in your messages.</p>
+      <div class="fg">
+        <div class="f"><label for="fn">Your name</label><input id="fn" name="name" autocomplete="name" required placeholder="First name"></div>
+        <div class="f"><label for="fs">Service</label><select id="fs" name="service"><option>Gel-X extensions</option><option>Builder gel</option><option>Builder gel fill</option><option>Nail art only</option><option>Removal</option><option>Not sure yet</option></select></div>
+        <div class="f full"><label>Length</label><div class="chips">
+          <label><input type="radio" name="len" value="Short" checked><span>Short</span></label>
+          <label><input type="radio" name="len" value="Medium"><span>Medium</span></label>
+          <label><input type="radio" name="len" value="Long"><span>Long</span></label>
+          <label><input type="radio" name="len" value="XL"><span>XL</span></label></div></div>
+        <div class="f"><label for="fd">Preferred day</label><input id="fd" name="day" type="date"></div>
+        <div class="f"><label for="ft">Time of day</label><select id="ft" name="time"><option>Morning</option><option selected>Afternoon</option><option>Evening</option><option>Flexible</option></select></div>
+        <div class="f full"><label for="fm">Design notes</label><textarea id="fm" name="notes" placeholder="Colors, shape, art ideas… you can send inspo photos after"></textarea></div>
+      </div>
+      <p class="err" id="err" aria-live="polite"></p>
+      <div class="send">
+        <button class="btn btn-ink" type="submit">Send by text</button>
+        <button class="btn btn-blush" type="button" id="dm">Copy & open DM</button>
+      </div>
+      <p class="fine">Your details stay on your phone. This form doesn't store anything.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div><a class="logo" href="#top"><img src="assets/logo.png" alt="" width="40" height="40"><span>NAILZ BY EMILIIA<small>ANCHORAGE · AK</small></span></a><p style="margin-top:20px;color:var(--mu);max-width:300px">Gel-X extensions, builder gel and nail art in a private Anchorage home studio.</p></div>
+      <div><h5>Visit</h5><p>Anchorage, Alaska<br>Address shared on booking<br>By appointment only</p></div>
+      <div><h5>Contact</h5><ul><li><a href="sms:+19072508559">Text 907-250-8559</a></li><li><a href="tel:+19072508559">Call the studio</a></li><li><a href="https://www.instagram.com/nailzbyemiliia/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h5>Explore</h5><ul><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#policies">Policies</a></li></ul></div>
+    </div>
+    <div class="big" aria-hidden="true">Nailz <span>✦</span> Emiliia</div>
+    <div class="ft-b"><span>© <span id="yr">2026</span> Nailz by Emiliia. All rights reserved.</span><span>Website by Sitemind</span></div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar"><a href="sms:+19072508559">Text</a><a class="b" href="#book">Book now</a></div>
+
+<script>
+const PHONE="+19072508559",IG="nailzbyemiliia";
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* header + mobile bar */
+const hd=document.getElementById("hd"),mbar=document.getElementById("mbar"),bookEl=document.getElementById("book");
+function onScroll(){hd.classList.toggle("scr",scrollY>30);const r=bookEl.getBoundingClientRect();mbar.classList.toggle("show",scrollY>innerHeight*.6&&!(r.top<innerHeight&&r.bottom>0))}
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+/* drawer */
+const dr=document.getElementById("drawer"),bg=document.getElementById("burger");
+function setDrawer(o){dr.classList.toggle("open",o);dr.setAttribute("aria-hidden",!o);bg.setAttribute("aria-expanded",o);document.body.style.overflow=o?"hidden":""}
+bg.onclick=()=>setDrawer(true);document.getElementById("dx").onclick=()=>setDrawer(false);
+dr.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>setDrawer(false)));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".rv,.arch").forEach((el,i)=>{el.style.transitionDelay=(el.closest(".svc,.steps,.hero")?(i%4)*90:0)+"ms";io.observe(el)});
+
+/* marquee: duplicate for a seamless loop */
+const mq=document.getElementById("marq");mq.innerHTML+=mq.innerHTML;
+
+/* price tabs (arrow-key friendly) */
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function selTab(t){tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;const p=document.getElementById(x.getAttribute("aria-controls"));p.hidden=!on;p.classList.toggle("on",on)})}
+tabs.forEach((t,i)=>{t.onclick=()=>selTab(t);t.onkeydown=e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();const n=tabs[(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length];selTab(n);n.focus()}}});
+
+/* lightbox */
+const shots=[...document.querySelectorAll("#gal button img")],lb=document.getElementById("lb"),lbi=document.getElementById("lbi");let li=0,lastF=null;
+function openLb(i){li=(i+shots.length)%shots.length;lbi.src=shots[li].src;lbi.alt=shots[li].alt;if(!lb.classList.contains("open")){lastF=document.activeElement;lb.classList.add("open");document.body.style.overflow="hidden";document.getElementById("lbc").focus()}}
+function closeLb(){lb.classList.remove("open");document.body.style.overflow="";lastF&&lastF.focus()}
+document.querySelectorAll("#gal button").forEach(b=>b.onclick=()=>openLb(+b.dataset.i));
+document.getElementById("lbc").onclick=closeLb;document.getElementById("lbp").onclick=()=>openLb(li-1);document.getElementById("lbn").onclick=()=>openLb(li+1);
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});
+addEventListener("keydown",e=>{if(!lb.classList.contains("open"))return;if(e.key==="Escape")closeLb();if(e.key==="ArrowRight")openLb(li+1);if(e.key==="ArrowLeft")openLb(li-1)});
+let tx=null;lb.addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});lb.addEventListener("touchend",e=>{if(tx==null)return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)openLb(li+(d<0?1:-1));tx=null});
+
+/* booking request: builds a ready-to-send message, nothing is stored or uploaded */
+const form=document.getElementById("req"),err=document.getElementById("err");
+const dateIn=document.getElementById("fd");dateIn.min=new Date().toISOString().slice(0,10);
+function message(){const f=new FormData(form),d=f.get("day");let day="any day";if(d){const dt=new Date(d+"T12:00");day=dt.toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"})}
+ return `Hi Emiliia! I'm ${f.get("name").trim()} and I'd like to book ${f.get("service").toLowerCase()} (${f.get("len").toLowerCase()} length). Preferred: ${day}, ${f.get("time").toLowerCase()}.${f.get("notes").trim()?" Notes: "+f.get("notes").trim():""} I can send inspo photos!`}
+function valid(){if(!form.name.value.trim()){err.textContent="Please add your name so Emiliia knows who's booking.";form.name.focus();return false}err.textContent="";return true}
+form.addEventListener("submit",e=>{e.preventDefault();if(!valid())return;const sep=/iPhone|iPad|Mac/.test(navigator.userAgent)?"&":"?";location.href=`sms:${PHONE}${sep}body=${encodeURIComponent(message())}`});
+document.getElementById("dm").onclick=async e=>{if(!valid())return;try{await navigator.clipboard.writeText(message());e.target.textContent="Copied ✓ opening DM"}catch(_){e.target.textContent="Opening DM"}setTimeout(()=>window.open(`https://ig.me/m/${IG}`,"_blank","noopener"),500)};
+</script>
+</body>
+</html>
