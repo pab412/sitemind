@@ -10,10 +10,11 @@
 <meta property="og:title" content="Dream Home Construction · Anchorage, AK">
 <meta property="og:description" content="Licensed & insured general contracting with an artist's eye. Free estimates.">
 <meta property="og:image" content="assets/hero.jpg">
+<link rel="icon" href="assets/logo-sm.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Instrument+Serif:ital@1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"GeneralContractor","name":"Dream Home Construction LLC","telephone":"+1-907-444-7878","email":"dreamhome907@gmail.com","foundingDate":"2017-03-31","address":{"@type":"PostalAddress","streetAddress":"9020 Arlon St","addressLocality":"Anchorage","addressRegion":"AK","postalCode":"99507","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}],"areaServed":"Anchorage and Southcentral Alaska","sameAs":["https://www.facebook.com/dreamhome907/","https://www.instagram.com/dreamhome907/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"14"}}
+{"@context":"https://schema.org","@type":"GeneralContractor","name":"Dream Home Construction LLC","logo":"https://sitemind.dev/dreamhome907/assets/logo.png","telephone":"+1-907-444-7878","email":"dreamhome907@gmail.com","foundingDate":"2017-03-31","address":{"@type":"PostalAddress","streetAddress":"9020 Arlon St","addressLocality":"Anchorage","addressRegion":"AK","postalCode":"99507","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}],"areaServed":"Anchorage and Southcentral Alaska","sameAs":["https://www.facebook.com/dreamhome907/","https://www.instagram.com/dreamhome907/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"14"}}
 </script>
 <style>
 /* ==================================================================
@@ -67,6 +68,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1}
 .nav.scr{background:rgba(7,26,32,.86);border-color:var(--line2)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15.5px;letter-spacing:-.01em;line-height:1.05}
 .brand small{display:block;font:500 10.5px var(--mono);letter-spacing:.16em;color:var(--mu);margin-top:3px}
+.lg{height:52px;width:auto;display:block}.lg-ft{height:96px}
 .mark{width:38px;height:38px;border-radius:11px;background:var(--teal);display:grid;place-items:center;flex:none}
 .mark svg{width:24px;height:24px}
 .nav .links{margin-left:auto;display:flex;gap:4px}
@@ -80,7 +82,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1}
 .burger i{display:block;width:18px;height:1.5px;background:#fff;box-shadow:0 6px 0 #fff,0 -6px 0 #fff}
 .sheet{position:fixed;inset:0;z-index:60;background:var(--ink);padding:28px 24px calc(28px + env(safe-area-inset-bottom));display:flex;flex-direction:column;transform:translateY(-102%);visibility:hidden;transition:transform .55s var(--ez),visibility 0s .55s}
 .sheet.open{transform:none;visibility:visible;transition:transform .55s var(--ez)}
-.sheet .x{align-self:flex-end;width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);font-size:22px}
+.sheet .x{width:46px;height:46px;border-radius:12px;border:1px solid var(--line2);font-size:22px}
 .sheet nav{display:flex;flex-direction:column;margin-top:30px}
 .sheet nav a{font-size:40px;font-weight:600;letter-spacing:-.03em;padding:8px 0;border-bottom:1px solid var(--line)}
 .sheet .btn{margin-top:auto;justify-content:space-between}
@@ -336,14 +338,14 @@ form.est>p{color:var(--pmu);margin:8px 0 26px}
 </svg>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Dream Home Construction home"><span class="mark"><svg><use href="#logo"/></svg></span><span>Dream Home<small>CONSTRUCTION · AK</small></span></a>
+  <a class="brand" href="#top" aria-label="Dream Home Construction home"><img class="lg" src="assets/logo-sm.png" alt="Dream Home Construction" width="94" height="52"></a>
   <nav class="links" aria-label="Main"><a href="#services">Services</a><a href="#finishes">Finishes</a><a href="#about">About</a><a href="#process">Process</a><a href="#faq">FAQ</a></nav>
   <a class="call" href="tel:+19074447878">(907) 444-7878</a>
   <a class="btn btn-g" href="#contact">Free estimate<span class="ar"><svg><use href="#arr"/></svg></span></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i></button>
 </header>
 <div class="sheet" id="sheet" aria-hidden="true">
-  <button class="x" id="sx" aria-label="Close menu">×</button>
+  <div style="display:flex;justify-content:space-between;align-items:center"><img class="lg" src="assets/logo-sm.png" alt="Dream Home Construction" width="94" height="52"><button class="x" id="sx" aria-label="Close menu">×</button></div>
   <nav aria-label="Mobile"><a href="#services">Services</a><a href="#finishes">Finishes</a><a href="#about">About</a><a href="#process">Process</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
   <a class="btn btn-g" href="#contact">Get a free estimate<span class="ar"><svg><use href="#arr"/></svg></span></a>
 </div>
@@ -523,7 +525,7 @@ form.est>p{color:var(--pmu);margin:8px 0 26px}
 <footer class="ft">
   <div class="wrap">
     <div class="ft-g">
-      <div><a class="brand" href="#top"><span class="mark"><svg><use href="#logo"/></svg></span><span>Dream Home Construction<small>ANCHORAGE · ALASKA</small></span></a><p style="margin-top:20px;max-width:320px">Licensed &amp; insured residential and commercial general contractor. AK entity #10055310, est. 2017.</p></div>
+      <div><a class="brand" href="#top" aria-label="Dream Home Construction home"><img class="lg lg-ft" src="assets/logo-sm.png" alt="Dream Home Construction" width="180" height="99" loading="lazy"></a><p style="margin-top:20px;max-width:320px">Licensed &amp; insured residential and commercial general contractor. AK entity #10055310, est. 2017.</p></div>
       <div><h5>Services</h5><ul><li><a href="#services">Painting &amp; staining</a></li><li><a href="#services">Drywall</a></li><li><a href="#services">Flooring &amp; tile</a></li><li><a href="#services">Tenant improvements</a></li></ul></div>
       <div><h5>Company</h5><ul><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li></ul></div>
       <div><h5>Contact</h5><ul><li><a href="tel:+19074447878">(907) 444-7878</a></li><li><a href="mailto:dreamhome907@gmail.com">Email us</a></li><li><a href="https://www.facebook.com/dreamhome907/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/dreamhome907/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
