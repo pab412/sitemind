@@ -421,7 +421,7 @@
   <div class="wrap">
     <div><div class="brand">sitemind</div><div style="margin-top:6px">Websites that think for your business.</div></div>
     <div style="text-align:right">
-      <div><a href="mailto:cam@sitemind.dev">cam@sitemind.dev</a> · <a href="tel:+19707930370">(970) 793-0370</a></div>
+      <div><a href="mailto:cam@sitemind.dev">cam@sitemind.dev</a> · <a href="tel:+19707930370">(970) 793-0370</a> · <a href="tel:+14127060815">(412) 706-0815</a></div>
       <div style="margin-top:6px">Arkansas · Alaska · Alabama · © 2026 Sitemind</div>
     </div>
   </div>
@@ -474,7 +474,7 @@ lead.addEventListener('submit',async e=>{e.preventDefault();
   err.style.display='none';btn.disabled=true;btn.textContent='Sending…';
   try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(lead)).toString()});
     if(!r.ok)throw 0;lead.reset();sent.textContent="Thanks! We got your info and will reach out within a day.";sent.style.display='block';btn.textContent='Sent ✓'}
-  catch(_){err.textContent="Couldn't send right now. Please call or text (970) 793-0370.";err.style.display='block';btn.disabled=false;btn.textContent='Get started'}
+  catch(_){err.textContent="Couldn't send right now. Please call or text (970) 793-0370 or (412) 706-0815.";err.style.display='block';btn.disabled=false;btn.textContent='Get started'}
 });
 
 </script>
