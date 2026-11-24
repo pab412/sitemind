@@ -273,7 +273,11 @@ button.go:disabled{opacity:.6;cursor:default}
 </form>
 <p id="formErr" role="alert" style="display: none; margin: 16px 0 0; color: #ff8a8a; font-size: 14px"></p>
 <p id="sent" role="status" style="display: none; margin: 18px 0 0; color: #c9b98f"></p>
-<p style="margin: 22px 0 0; color: #8d8b88; font-size: 15px">Rather email? Write to <a href="mailto:cam@sitemind.dev" style="color: #f4f2ee">cam@sitemind.dev</a> or text <a href="tel:+14127060815" style="color: #f4f2ee">(412) 706-0815</a></p>
+<p style="margin: 26px 0 0; color: #8d8b88; font-size: 15px">Rather talk to a person? Email <a href="mailto:cam@sitemind.dev" style="color: #f4f2ee">cam@sitemind.dev</a> or call or text one of us:</p>
+<div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 14px">
+<a href="tel:+14127060815" style="text-decoration: none; display: flex; flex-direction: column; gap: 2px; min-width: 190px; padding: 14px 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; background: #0d0d10"><span style="color: #f4f2ee; font-size: 15px; font-weight: 500">Cam Mitch</span><span style="color: #8d8b88; font-size: 14px">(412) 706-0815</span></a>
+<a href="tel:+19707930370" style="text-decoration: none; display: flex; flex-direction: column; gap: 2px; min-width: 190px; padding: 14px 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; background: #0d0d10"><span style="color: #f4f2ee; font-size: 15px; font-weight: 500">Emmanuel</span><span style="color: #8d8b88; font-size: 14px">(970) 793-0370</span></a>
+</div>
 </div>
 </section>
 
@@ -287,7 +291,8 @@ button.go:disabled{opacity:.6;cursor:default}
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start">
 <a href="mailto:cam@sitemind.dev" style="color: #f4f2ee; text-decoration: none">cam@sitemind.dev</a>
-<a href="tel:+14127060815" style="color: #f4f2ee; text-decoration: none">(412) 706-0815</a>
+<a href="tel:+14127060815" style="color: #f4f2ee; text-decoration: none">Cam Mitch · (412) 706-0815</a>
+<a href="tel:+19707930370" style="color: #f4f2ee; text-decoration: none">Emmanuel · (970) 793-0370</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start">
 <a href="/legal/#privacy" style="color: #8d8b88">Privacy policy</a>
@@ -314,7 +319,7 @@ lead.addEventListener('submit',async e=>{
     const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(lead)).toString()});
     if(!r.ok)throw 0;
     lead.reset();sent.textContent="Thanks! We got your info and will get back to you within a day.";sent.style.display='block';btn.textContent='Sent';
-  }catch(_){err.textContent="Couldn't send right now. Please email cam@sitemind.dev or text (412) 706-0815.";err.style.display='block';btn.disabled=false;btn.textContent='Get started'}
+  }catch(_){err.textContent="Couldn't send right now. Please email cam@sitemind.dev, or text Cam at (412) 706-0815 or Emmanuel at (970) 793-0370.";err.style.display='block';btn.disabled=false;btn.textContent='Get started'}
 });
 }
 </script>
