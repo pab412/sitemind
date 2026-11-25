@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start your website · Sitemind</title>
+<meta name="description" content="Tell Sitemind about your business so we can start building your website.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://sitemind.dev/start/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#070708;color:#f4f2ee;font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#c9b98f}a:hover{color:#f4f2ee}
+a:focus-visible,button:focus-visible{outline:2px solid #c9b98f;outline-offset:3px}
+.nav{border-bottom:1px solid rgba(255,255,255,.08)}
+.nav div{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.mark{text-decoration:none;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:28px;line-height:1;color:#f4f2ee}
+.mark span{color:#c9b98f}
+main{max-width:760px;margin:0 auto;padding:72px 24px 96px}
+h1{margin:0;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(46px,8vw,76px);line-height:1;letter-spacing:-.02em}
+.lead{margin:18px 0 0;color:#b9b6b1;font-size:17px;font-weight:300;max-width:600px}
+fieldset{border:0;padding:0;margin:52px 0 0}
+legend{padding:0;font-size:20px;font-weight:500;margin-bottom:4px}
+.hint{margin:0 0 18px;color:#8d8b88;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+label{display:grid;gap:6px;font-size:13px;color:#8d8b88}
+label.full{grid-column:1/-1}
+label b{color:#c9b98f;font-weight:400}
+input,select,textarea{font:inherit;font-size:16px;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:#0d0d10;color:#f4f2ee;width:100%}
+textarea{resize:vertical;min-height:110px}
+input[type=file]{padding:12px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(160,180,255,.6);box-shadow:0 0 0 4px rgba(108,124,255,.12)}
+.bad{border-color:#ff6b6b!important;box-shadow:0 0 0 4px rgba(255,107,107,.12)}
+.choices{display:flex;flex-wrap:wrap;gap:10px}
+.choices label{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#f4f2ee;font-size:15px;cursor:pointer;min-height:44px}
+.choices input{width:auto;padding:0;accent-color:#c9b98f}
+button{margin-top:40px;padding:16px 34px;border-radius:999px;border:0;background:#f4f2ee;color:#070708;font:500 15px Inter,system-ui,sans-serif;cursor:pointer;min-height:48px}
+button:disabled{opacity:.6;cursor:default}
+#err{display:none;margin:16px 0 0;color:#ff8a8a;font-size:14px}
+#done{display:none;margin-top:40px;padding:28px;border:1px solid rgba(201,185,143,.45);border-radius:20px;background:#0d0d10}
+#done h2{margin:0 0 8px;font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;font-size:36px}
+#done p{margin:0;color:#b9b6b1}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 24px;text-align:center;font-size:14px;color:#8d8b88}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main"><div><a class="mark" href="/">sitemind<span>.</span></a></div></nav>
+<main>
+<h1>Let's build your site.</h1>
+<p class="lead">This takes about 10 minutes. Answer what you can, and leave the rest: we'll follow up on anything missing. Fields marked <b style="color:#c9b98f;font-weight:400">*</b> are needed to start.</p>
+
+<form id="intake" name="intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" novalidate>
+<input type="hidden" name="form-name" value="intake">
+<p hidden><label>Leave empty <input name="bot-field"></label></p>
+
+<fieldset>
+<legend>You and your business</legend>
+<p class="hint">Who we're building for and how to reach you.</p>
+<div class="grid">
+<label><span>Your name <b>*</b></span><input name="name" required autocomplete="name"></label>
+<label><span>Business name <b>*</b></span><input name="business" required autocomplete="organization"></label>
+<label><span>Email <b>*</b></span><input name="email" type="email" required autocomplete="email"></label>
+<label><span>Phone <b>*</b></span><input name="phone" type="tel" required autocomplete="tel"></label>
+<label><span>Package <b>*</b></span><select name="package" required><option value="">Choose one</option><option>Website</option><option>Website + AI</option><option>Website + SEO</option><option>Complete</option><option>AI only (I keep my site)</option><option>SEO only (I keep my site)</option><option>Not sure yet</option></select></label>
+<label><span>What kind of business is it? <b>*</b></span><input name="industry" required placeholder="Nail salon, handyman, dentist…"></label>
+<label><span>City and the areas you serve <b>*</b></span><input name="area" required placeholder="Rogers, AR and 20 miles around"></label>
+<label>Street address, if customers visit you<input name="address" autocomplete="street-address"></label>
+<label class="full">Business hours<textarea name="hours" rows="3" placeholder="Mon to Fri 9 to 6, Sat 10 to 4, closed Sunday"></textarea></label>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Your brand</legend>
+<p class="hint">No logo or colours yet? That's fine, we'll suggest some.</p>
+<div class="grid">
+<label>Logo file (PNG, JPG or SVG, under 5 MB)<input name="logo" type="file" accept=".png,.jpg,.jpeg,.svg,.webp"></label>
+<label>Brand colours, if you have them<input name="colors" placeholder="Navy and gold, or #1b2a4a"></label>
+<label>Tagline or one line about you<input name="tagline"></label>
+<label>Instagram, Facebook or other pages<input name="social" placeholder="@yourbusiness"></label>
+<label class="full">Link to your photos<input name="photos" placeholder="Google Drive, Dropbox or iCloud link with 5 to 15 photos"><span>No link? We can use photos from your Instagram, or reply to our welcome email with them attached.</span></label>
+<label class="full">Websites you like the look of, and why<textarea name="inspiration" rows="3"></textarea></label>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>What you offer</legend>
+<p class="hint">Write it the way you'd explain it to a customer. We'll polish the wording.</p>
+<div class="grid">
+<label class="full"><span>Your services, with prices if you share them <b>*</b></span><textarea name="services" required rows="5" placeholder="Gel manicure, $40&#10;Full set acrylic, $60&#10;…"></textarea></label>
+<div class="full" role="group" aria-labelledby="first-step" style="grid-column:1/-1"><p id="first-step" style="margin:0 0 8px;font-size:13px;color:#8d8b88">What should a visitor do first?</p>
+<div class="choices"><label><input type="radio" name="first_step" value="Call or text"> Call or text</label><label><input type="radio" name="first_step" value="Book online"> Book online</label><label><input type="radio" name="first_step" value="Request a quote"> Request a quote</label><label><input type="radio" name="first_step" value="Visit in person"> Visit in person</label><label><input type="radio" name="first_step" value="Order online"> Order online</label></div></div>
+<label>Booking app you use now, if any<input name="booking_tool" placeholder="Square, Vagaro, Booksy, none"></label>
+<label>What makes you different?<input name="different"></label>
+</div>
+</fieldset>
+
+<fieldset>
+<legend>Domain and accounts</legend>
+<p class="hint">Your web address and Google listing. Never send us passwords: we'll ask you to add us as a user instead.</p>
+<div class="grid">
+<div class="full" role="group" aria-labelledby="have-domain" style="grid-column:1/-1"><p id="have-domain" style="margin:0 0 8px;font-size:13px;color:#8d8b88">Do you already own a web address (domain)?</p>
+<div class="choices"><label><input type="radio" name="has_domain" value="Yes"> Yes</label><label><input type="radio" name="has_domain" value="No, help me get one"> No, help me get one</label><label><input type="radio" name="has_domain" value="Not sure"> Not sure</label></div></div>
+<label>The domain, if you have one<input name="domain" placeholder="yourbusiness.com"></label>
+<label>Where it was bought, if you know<input name="registrar" placeholder="GoDaddy, Squarespace, Cloudflare…"></label>
+<div class="full" role="group" aria-labelledby="have-gbp" style="grid-column:1/-1"><p id="have-gbp" style="margin:0 0 8px;font-size:13px;color:#8d8b88">Do you have a Google Business Profile (your listing on Google Maps)?</p>
+<div class="choices"><label><input type="radio" name="has_gbp" value="Yes"> Yes</label><label><input type="radio" name="has_gbp" value="No"> No</label><label><input type="radio" name="has_gbp" value="Not sure"> Not sure</label></div></div>
+<label class="full">Anything else we should know?<textarea name="notes" rows="4"></textarea></label>
+</div>
+</fieldset>
+
+<button type="submit">Send to Sitemind</button>
+<p id="err" role="alert"></p>
+</form>
+
+<div id="done" role="status"><h2>Got it, thank you.</h2><p>We'll review everything and email you within one business day with anything we still need and your review date.</p></div>
+</main>
+<footer>© 2026 Sitemind · Bentonville, Arkansas · <a href="/legal/#privacy">Privacy</a> · <a href="mailto:cam@sitemind.dev">cam@sitemind.dev</a></footer>
+<script>
+{
+const form=document.getElementById('intake'),err=document.getElementById('err'),done=document.getElementById('done'),btn=form.querySelector('button[type=submit]');
+const label=el=>{const l=el.closest('label');return (l?l.firstChild.textContent:el.name).replace('*','').trim()};
+form.addEventListener('input',e=>e.target.classList.remove('bad'));
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  form.querySelectorAll('.bad').forEach(el=>el.classList.remove('bad'));
+  const missing=[...form.querySelectorAll('[required]')].filter(el=>!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value)));
+  const logo=form.querySelector('input[name=logo]');
+  if(logo.files[0]&&logo.files[0].size>5*1024*1024){logo.classList.add('bad');err.textContent='The logo file is over 5 MB. Please send a smaller one, or email it to cam@sitemind.dev.';err.style.display='block';return}
+  if(missing.length){missing.forEach(el=>el.classList.add('bad'));err.textContent='Please fill in: '+missing.map(label).join(', ')+'.';err.style.display='block';missing[0].focus();return}
+  err.style.display='none';btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const r=await fetch('/',{method:'POST',body:new FormData(form)});
+    if(!r.ok)throw 0;
+    form.style.display='none';done.style.display='block';done.scrollIntoView({block:'center'});
+  }catch(_){err.textContent="Couldn't send right now. Please email cam@sitemind.dev, or text Cam at (412) 706-0815 or Emmanuel at (970) 793-0370.";err.style.display='block';btn.disabled=false;btn.textContent='Send to Sitemind'}
+});
+}
+</script>
+</body>
+</html>
