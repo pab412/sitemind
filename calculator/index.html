@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missed-call calculator | Sitemind</title>
+<meta name="description" content="Estimate what answering the calls you miss could be worth to your business, using your own numbers.">
+<link rel="canonical" href="https://sitemind.dev/calculator/">
+<meta property="og:url" content="https://sitemind.dev/calculator/">
+<meta property="og:title" content="Missed-call calculator | Sitemind">
+<meta property="og:description" content="Estimate what answering the calls you miss could be worth to your business, using your own numbers.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sitemind">
+<meta property="og:image" content="https://sitemind.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sitemind.dev/og.jpg">
+<meta name="theme-color" content="#070708">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="pg">
+<nav class="nav" aria-label="Main"><div class="navin"><a class="mark" href="/" aria-label="Sitemind home">sitemind<span>.</span></a><div class="links"><a href="/work/">Work</a><a href="/ai/">AI for teams</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a></div><button class="btn ghost sm menu" type="button" aria-expanded="false" aria-controls="mnav">Menu</button><a class="btn sm" href="/get-started/">Get started</a></div><div id="mnav" class="mnav" hidden><a href="/work/">Work</a><a href="/ai/">AI for teams</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/get-started/">Get started</a></div></nav>
+<main>
+
+<section style="position:relative;overflow:hidden;padding:clamp(96px,10vw,144px) 0 clamp(96px,10vw,144px)">
+<div class="atmo" aria-hidden="true" style="width:760px;height:480px;right:-120px;top:-120px;background:rgba(201,185,143,.08)"></div>
+<div class="wrap g12" style="position:relative;row-gap:56px;align-items:start">
+<div style="grid-column:1/6">
+<p class="label rise">Missed-call calculator</p>
+<h1 class="t1 rise d1" style="margin-top:20px;font-size:clamp(44px,5.6vw,76px)">What a missed call <span class="serif">is worth.</span></h1>
+<p class="lede rise d2" style="margin-top:22px">Put in your own numbers. This estimates revenue you could win back by answering calls you miss today.</p>
+<div class="rise d3" style="display:grid;gap:30px;margin-top:44px">
+<label class="f" style="gap:12px"><span style="display:flex;justify-content:space-between;font-size:15px"><span>Missed calls a month</span><span class="soft"><span data-v="calls">30</span></span></span><input type="range" min="0" max="200" step="5" data-s="calls" value="30" aria-label="Missed calls a month"></label>
+<label class="f" style="gap:12px"><span style="display:flex;justify-content:space-between;font-size:15px"><span>Share the AI could answer</span><span class="soft"><span data-v="rec">50</span>%</span></span><input type="range" min="0" max="100" step="5" data-s="rec" value="50" aria-label="Share of missed calls answered, percent"></label>
+<label class="f" style="gap:12px"><span style="display:flex;justify-content:space-between;font-size:15px"><span>Share of those callers who book</span><span class="soft"><span data-v="conv">20</span>%</span></span><input type="range" min="0" max="100" step="5" data-s="conv" value="20" aria-label="Share of answered callers who book, percent"></label>
+<label class="f" style="gap:12px"><span style="display:flex;justify-content:space-between;font-size:15px"><span>Average value of a booking</span><span class="soft">$<span data-v="val">150</span></span></span><input type="range" min="20" max="1000" step="10" data-s="val" value="150" aria-label="Average value of a booking, dollars"></label>
+</div>
+</div>
+<div class="sticky" style="grid-column:7/13;position:sticky;top:120px" aria-live="polite">
+<div style="padding:clamp(32px,4vw,56px) 0;border-top:1px solid rgba(255,255,255,.12)">
+<p class="muted sm" style="margin:0">Estimated revenue recovered</p>
+<p style="margin:18px 0 0;line-height:.9"><span class="disp" style="font-size:clamp(96px,11vw,168px)"><span id="month">$450</span></span></p>
+<p class="muted" style="margin:14px 0 0">a month</p>
+<p style="margin:28px 0 0;font-size:26px;font-weight:300"><span id="year">$5,400</span> <span class="muted sm">a year</span></p>
+<p class="sm soft" style="margin:36px 0 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)"><span id="formula">30 missed calls × 50% answered × 20% book × $150 = $450 a month</span></p>
+<p class="xs muted" style="margin:14px 0 0;max-width:34em">An illustration from your own inputs. It's gross revenue, not profit, and doesn't subtract your costs or your Sitemind plan.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:36px"><a class="btn" href="/pricing/">Build a package</a><a class="btn ghost" href="/ai/">Hear the AI receptionist</a></div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="foot"><div class="wrap">
+<div class="cols">
+<div><a class="mark" href="/" style="font-size:34px">sitemind<span>.</span></a><p style="margin:14px 0 0;max-width:22em">Websites and AI for local businesses. Bentonville, Arkansas.</p><p style="margin:10px 0 0" class="soft">An OpenAI OpenWorks Partner</p></div>
+<div class="col"><a href="mailto:cam@sitemind.dev" style="color:#f4f2ee">cam@sitemind.dev</a><a href="tel:+14127060815" style="color:#f4f2ee">Cam Mitch · (412) 706-0815</a><a href="tel:+19707930370" style="color:#f4f2ee">Emmanuel · (970) 793-0370</a></div>
+<div class="col"><a href="/work/">Work</a><a href="/examples/">Templates</a><a href="/review/">Free website review</a><a href="/calculator/">Missed-call calculator</a></div>
+<div class="col"><a href="/legal/#privacy">Privacy</a><a href="/legal/#terms">Terms</a></div>
+</div>
+<p class="xs" style="margin:56px 0 0">© 2026 Sitemind</p>
+</div></footer>
+</div>
+<script src="/assets/site.js" defer></script>
+<script>(function(){
+var ss=document.querySelectorAll('[data-s]');function f(n){return '$'+Math.round(n).toLocaleString('en-US')}
+function draw(){var v={};ss.forEach(function(s){v[s.dataset.s]=+s.value;document.querySelectorAll('[data-v='+s.dataset.s+']').forEach(function(e){e.textContent=s.value})});var m=v.calls*v.rec/100*v.conv/100*v.val;document.getElementById('month').textContent=f(m);document.getElementById('year').textContent=f(m*12);document.getElementById('formula').textContent=v.calls+' missed calls × '+v.rec+'% answered × '+v.conv+'% book × $'+v.val+' = '+f(m)+' a month'}
+ss.forEach(function(s){s.addEventListener('input',draw)});draw();
+})();</script>
+</body>
+</html>
