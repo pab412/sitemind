@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rise Forward Youth Collective</title>
+<meta name="description" content="Rise Forward Youth Collective supports young people impacted by foster care, the justice system, poverty, welfare systems and homelessness.">
+<meta name="theme-color" content="#1d2024">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preload" href="fonts/instrument.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero.jpg" as="image" media="(min-width: 761px)">
+<link rel="preload" href="img/hero-m.jpg" as="image" media="(max-width: 760px)">
+<style>
+/* VOICE: steady, warm, credible. A youth nonprofit that sounds like it shows up every week.
+   PICTURE: golden-hour photography of young people, set in a quiet graphite-and-stone frame so the light in the photos does the talking.
+   COLOUR: graphite and warm stone grays, one sunlit gold for giving and the main action.
+   TYPE: Instrument Serif for headlines, Hanken Grotesk for reading and interface.
+   MOTION: one orchestrated hero entrance; photos rise into place once as you scroll; hover lifts on images. Reduced motion respected. */
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+:root{
+--ink:#1d2024;--ink2:#2b2f34;--slate:#50565e;--mute:#6a7078;--line:#dcd9d3;--line2:#cfcbc4;
+--paper:#f6f5f2;--stone:#ebe8e3;--white:#fff;--sun:#f3b23c;--sun2:#ffc65c;--sun-ink:#2a1c00;
+--dline:rgba(255,255,255,.14);--dmute:#aeb3ba;
+--serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+--top:108px;--pad:clamp(20px,4.5vw,64px);--max:1280px;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:calc(var(--top) + 16px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.62 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:400;text-wrap:balance}
+h1,h2{font-family:var(--serif);letter-spacing:-.012em;line-height:1.02}
+h1{font-size:clamp(46px,7.4vw,104px)}
+h2{font-size:clamp(36px,4.8vw,64px)}
+h3{font-family:var(--sans);font-weight:600;font-size:clamp(19px,1.6vw,21px);line-height:1.3;letter-spacing:-.005em}
+p,ul,ol{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+.lede{font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:var(--slate);max-width:36em}
+.dark .lede,.on-photo .lede{color:#d9dce0}
+.mute{color:var(--mute)}
+.dark .mute{color:var(--dmute)}
+.small{font-size:14px}
+.note{font-size:13.5px;color:var(--mute);line-height:1.5}
+.dark .note{color:var(--dmute)}
+.kicker{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:600;color:var(--slate)}
+.kicker::before{content:"";width:28px;height:2px;background:var(--sun);flex:none}
+.dark .kicker,.on-photo .kicker{color:#e6e8eb}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--sun);color:var(--sun-ink);padding:10px 14px;border-radius:6px;font-weight:600}
+.skip:focus{left:8px}
+:focus-visible{outline:2.5px solid var(--sun);outline-offset:3px;border-radius:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;border:1.5px solid transparent;font:600 16px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,box-shadow .25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn.sun{background:var(--sun);color:var(--sun-ink)}
+.btn.sun:hover{background:var(--sun2);box-shadow:0 10px 28px -10px rgba(243,178,60,.75)}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ink:hover{background:#000}
+.btn.glass{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn.glass:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:#fff}
+.dark .btn.line{color:#fff;border-color:rgba(255,255,255,.5)}
+.dark .btn.line:hover{background:#fff;color:var(--ink)}
+.btn.sm{min-height:42px;padding:0 20px;font-size:15px}
+.btn.wide{width:100%}
+.arrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:2px}
+.arrow svg{transition:transform .25s var(--ease)}
+.arrow:hover svg{transform:translateX(4px)}
+.tlink{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:600}
+
+/* top: crisis line + nav */
+.top{position:fixed;inset:0 0 auto;z-index:50;color:#fff}
+.help{height:36px;background:#121417;font-size:13.5px;display:flex;align-items:center}
+.help .wrap{width:100%;display:flex;justify-content:space-between;gap:16px;align-items:center;white-space:nowrap}
+.help span{overflow:hidden;text-overflow:ellipsis}
+.help a{color:var(--sun);font-weight:600;text-decoration:none}
+.help a:hover{text-decoration:underline}
+.nav{height:72px;transition:background .35s,backdrop-filter .35s,box-shadow .35s}
+.top.solid .nav,body:not(.over) .nav{background:rgba(29,32,36,.92);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.navin{height:100%;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.brand b{display:block;font:400 25px/1 var(--serif);letter-spacing:.005em}
+.brand small{display:block;font-size:11.5px;letter-spacing:.06em;color:#cfd3d8;margin-top:3px}
+.links{display:flex;gap:4px;margin-left:auto}
+.links a{position:relative;padding:10px 12px;font-size:15px;font-weight:500;text-decoration:none;color:#e9ebee;border-radius:6px}
+.links a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1.5px;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.links a:hover::after,.links a[aria-current]::after{transform:scaleX(1)}
+.links a[aria-current]{color:#fff}
+.navcta{display:flex;align-items:center;gap:10px}
+.cartbtn{position:relative;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .25s,border-color .25s}
+.cartbtn:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.cartbtn i{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--sun);color:var(--sun-ink);font:700 11.5px/20px var(--sans);text-align:center;font-style:normal}
+.menu{display:none;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;cursor:pointer;place-items:center}
+.menu span{display:block;width:18px;height:1.5px;background:currentColor;position:relative;transition:background .2s}
+.menu span::before,.menu span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:currentColor;transition:transform .3s var(--ease)}
+.menu span::before{top:-6px}.menu span::after{top:6px}
+.menu[aria-expanded=true] span{background:transparent}
+.menu[aria-expanded=true] span::before{transform:translateY(6px) rotate(45deg)}
+.menu[aria-expanded=true] span::after{transform:translateY(-6px) rotate(-45deg)}
+.mnav{position:fixed;z-index:49;inset:var(--top) 0 0;background:var(--ink);padding:28px var(--pad) 40px;display:flex;flex-direction:column;overflow:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .3s var(--ease),visibility .3s}
+.mnav.open{opacity:1;visibility:visible;transform:none}
+.mnav a{font:400 clamp(34px,9vw,44px)/1.15 var(--serif);text-decoration:none;padding:6px 0;color:#fff}
+.mnav a[aria-current]{color:var(--sun)}
+.mnav a.btn{margin-top:28px;padding:0 26px;min-height:54px;font:600 17px/1 var(--sans);color:var(--sun-ink)}
+body.menu-open .nav{background:var(--ink)!important}
+.mnav p{margin-top:24px;color:var(--dmute);font-size:15px}
+
+/* pages */
+[data-page]{display:none}
+[data-page].on{display:block;animation:pagein .5s var(--ease)}
+@keyframes pagein{from{opacity:0}to{opacity:1}}
+.sec{padding-block:clamp(72px,10vw,140px)}
+.sec.tight{padding-block:clamp(56px,7vw,96px)}
+.dark{background:var(--ink);color:#fff}
+.stone{background:var(--stone)}
+.white{background:#fff}
+.head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.head h2{margin-top:16px}
+
+/* hero */
+.hero{position:relative;min-height:max(640px,100svh);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#2b2116}
+.hero picture,.hero .bg{position:absolute;inset:0}
+.hero .bg img,.hero picture img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero .bg{transform:scale(1.08);animation:zoom 2.6s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,21,.6) 0,rgba(17,18,21,0) 240px),linear-gradient(90deg,rgba(17,18,21,.82) 0%,rgba(17,18,21,.55) 38%,rgba(17,18,21,.08) 72%),linear-gradient(0deg,rgba(17,18,21,.75) 0%,rgba(17,18,21,0) 45%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:calc(var(--top) + 40px);padding-bottom:clamp(40px,6vw,72px)}
+.hero h1{max-width:10.5em}
+.hero .lede{margin-top:24px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:clamp(48px,7vw,88px);padding-top:22px;border-top:1px solid rgba(255,255,255,.22);font-size:15.5px;color:#e3e5e8}
+.hero-foot a{color:#fff}
+.rise{opacity:0;transform:translateY(26px);animation:rise 1s var(--ease) forwards}
+.rise.d1{animation-delay:.15s}.rise.d2{animation-delay:.3s}.rise.d3{animation-delay:.45s}.rise.d4{animation-delay:.6s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+/* inner page heroes */
+.phero{position:relative;min-height:clamp(460px,64vh,640px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#24272b}
+.phero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.phero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,18,21,.55) 0,rgba(17,18,21,0) 220px),linear-gradient(0deg,rgba(17,18,21,.86) 0%,rgba(17,18,21,.35) 55%,rgba(17,18,21,.25) 100%),linear-gradient(90deg,rgba(17,18,21,.5),rgba(17,18,21,0) 70%)}
+.phero .wrap{position:relative;z-index:1;width:100%;padding-top:calc(var(--top) + 48px);padding-bottom:clamp(40px,5.5vw,72px)}
+.phero h1{font-size:clamp(44px,6.4vw,88px);max-width:11em;margin-top:18px}
+.phero .lede{margin-top:20px;color:#dde0e4}
+.plain{padding-top:calc(var(--top) + clamp(40px,6vw,80px));padding-bottom:clamp(28px,4vw,48px)}
+.plain h1{font-size:clamp(44px,6vw,80px);margin-top:16px}
+.plain .lede{margin-top:18px}
+
+/* intro statement */
+.statement{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center}
+.statement .big{font:400 clamp(30px,3.4vw,46px)/1.15 var(--serif);letter-spacing:-.005em;text-wrap:pretty}
+.statement .ph{border-radius:10px;overflow:hidden;aspect-ratio:4/5}
+.statement .ph img{width:100%;height:100%;object-fit:cover;object-position:35% 50%}
+.vision{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--line2)}
+.vision h3{font-size:16px;color:var(--slate)}
+.vision p{margin-top:8px}
+
+/* photo cards */
+.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.pcard{position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:3/4.2;border-radius:10px;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;background:#2b2f34}
+.pcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.1s var(--ease)}
+.pcard::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(15,16,18,.9) 0%,rgba(15,16,18,.45) 42%,rgba(15,16,18,0) 70%);transition:opacity .4s}
+.pcard:hover img{transform:scale(1.06)}
+.pcard .in{padding:22px 22px 24px}
+.pcard small{display:block;font-size:13px;font-weight:600;color:var(--sun);letter-spacing:.01em}
+.pcard h3{font:400 30px/1.05 var(--serif);margin-top:6px;letter-spacing:0}
+.pcard p{font-size:15px;line-height:1.5;color:#dfe2e6;margin-top:10px}
+.pcard .go{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14.5px;font-weight:600}
+.pcard .go svg{transition:transform .3s var(--ease)}
+.pcard:hover .go svg{transform:translateX(5px)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--dline)}
+.stat{padding:36px 32px 8px 0}
+.stat+.stat{padding-left:32px;border-left:1px solid var(--dline)}
+.stat b{display:block;font:400 clamp(56px,6.6vw,92px)/.95 var(--serif);color:var(--sun);letter-spacing:-.02em}
+.stat p{margin-top:18px;color:#e3e5e8;max-width:22em}
+.stat a{display:inline-block;margin-top:14px;font-size:13px;color:var(--dmute);text-underline-offset:3px}
+.stat a:hover{color:#fff}
+.light-stats{border-top-color:var(--line2)}
+.light-stats .stat+.stat{border-left-color:var(--line2)}
+.light-stats .stat b{color:var(--ink)}
+.light-stats .stat p{color:var(--slate)}
+.light-stats .stat a{color:var(--mute)}
+
+/* ways to help */
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.4vw,32px)}
+.way .ph{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#d8d5cf}
+.way .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.way:hover .ph img{transform:scale(1.05)}
+.way h3{font:400 34px/1.05 var(--serif);margin-top:24px}
+.way p{margin-top:10px;color:var(--slate)}
+.way .btn{margin-top:22px}
+
+/* feature split */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.feature .ph{border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:#2b2f34}
+.feature .ph img{width:100%;height:100%;object-fit:cover}
+.feature h2{margin-top:16px}
+.feature .lede{margin-top:22px}
+
+/* cta band */
+.band-photo{position:relative;color:#fff;overflow:hidden;background:#2b2116}
+.band-photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.band-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,18,21,.85),rgba(17,18,21,.45) 60%,rgba(17,18,21,.2))}
+.band-photo .wrap{position:relative;z-index:1;padding-block:clamp(96px,13vw,180px)}
+.band-photo h2{max-width:11em;font-size:clamp(40px,5.6vw,76px)}
+
+/* lists and rows */
+.rows{border-top:1px solid var(--line2)}
+.rows>*{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr) auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line2);text-decoration:none}
+.rows h3{font:400 30px/1.1 var(--serif)}
+.status{display:inline-block;justify-self:start;padding:6px 12px;border-radius:999px;background:var(--stone);color:var(--slate);font-size:13px;font-weight:600;white-space:nowrap}
+.white .status,.stone .status{background:#fff;border:1px solid var(--line)}
+.dark .status{background:rgba(255,255,255,.1);color:#e3e5e8}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line2)}
+.grid3>div{padding:30px 32px 34px 0;border-bottom:1px solid var(--line2)}
+.grid3>div:not(:nth-child(3n+1)){padding-left:32px;border-left:1px solid var(--line2)}
+.grid3 h3{font:400 28px/1.1 var(--serif)}
+.grid3 p{margin-top:10px;color:var(--slate)}
+.dark .grid3,.dark .grid3>div{border-color:var(--dline)}
+.dark .grid3 p{color:var(--dmute)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.grid4>div{padding-top:22px;border-top:2px solid var(--ink)}
+.grid4 h3{font:400 28px/1.1 var(--serif)}
+.grid4 p{margin-top:10px;color:var(--slate)}
+.steps{counter-reset:s;display:grid;gap:0;margin-top:28px;border-top:1px solid var(--line2)}
+.steps li{list-style:none;counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:8px;padding:20px 0;border-bottom:1px solid var(--line2)}
+.steps li::before{content:counter(s);font:400 30px/1 var(--serif);color:var(--slate)}
+.steps{padding:0}
+
+/* programs page */
+.prog{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start;padding-block:clamp(56px,7vw,96px);border-bottom:1px solid var(--line2)}
+.prog:nth-child(even) .ph{order:2}
+.prog .ph{position:sticky;top:calc(var(--top) + 24px);border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:#2b2f34}
+.prog .ph img{width:100%;height:100%;object-fit:cover}
+.prog h2{margin-top:18px}
+.prog .who{margin-top:16px;font-weight:600;font-size:18px}
+.prog .intro{margin-top:12px;color:var(--slate)}
+.prog h4{font-size:15px;font-weight:600;color:var(--slate);margin-top:34px}
+.prog ul{padding:0;margin-top:12px;border-top:1px solid var(--line2)}
+.prog li{list-style:none;padding:12px 0 12px 28px;border-bottom:1px solid var(--line2);position:relative}
+.prog li::before{content:"";position:absolute;left:2px;top:22px;width:12px;height:2px;background:var(--sun)}
+.prog .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;font-size:15px;font-weight:500;background:rgba(255,255,255,.06);cursor:pointer;font-family:var(--sans);transition:background .25s,color .25s,border-color .25s}
+.chip:hover{background:#fff;color:var(--ink);border-color:#fff}
+.plain .chip,.light-chips .chip{color:var(--ink);border-color:var(--line2);background:#fff}
+.plain .chip:hover,.plain .chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* forms */
+.formcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(24px,3vw,40px);box-shadow:0 1px 2px rgba(20,22,25,.04),0 24px 48px -32px rgba(20,22,25,.25)}
+.formcard h3{font:400 30px/1.1 var(--serif)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.f{display:grid;gap:7px;font-size:14.5px;font-weight:600;color:var(--ink2)}
+.f input,.f select,.f textarea{width:100%;font:400 16px/1.4 var(--sans);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:13px 14px;transition:border-color .2s,background .2s,box-shadow .2s}
+.f textarea{min-height:120px;resize:vertical}
+.f input:hover,.f select:hover,.f textarea:hover{border-color:var(--line2)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:0 0 0 4px rgba(243,178,60,.28)}
+.f [aria-invalid=true]{border-color:#b3261e;background:#fff7f6}
+fieldset{border:0;padding:0;margin:0}
+legend{font-size:14.5px;font-weight:600;color:var(--ink2);padding:0;margin-bottom:10px}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.check{display:flex;gap:10px;align-items:center;padding:11px 14px;border:1.5px solid var(--line);border-radius:8px;cursor:pointer;font-size:15px;transition:border-color .2s,background .2s}
+.check:hover{border-color:var(--line2)}
+.check:has(input:checked){border-color:var(--ink);background:var(--paper)}
+.check input{accent-color:var(--ink);width:17px;height:17px;margin:0;flex:none}
+.done{display:none;margin-top:16px;padding:14px 16px;border-radius:8px;background:#f1efe9;border-left:3px solid var(--sun);font-size:15px}
+.done.show{display:block}
+.mt{margin-top:16px}
+
+/* donate */
+.seg{display:grid;grid-template-columns:1fr 1fr;padding:5px;background:var(--stone);border-radius:999px}
+.seg button{min-height:46px;border:0;border-radius:999px;background:transparent;font:600 15.5px var(--sans);color:var(--slate);cursor:pointer;transition:background .25s,color .25s,box-shadow .25s}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.amounts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.amt{min-height:58px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font:400 26px/1 var(--serif);cursor:pointer;color:var(--ink);transition:border-color .2s,background .2s,color .2s,transform .2s}
+.amt:hover{border-color:var(--ink);transform:translateY(-1px)}
+.amt[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.donate-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.funds>div{padding:18px 0;border-bottom:1px solid var(--line2);transition:opacity .3s}
+.funds>div:first-child{border-top:1px solid var(--line2)}
+.funds b{font-weight:600}
+.funds .sel b::after{content:"Selected";margin-left:10px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--sun);color:var(--sun-ink);vertical-align:2px}
+
+/* shop */
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.pgrid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.prod{text-decoration:none;display:block}
+.pimg{aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:#e3e0da;position:relative}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.prod:hover .pimg img{transform:scale(1.05)}
+.pimg .tag{position:absolute;left:12px;top:12px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:12px;font-weight:600;color:var(--slate)}
+.prod h3{margin-top:16px;font:400 26px/1.1 var(--serif)}
+.prod p{margin-top:6px;color:var(--slate);font-size:15px}
+.pdp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.pdp h1{font-size:clamp(40px,5vw,64px)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;background:#fff;height:50px}
+.qty button{width:44px;height:100%;border:0;background:transparent;font-size:20px;cursor:pointer;color:var(--ink);border-radius:999px}
+.qty span{min-width:28px;text-align:center;font-weight:600}
+.sizes{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.sizes button{min-width:52px;height:44px;padding:0 12px;border-radius:8px;border:1.5px solid var(--line);background:#fff;font:600 15px var(--sans);cursor:pointer;color:var(--ink)}
+.sizes button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* cart drawer */
+.drawer{position:fixed;inset:0;z-index:80;visibility:hidden}
+.drawer.open{visibility:visible}
+.scrim{position:absolute;inset:0;background:rgba(15,16,18,.5);opacity:0;transition:opacity .35s}
+.drawer.open .scrim{opacity:1}
+.drawer aside{position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .45s var(--ease)}
+.drawer.open aside{transform:none}
+.drawer header,.drawer footer{padding:22px 24px}
+.drawer header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.drawer header h3{font:400 30px/1 var(--serif)}
+.drawer footer{border-top:1px solid var(--line);background:#fff}
+.x{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:22px;line-height:1;cursor:pointer;color:var(--ink)}
+.citems{flex:1;overflow:auto;padding:8px 24px}
+.citem{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.citem .pimg{aspect-ratio:1;border-radius:8px}
+.citem .qty{height:38px}
+.citem .qty button{width:34px;font-size:17px}
+.sum>div{display:flex;justify-content:space-between;padding:4px 0;font-size:15.5px}
+.sum>div:last-child{font-weight:700;font-size:17px;padding-top:10px;margin-top:6px;border-top:1px solid var(--line)}
+
+/* footer */
+footer.site{background:#15171a;color:#cfd3d8;padding-block:clamp(64px,8vw,104px) 36px}
+.fbig{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;padding-bottom:clamp(44px,6vw,72px);border-bottom:1px solid var(--dline)}
+.fbig h2{color:#fff;max-width:12em;font-size:clamp(36px,4.4vw,58px)}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:40px;padding-top:48px}
+.fcols nav{display:grid;gap:10px;align-content:start}
+.fcols nav b,.fcols form b{color:#fff;font-weight:600;font-size:15px;margin-bottom:4px}
+.fcols a{text-decoration:none;color:#cfd3d8}
+.fcols a:hover{color:#fff}
+.fnews{display:flex;gap:8px;margin-top:12px}
+.fnews input{flex:1;min-height:48px;border-radius:999px;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;padding:0 18px;font:400 15.5px var(--sans)}
+.fnews input::placeholder{color:#9aa0a8}
+.fnews input:focus{outline:none;border-color:var(--sun)}
+.legal{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--dline);font-size:13.5px;color:#9aa0a8}
+
+/* reveal */
+.js [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js [data-reveal].in{opacity:1;transform:none}
+.js [data-reveal][data-d="1"]{transition-delay:.08s}.js [data-reveal][data-d="2"]{transition-delay:.16s}.js [data-reveal][data-d="3"]{transition-delay:.24s}
+
+/* responsive */
+@media (max-width:1100px){
+.links{display:none}.menu{display:grid}.navcta{margin-left:auto}
+.cards4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid4{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
+.fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+:root{--top:100px}
+body{font-size:16.5px}
+.nav{height:64px}
+.brand b{font-size:22px}.brand small{font-size:10.5px}
+.navcta .btn.sun{display:none}
+.hero{min-height:max(620px,100svh)}
+.hero::after{background:linear-gradient(180deg,rgba(17,18,21,.55) 0,rgba(17,18,21,0) 200px),linear-gradient(0deg,rgba(17,18,21,.92) 0%,rgba(17,18,21,.7) 42%,rgba(17,18,21,.15) 75%),linear-gradient(90deg,rgba(17,18,21,.35),rgba(17,18,21,0))}
+.hero .bg img,.hero picture img{object-position:52% 50%}
+.ctas .btn{flex:1 1 auto}
+.hero-foot{margin-top:40px}
+.head,.statement,.feature,.donate-grid,.pdp,.prog{grid-template-columns:minmax(0,1fr)}
+.statement .ph{aspect-ratio:4/3}
+.feature .ph{aspect-ratio:4/3.4}
+.vision{grid-template-columns:1fr}
+.cards4{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scrollbar-width:none;padding-bottom:4px}
+.cards4::-webkit-scrollbar{display:none}
+.cards4 .pcard{flex:0 0 80%;scroll-snap-align:start;scroll-margin-left:var(--pad)}
+.stats{grid-template-columns:1fr}
+.stat,.stat+.stat{padding:28px 0;border-left:0}
+.stat+.stat{border-top:1px solid var(--dline)}
+.light-stats .stat+.stat{border-top-color:var(--line2)}
+.ways{grid-template-columns:1fr;gap:44px}
+.rows>*{grid-template-columns:1fr;gap:8px}
+.grid3{grid-template-columns:1fr}
+.grid3>div,.grid3>div:not(:nth-child(3n+1)){padding:24px 0;border-left:0}
+.grid4{grid-template-columns:1fr}
+.prog .ph{position:relative;top:0;aspect-ratio:4/3}
+.prog:nth-child(even) .ph{order:0}
+.fgrid,.checks{grid-template-columns:1fr}
+.amounts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pgrid,.pgrid.four{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.prod h3{font-size:21px;margin-top:12px}
+.prod p{font-size:14px}
+.fcols{grid-template-columns:1fr;gap:32px}
+.fbig .btn{width:100%}
+.band-photo::after{background:linear-gradient(0deg,rgba(17,18,21,.88),rgba(17,18,21,.45))}
+}
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+.hero .bg{transform:none}.rise{opacity:1;transform:none}
+.js [data-reveal]{opacity:1;transform:none}
+}
+.concept{position:fixed;left:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 14px;border-radius:999px;background:rgba(21,23,26,.92);color:#fff;font:500 13.5px/1.2 var(--sans);text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
+.concept i{width:8px;height:8px;border-radius:50%;background:var(--sun);flex:none;box-shadow:0 0 0 4px rgba(243,178,60,.22)}
+.concept b{font-weight:600}
+.concept:hover{background:#000}
+@media (max-width:760px){.concept{left:10px;bottom:10px;font-size:12.5px;padding:8px 13px 8px 11px}}
+@media print{.concept{display:none}}
+</style>
+</head>
+<body class="over">
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top" id="top">
+<div class="help"><div class="wrap"><span>In crisis? Call or text <a href="tel:988">988</a>, free, 24/7.</span><a href="#get-help">Get help from us</a></div></div>
+<header class="nav">
+<div class="wrap navin">
+<a class="brand" href="#home" aria-label="Rise Forward Youth Collective, home">
+<svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19.25" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M9 25.5h22" stroke="#f3b23c" stroke-width="2.2" stroke-linecap="round"/><path d="M13 25.5a7 7 0 0 1 14 0" fill="#f3b23c"/><path d="M20 11.5v3M12.5 15l2 2M27.5 15l-2 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+<span><b>Rise Forward</b><small>Youth Collective</small></span></a>
+<nav class="links" aria-label="Main">
+<a href="#about">About</a><a href="#programs">Programs</a><a href="#partners">Partnerships</a><a href="#get-involved">Get involved</a><a href="#shop">Shop</a><a href="#contact">Contact</a>
+</nav>
+<div class="navcta">
+<button class="cartbtn" type="button" id="cartOpen" aria-label="Open cart"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><i id="cartCount" hidden>0</i></button>
+<a class="btn sun sm" href="#donate">Donate</a>
+<button class="menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Open menu"><span></span></button>
+</div>
+</div>
+</header>
+</div>
+<nav class="mnav" id="mnav" aria-label="Mobile">
+<a href="#about">About</a><a href="#programs">Programs</a><a href="#partners">Partnerships</a><a href="#get-involved">Get involved</a><a href="#shop">Shop</a><a href="#contact">Contact</a><a href="#get-help">Get help</a>
+<a class="btn sun" href="#donate">Donate</a>
+<p>In crisis? Call or text <a class="tlink" href="tel:988" style="font:inherit;color:#fff;padding:0">988</a>, free, 24/7.</p>
+</nav>
+
+<main id="main">
+<!-- ============ HOME ============ -->
+<section data-page="home" data-over>
+<div class="hero">
+<div class="bg"><picture><source media="(max-width:760px)" srcset="img/hero-m.jpg"><img src="img/hero.jpg" alt="Four young people celebrating on a hilltop at sunset" width="2400" height="1600" fetchpriority="high"></picture></div>
+<div class="wrap on-photo">
+<p class="kicker rise">Youth nonprofit, Northwest Arkansas</p>
+<h1 class="rise d1" style="margin-top:20px">Where you start shouldn't decide where you go.</h1>
+<p class="lede rise d2">We stand with young people who have been through foster care, the justice system, poverty, welfare systems or homelessness, with mentors, resources and real opportunities to build the life they choose.</p>
+<div class="ctas rise d3"><a class="btn sun" href="#donate">Donate</a><a class="btn glass" href="#get-involved">Volunteer</a><a class="btn glass" href="#partners">Become a partner</a></div>
+<div class="hero-foot rise d4"><span>Are you a young person looking for support?</span><a class="arrow" href="#get-help">Start here <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+</div>
+</div>
+
+<div class="sec"><div class="wrap statement">
+<div class="ph" data-reveal><img src="img/friends.jpg" alt="Young friends laughing together on outdoor steps" width="1600" height="901" loading="lazy"></div>
+<div data-reveal data-d="1">
+<p class="kicker">Our mission</p>
+<p class="big" style="margin-top:22px">We walk alongside young people until they're standing on their own: connecting them to the people, resources and opportunities they need to build stable, self-directed lives.</p>
+<div class="vision">
+<div><h3>Our vision</h3><p>A future where a young person's starting point never decides where they can go.</p></div>
+<div><h3>Who we serve</h3><p>Young people, roughly ages 14 to 24, whose path has been shaped by systems they didn't choose.</p></div>
+</div>
+<p class="note" style="margin-top:22px">Draft mission and vision. Final wording to be set by the founder and board.</p>
+<p style="margin-top:26px"><a class="arrow" href="#about">Read our story <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></p>
+</div>
+</div></div>
+
+<div class="sec white"><div class="wrap">
+<div class="head"><div><p class="kicker">Who we serve, and how</p><h2>A program for every starting point.</h2></div><p class="lede">Four programs in development, each built around a different transition, with youth who have lived it helping shape the work.</p></div>
+<div class="cards4" id="homePrograms"></div>
+</div></div>
+
+<div class="sec dark"><div class="wrap">
+<div class="head"><div><p class="kicker">Why this work matters</p><h2>The need is real, and it's measurable.</h2></div><p class="lede">National figures that show why we start at the moments young people most often fall through the gaps.</p></div>
+<div class="stats" data-reveal>
+<div class="stat"><b>15,379</b><p>young people aged out of U.S. foster care in fiscal year 2024 without a permanent family.</p><a href="https://adoptioncouncil.org/article/foster-care-and-adoption-statistics">National Council for Adoption, from federal AFCARS data</a></div>
+<div class="stat"><b>4.2M</b><p>U.S. youth and young adults, ages 13 to 25, experience some form of homelessness in a year.</p><a href="https://huduser.gov/portal/node/9693">Chapin Hall, Voices of Youth Count, via HUD</a></div>
+<div class="stat"><b>1 in 10</b><p>young adults ages 18 to 25 experience homelessness over a year, and at least 1 in 30 teens ages 13 to 17.</p><a href="https://www.chapinhall.org/news/ahead-of-congressional-reauthorization-new-study-shows-greater-reform-is-needed-in-runaway-and-homeless-youth-act/">Chapin Hall</a></div>
+</div>
+</div></div>
+
+<div class="sec"><div class="wrap">
+<div class="head"><div><p class="kicker">Get involved</p><h2>There's a place for you in this work.</h2></div><p class="lede">Give, show up or bring your organization to the table. Every role is about being consistent for young people.</p></div>
+<div class="ways">
+<div class="way" data-reveal><div class="ph"><img src="img/give.jpg" alt="A smiling volunteer holding a box of fresh groceries" width="1400" height="2100" loading="lazy" style="object-position:50% 18%"></div><h3>Give</h3><p>One-time or monthly gifts fund programs directly. You choose where your gift goes.</p><a class="btn sun sm" href="#donate">Donate</a></div>
+<div class="way" data-reveal data-d="1"><div class="ph"><img src="img/volunteer.jpg" alt="A volunteer carrying a donation box" width="1600" height="1067" loading="lazy"></div><h3>Volunteer or mentor</h3><p>Share your time, skills or experience with a young person building their next step.</p><a class="btn ink sm" href="#get-involved">Get involved</a></div>
+<div class="way" data-reveal data-d="2"><div class="ph"><img src="img/partners.jpg" alt="A group of young adults talking and laughing outdoors" width="1600" height="1066" loading="lazy"></div><h3>Partner with us</h3><p>Service providers, employers, funders and community groups: let's build this together.</p><a class="btn line sm" href="#partners">Explore partnerships</a></div>
+</div>
+</div></div>
+
+<div class="sec stone"><div class="wrap feature">
+<div class="ph" data-reveal><img src="img/graduate.jpg" alt="A smiling graduate in cap and gown" width="1400" height="2114" loading="lazy" style="object-position:50% 25%"></div>
+<div data-reveal data-d="1">
+<p class="kicker">Where we're headed</p>
+<h2>A plan, a person and a place for every young person.</h2>
+<p class="lede">In our first years we're building four core programs, forming partnerships with local providers and employers, and recruiting our first mentors. Long term, every young person leaving a system in our community should have someone in their corner.</p>
+<div class="ctas"><a class="btn ink" href="#programs">See our programs</a><a class="btn line" href="#about">About us</a></div>
+</div>
+</div></div>
+
+<div class="sec white"><div class="wrap">
+<div class="head"><div><p class="kicker">Shop</p><h2>Wear what you stand for.</h2></div><div><p class="lede">Apparel and goods from Rise Forward, plus move-in kits you can sponsor for a young person's first home.</p><p style="margin-top:20px"><a class="arrow" href="#shop">Visit the shop <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></p></div></div>
+<div class="pgrid four" id="homeProducts"></div>
+</div></div>
+
+<div class="band-photo">
+<img src="img/together.jpg" alt="" width="1600" height="1128" loading="lazy">
+<div class="wrap">
+<p class="kicker" style="color:#e6e8eb">Make the next step possible</p>
+<h2 style="margin-top:18px">Help a young person take the next step.</h2>
+<div class="ctas"><a class="btn sun" href="#donate">Donate today</a><a class="btn glass" href="#get-involved">Volunteer</a></div>
+</div>
+</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section data-page="about" data-over>
+<div class="phero"><img src="img/about.jpg" alt="Friends standing together in warm evening light" width="1600" height="1066"><div class="wrap on-photo"><p class="kicker">About us</p><h1>Built for the young people systems leave behind.</h1></div></div>
+<div class="sec"><div class="wrap statement">
+<div class="ph" data-reveal><img src="img/together.jpg" alt="Young friends smiling together outdoors" width="1600" height="1128" loading="lazy" style="object-position:50% 50%"></div>
+<div data-reveal data-d="1">
+<p class="kicker">Our story</p>
+<p class="big" style="margin-top:22px">The moment a young person leaves foster care, walks out of detention or loses a place to stay should be the start of something, not the end of support.</p>
+<p class="lede" style="margin-top:22px">Too many young people reach adulthood with no one in their corner and a stack of systems to navigate alone. We're building the organization we wish existed for them: consistent, practical and led by people who listen to youth first.</p>
+<p class="note" style="margin-top:20px">Draft story. Replace with the founder's own words and history.</p>
+</div>
+</div></div>
+<div class="sec white"><div class="wrap">
+<div class="head"><div><p class="kicker">Mission and values</p><h2>What we stand on.</h2></div><p class="lede">Our mission is to connect young people impacted by foster care, the justice system, poverty, welfare systems and homelessness to what they need to build stable, self-directed lives.</p></div>
+<div class="grid4" data-reveal>
+<div><h3>Youth voice first</h3><p>Young people with lived experience help design and review every program.</p></div>
+<div><h3>Dignity</h3><p>No one has to prove they deserve help to get it.</p></div>
+<div><h3>Consistency</h3><p>We stay. Relationships last longer than a single program.</p></div>
+<div><h3>Partnership</h3><p>We work with the organizations already doing good work, not around them.</p></div>
+</div>
+</div></div>
+<div class="sec dark"><div class="wrap">
+<div class="head"><div><p class="kicker">The challenges young people face</p><h2>The gaps are where young people fall.</h2></div><p class="lede">Leaving care, coming home from detention, losing housing, or getting lost in benefits paperwork: each transition can undo years of progress without the right support.</p></div>
+<div class="stats" data-reveal>
+<div class="stat"><b>15,379</b><p>young people aged out of U.S. foster care in fiscal year 2024 without a permanent family.</p><a href="https://adoptioncouncil.org/article/foster-care-and-adoption-statistics">National Council for Adoption, from federal AFCARS data</a></div>
+<div class="stat"><b>4.2M</b><p>U.S. youth and young adults, ages 13 to 25, experience some form of homelessness in a year.</p><a href="https://huduser.gov/portal/node/9693">Chapin Hall, Voices of Youth Count, via HUD</a></div>
+<div class="stat"><b>1 in 10</b><p>young adults ages 18 to 25 experience homelessness over a year, and at least 1 in 30 teens ages 13 to 17.</p><a href="https://www.chapinhall.org/news/ahead-of-congressional-reauthorization-new-study-shows-greater-reform-is-needed-in-runaway-and-homeless-youth-act/">Chapin Hall</a></div>
+</div>
+</div></div>
+<div class="sec stone"><div class="wrap feature">
+<div class="ph" data-reveal><img src="img/graduate.jpg" alt="A smiling graduate in cap and gown" width="1400" height="2114" loading="lazy" style="object-position:50% 25%"></div>
+<div data-reveal data-d="1">
+<p class="kicker">Purpose and vision</p>
+<h2>A future where a starting point never decides the destination.</h2>
+<p class="lede">In our first years we're building the four core programs, forming partnerships with local service providers and employers, and recruiting our first mentors. Long term, we want every young person leaving a system in our community to have a plan, a person and a place.</p>
+<div class="ctas"><a class="btn sun" href="#donate">Support the work</a><a class="btn line" href="#partners">Partner with us</a></div>
+</div>
+</div></div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section data-page="programs" data-over>
+<div class="phero"><img src="img/programs.jpg" alt="A graduate holding her diploma outdoors" width="1800" height="1188" style="object-position:50% 15%"><div class="wrap on-photo"><p class="kicker">Programs and services</p><h1>Support for every starting point.</h1><p class="lede">Each program is in development. Descriptions, goals and resources will grow as we launch and learn from the young people we serve.</p>
+<nav class="jump" aria-label="Programs"><a class="chip" href="#program-launch">Launch</a><a class="chip" href="#program-second-start">Second Start</a><a class="chip" href="#program-steady-ground">Steady Ground</a><a class="chip" href="#program-navigate">Navigate</a></nav></div></div>
+<div class="wrap" id="programList"></div>
+<div class="sec tight"><div class="wrap head" style="margin-bottom:0"><div><p class="kicker">More to come</p><h2>Programs shaped by what young people tell us.</h2></div><div><p class="lede">As we grow we'll add support for education, parenting youth and mental health partnerships.</p><p style="margin-top:20px"><a class="arrow" href="#contact">Suggest a program <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></p></div></div></div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section data-page="partners" data-over>
+<div class="phero"><img src="img/partners.jpg" alt="Young adults talking and laughing together outdoors" width="1600" height="1066"><div class="wrap on-photo"><p class="kicker">Partnerships</p><h1>No organization can do this alone.</h1><p class="lede">We partner with service providers, employers, funders, schools and community groups to reach more young people and close the gaps between systems.</p><div class="ctas"><a class="btn sun" href="#partner-form">Start a partnership inquiry</a></div></div></div>
+<div class="sec white"><div class="wrap">
+<div class="head"><div><p class="kicker">Partnership opportunities</p><h2>How organizations contribute.</h2></div><p class="lede">Whatever your size or sector, there's a way to put what you already have to work for young people.</p></div>
+<div class="grid3" data-reveal>
+<div><h3>Service providers</h3><p>Refer young people both ways, co-deliver workshops, or share case management for youth in our programs.</p></div>
+<div><h3>Employers</h3><p>Offer internships, first jobs, job shadowing or interview practice for youth building work history.</p></div>
+<div><h3>Funders and foundations</h3><p>Fund a program, sponsor a cohort or support our operating costs as we grow.</p></div>
+<div><h3>Schools and colleges</h3><p>Connect students to support, host workshops, and help youth re-enroll or reach campus resources.</p></div>
+<div><h3>Community and faith groups</h3><p>Host drives, share space for programs and help us reach young people where they already are.</p></div>
+<div><h3>In-kind donors</h3><p>Contribute goods for move-in kits, hygiene essentials, professional clothing or tech.</p></div>
+</div>
+</div></div>
+<div class="sec"><div class="wrap donate-grid">
+<div><p class="kicker">Collaboration inquiries</p><h2 style="margin-top:16px">How partnership works.</h2>
+<ol class="steps"><li><span><b>Send an inquiry.</b> Tell us about your organization and what you'd like to do.</span></li><li><span><b>Talk it through.</b> We'll set up a call to match your goals to our programs.</span></li><li><span><b>Agree on the details.</b> Roles, data sharing and expectations go in writing.</span></li><li><span><b>Launch and report.</b> We start together and share what's working.</span></li></ol></div>
+<form class="formcard" id="partner-form" data-form="partner" novalidate>
+<h3>Partnership inquiry</h3>
+<div class="fgrid" style="margin-top:22px">
+<label class="f">Organization name<input name="org" required autocomplete="organization"></label>
+<label class="f">Your name<input name="name" required autocomplete="name"></label>
+<label class="f">Email<input name="email" type="email" required autocomplete="email"></label>
+<label class="f">Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+</div>
+<label class="f mt">Type of organization<select name="type"><option>Service provider</option><option>Employer or business</option><option>Funder or foundation</option><option>School or college</option><option>Community or faith group</option><option>Government agency</option><option>Other</option></select></label>
+<fieldset class="mt"><legend>How would you like to work together?</legend><div class="checks">
+<label class="check"><input type="checkbox" name="way" value="Referrals">Referrals</label><label class="check"><input type="checkbox" name="way" value="Funding">Funding or sponsorship</label>
+<label class="check"><input type="checkbox" name="way" value="Jobs">Jobs or internships</label><label class="check"><input type="checkbox" name="way" value="Space">Space or events</label>
+<label class="check"><input type="checkbox" name="way" value="In-kind">In-kind goods</label><label class="check"><input type="checkbox" name="way" value="Other">Something else</label></div></fieldset>
+<label class="f mt">Tell us more<textarea name="msg" placeholder="What you have in mind, and which young people you serve"></textarea></label>
+<button class="btn ink wide" type="submit" style="margin-top:20px">Send inquiry</button>
+<p class="done" role="status"></p>
+</form>
+</div></div>
+</section>
+
+<!-- ============ GET INVOLVED ============ -->
+<section data-page="get-involved" data-over>
+<div class="phero"><img src="img/volunteer.jpg" alt="A volunteer carrying a donation box" width="1600" height="1067"><div class="wrap on-photo"><p class="kicker">Get involved</p><h1>Show up for a young person.</h1><p class="lede">An hour a week, a skill you already have, or a voice for change. Every role here is about consistency.</p></div></div>
+<div class="sec white"><div class="wrap">
+<div class="head"><div><p class="kicker">Ways to help</p><h2>Volunteer, mentor, advocate.</h2></div><p class="lede">All roles working directly with youth are screened and trained. Mentorship opens once the program is ready.</p></div>
+<div class="rows" data-reveal>
+<div><h3>Mentor</h3><p class="mute">Meet with one young person regularly for at least a year. Join the interest list and we'll reach out when the program opens.</p><span class="status">Interest list</span></div>
+<div><h3>Skills volunteer</h3><p class="mute">Help with résumés, mock interviews, tutoring, budgeting, haircuts, photography, or legal and benefits know-how.</p><span class="status">Open</span></div>
+<div><h3>Events and drives</h3><p class="mute">Pack move-in kits, staff a community event or run a collection drive at your workplace, school or place of worship.</p><span class="status">Open</span></div>
+<div><h3>Community</h3><p class="mute">Bring your neighborhood, team or congregation in: host a gathering, share space, or help us meet young people where they are.</p><span class="status">Open</span></div>
+<div><h3>Advocate</h3><p class="mute">Share our work, speak up for youth-centered policy locally, and help us reach young people who need us.</p><span class="status">Open</span></div>
+</div>
+</div></div>
+<div class="sec"><div class="wrap donate-grid">
+<div><p class="kicker">Sign up</p><h2 style="margin-top:16px">Tell us how you'd like to help.</h2><p class="lede" style="margin-top:18px">We'll follow up with next steps, including any background check needed for roles working directly with youth.</p>
+<div class="ph" style="margin-top:32px;border-radius:10px;overflow:hidden;aspect-ratio:16/10"><img src="img/steady-ground.jpg" alt="Volunteers packing boxes of food donations" width="1600" height="1067" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div></div>
+<form class="formcard" data-form="volunteer" novalidate>
+<h3>Volunteer sign-up</h3>
+<div class="fgrid" style="margin-top:22px"><label class="f">First name<input name="first" required autocomplete="given-name"></label><label class="f">Last name<input name="last" required autocomplete="family-name"></label>
+<label class="f">Email<input name="email" type="email" required autocomplete="email"></label><label class="f">Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label></div>
+<fieldset class="mt"><legend>I'm interested in</legend><div class="checks">
+<label class="check"><input type="checkbox" name="role" value="Mentoring">Mentoring</label><label class="check"><input type="checkbox" name="role" value="Skills">Sharing a skill</label>
+<label class="check"><input type="checkbox" name="role" value="Events">Events and drives</label><label class="check"><input type="checkbox" name="role" value="Advocacy">Advocacy</label></div></fieldset>
+<label class="f mt">Anything you'd like us to know?<textarea name="msg" placeholder="Your skills, availability, or lived experience you'd like to share"></textarea></label>
+<button class="btn ink wide" type="submit" style="margin-top:20px">Sign up</button>
+<p class="done" role="status"></p>
+</form>
+</div></div>
+</section>
+
+<!-- ============ DONATE ============ -->
+<section data-page="donate" data-over>
+<div class="phero"><img src="img/donate.jpg" alt="Two volunteers packing donation boxes with fresh food" width="1600" height="1066" style="object-position:50% 40%"><div class="wrap on-photo"><p class="kicker">Donate</p><h1>Your gift opens a door.</h1><p class="lede">Gifts fund our programs directly: move-in essentials, transportation, mentoring, workshops and the staff who show up every week.</p></div></div>
+<div class="sec"><div class="wrap donate-grid">
+<form class="formcard" data-form="donate" id="donateForm" novalidate>
+<h3>Make a gift</h3>
+<div class="seg" role="group" aria-label="Gift frequency" style="margin-top:22px"><button type="button" data-freq="once" aria-pressed="true">One time</button><button type="button" data-freq="monthly" aria-pressed="false">Monthly</button></div>
+<fieldset style="margin-top:22px"><legend>Amount</legend><div class="amounts">
+<button type="button" class="amt" data-amt="25" aria-pressed="false">$25</button><button type="button" class="amt" data-amt="50" aria-pressed="true">$50</button><button type="button" class="amt" data-amt="100" aria-pressed="false">$100</button><button type="button" class="amt" data-amt="250" aria-pressed="false">$250</button></div>
+<label class="f" style="margin-top:12px">Other amount ($)<input name="custom" inputmode="decimal" placeholder="Enter an amount"></label></fieldset>
+<label class="f mt">Direct my gift to<select name="fund" id="fund"><option value="general">Where it's needed most</option><option value="launch">Launch: leaving foster care</option><option value="second">Second Start: justice-impacted youth</option><option value="steady">Steady Ground: housing and essentials</option><option value="navigate">Navigate: welfare systems</option></select></label>
+<label class="check mt"><input type="checkbox" name="fees" id="fees">Add 3% to cover card processing fees</label>
+<div class="fgrid mt"><label class="f">Full name<input name="name" required autocomplete="name"></label><label class="f">Email<input name="email" type="email" required autocomplete="email"></label></div>
+<button class="btn sun wide" type="submit" style="margin-top:22px;min-height:56px;font-size:17px" id="giveBtn">Give $50</button>
+<p class="note" style="margin-top:14px">Prototype: no payment is taken here. At launch this connects to a secure processor such as Stripe or a nonprofit giving platform. Tax-deductibility depends on 501(c)(3) status, to be confirmed before launch.</p>
+<p class="done" role="status"></p>
+</form>
+<div>
+<p class="kicker">How your gift is used</p>
+<div class="funds" style="margin-top:22px" id="fundInfo"></div>
+<p class="kicker" style="margin-top:56px">Fundraising initiatives</p>
+<div class="funds" style="margin-top:22px">
+<div><b>Launch kit drive</b><p class="mute" style="margin-top:6px">Collecting and funding move-in kits for young people getting their first place after care. <a class="tlink" href="#product-move-in-kit">Sponsor a kit</a></p></div>
+<div><b>Peer fundraising pages</b><p class="mute" style="margin-top:6px">Start a personal page for a birthday, race or team challenge.</p></div>
+<div><b>Organizational giving</b><p class="mute" style="margin-top:6px">Businesses and foundations can sponsor a program or cohort. <a class="tlink" href="#partners">See partnerships</a></p></div>
+</div>
+<p class="note" style="margin-top:14px">Initiatives open as the organization launches.</p>
+</div>
+</div></div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section data-page="shop">
+<div class="wrap plain"><p class="kicker">Shop</p><h1>Rise Forward goods.</h1><p class="lede">Sample products for the prototype. The final line, pricing and how proceeds support programs are still being decided.</p>
+<div class="jump" role="group" aria-label="Filter by category" id="cats"></div></div>
+<div class="wrap" style="padding-bottom:clamp(72px,9vw,128px)"><div class="pgrid" id="productGrid"></div></div>
+</section>
+
+<section data-page="product"><div class="wrap" style="padding-top:calc(var(--top) + 36px);padding-bottom:clamp(72px,9vw,128px)" id="pdp"></div></section>
+
+<section data-page="checkout">
+<div class="wrap plain"><p class="kicker">Checkout</p><h1>Almost done.</h1></div>
+<div class="wrap donate-grid" style="padding-bottom:clamp(72px,9vw,128px)">
+<form class="formcard" data-form="checkout" id="checkoutForm" novalidate>
+<h3>Contact</h3>
+<div class="fgrid" style="margin-top:16px"><label class="f">Email<input name="email" type="email" required autocomplete="email"></label><label class="f">Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label></div>
+<h3 style="margin-top:32px">Shipping</h3>
+<div class="fgrid" style="margin-top:16px"><label class="f">Full name<input name="name" required autocomplete="name"></label><label class="f">Address<input name="addr" required autocomplete="street-address"></label>
+<label class="f">City<input name="city" required autocomplete="address-level2"></label><label class="f">State and ZIP<input name="zip" required autocomplete="postal-code"></label></div>
+<h3 style="margin-top:32px">Payment</h3>
+<div style="margin-top:16px;padding:18px;border-radius:10px;border:1.5px dashed var(--line2);background:var(--paper)" class="mute small"><b style="color:var(--ink)">Secure payment</b><br>Card payment appears here once a processor (such as Stripe or Shopify Payments) is connected. Prototype: no payment is taken.</div>
+<button class="btn ink wide" type="submit" style="margin-top:24px;min-height:56px">Place order</button>
+<p class="done" role="status"></p>
+</form>
+<div><h3 style="font:400 30px/1.1 var(--serif)">Order summary</h3><div id="checkoutSummary" style="margin-top:16px"></div></div>
+</div>
+</section>
+
+<section data-page="order"><div class="wrap plain" style="padding-bottom:clamp(72px,9vw,128px)"><p class="kicker">Order confirmed</p><h1>Thank you.</h1><p class="lede" id="orderMsg"></p><div class="ctas"><a class="btn ink" href="#shop">Keep shopping</a><a class="btn line" href="#home">Back home</a></div></div></section>
+
+<!-- ============ CONTACT ============ -->
+<section data-page="contact" data-over>
+<div class="phero"><img src="img/contact.jpg" alt="Four friends sitting together on the grass" width="1600" height="1096"><div class="wrap on-photo"><p class="kicker">Contact</p><h1>Let's talk.</h1><p class="lede">Questions, partnerships, volunteering or press: send a note and the right person will get back to you.</p></div></div>
+<div class="sec"><div class="wrap donate-grid">
+<div>
+<p class="kicker">Reach us</p>
+<div class="funds" style="margin-top:22px">
+<div><b>General inquiries</b><p class="mute">hello@riseforwardyouth.org</p></div>
+<div><b>Partnerships</b><p class="mute">partners@riseforwardyouth.org</p></div>
+<div><b>Volunteering</b><p class="mute">volunteer@riseforwardyouth.org</p></div>
+<div><b>Phone</b><p class="mute">(479) 555-0100</p></div>
+<div><b>Location</b><p class="mute">Northwest Arkansas</p></div>
+<div><b>Young people looking for help</b><p class="mute" style="margin-top:4px">Use our <a class="tlink" href="#get-help">Get help page</a>. In a crisis, call or text 988.</p></div>
+</div>
+<p class="note" style="margin-top:14px">Sample contact details for the prototype. Replace before launch.</p>
+</div>
+<form class="formcard" data-form="contact" novalidate>
+<h3>Send a message</h3>
+<label class="f" style="margin-top:22px">What's this about?<select name="topic" id="topic"><option>General question</option><option>Partnership</option><option>Volunteering</option><option>Donations</option><option>Shop order</option><option>Media</option></select></label>
+<div class="fgrid mt"><label class="f">Name<input name="name" required autocomplete="name"></label><label class="f">Email<input name="email" type="email" required autocomplete="email"></label></div>
+<label class="f mt">Organization (optional)<input name="org" autocomplete="organization"></label>
+<label class="f mt">Message<textarea name="msg" required></textarea></label>
+<button class="btn ink wide" type="submit" style="margin-top:20px">Send message</button>
+<p class="done" role="status"></p>
+</form>
+</div></div>
+</section>
+
+<!-- ============ GET HELP (youth) ============ -->
+<section data-page="get-help" data-over>
+<div class="phero"><img src="img/help.jpg" alt="Friends smiling together in warm sunlight" width="1600" height="1066"><div class="wrap on-photo"><p class="kicker">Get help</p><h1>You don't have to figure this out alone.</h1><p class="lede">Dealing with foster care, the justice system, money, housing or benefits? We'll help you find your next step. It's free, and you don't need to explain everything at once.</p></div></div>
+<div class="sec dark tight"><div class="wrap">
+<p class="kicker">If you need help right now</p>
+<div class="grid3" style="margin-top:28px">
+<div><h3>Call 911</h3><p>If you or someone else is in immediate danger.</p><p style="margin-top:16px"><a class="btn sun sm" href="tel:911">Call 911</a></p></div>
+<div><h3>Call or text 988</h3><p>Free, 24/7 support from the 988 Suicide &amp; Crisis Lifeline, or chat at <a class="tlink" href="https://988lifeline.org">988lifeline.org</a>.</p><p style="margin-top:16px"><a class="btn line sm" href="tel:988">Call 988</a></p></div>
+<div><h3>1-800-RUNAWAY</h3><p>Call or text 1-800-786-2929 for the National Runaway Safeline, free and confidential, 24/7.</p><p style="margin-top:16px"><a class="btn line sm" href="tel:18007862929">Call the Safeline</a></p></div>
+</div>
+</div></div>
+<div class="sec"><div class="wrap donate-grid">
+<div><p class="kicker">Reach out to us</p><h2 style="margin-top:16px">Tell us what's going on.</h2><p class="lede" style="margin-top:18px">Let us know how to reach you. You can leave out your last name. If it's urgent, please use the numbers above.</p></div>
+<form class="formcard" data-form="help" novalidate>
+<div class="fgrid"><label class="f">First name or nickname<input name="name" required autocomplete="given-name"></label>
+<label class="f">Your age<select name="age"><option>Under 16</option><option>16–17</option><option selected>18–20</option><option>21–24</option><option>I'm a parent or caregiver</option><option>I'm asking for someone else</option></select></label></div>
+<fieldset class="mt"><legend>What do you need help with?</legend><div class="checks">
+<label class="check"><input type="checkbox" name="need" value="Housing">A place to stay</label><label class="check"><input type="checkbox" name="need" value="Food">Food or essentials</label>
+<label class="check"><input type="checkbox" name="need" value="Documents">ID or documents</label><label class="check"><input type="checkbox" name="need" value="School or job">School or a job</label>
+<label class="check"><input type="checkbox" name="need" value="Benefits">Benefits or paperwork</label><label class="check"><input type="checkbox" name="need" value="Talk">Someone to talk to</label></div></fieldset>
+<div class="fgrid mt"><label class="f">Best way to reach you<select name="via"><option>Text</option><option>Call</option><option>Email</option></select></label><label class="f">Phone or email<input name="reach" required></label></div>
+<button class="btn ink wide" type="submit" style="margin-top:20px">Send to Rise Forward</button>
+<p class="note" style="margin-top:12px">We only use this to get back to you. We won't share it without your permission, unless we're required to keep someone safe.</p>
+<p class="done" role="status"></p>
+</form>
+</div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap">
+<div class="fbig"><h2>Every young person deserves someone in their corner.</h2><a class="btn sun" href="#donate">Donate</a></div>
+<div class="fcols">
+<div><p style="font:400 26px/1.1 var(--serif);color:#fff">Rise Forward Youth Collective</p><p style="margin-top:12px;max-width:24em">Supporting young people impacted by foster care, the justice system, poverty, welfare systems and homelessness.</p><p style="margin-top:14px">Need help now? Call or text <a class="tlink" href="tel:988" style="color:#fff">988</a>.</p></div>
+<nav aria-label="Organization"><b>Organization</b><a href="#about">About</a><a href="#programs">Programs</a><a href="#partners">Partnerships</a><a href="#get-involved">Get involved</a></nav>
+<nav aria-label="Support"><b>Support</b><a href="#donate">Donate</a><a href="#shop">Shop</a><a href="#contact">Contact</a><a href="#get-help">Get help</a></nav>
+<form data-form="news" novalidate><b style="display:block">Get updates</b><p style="margin-top:6px;font-size:15px">News from our programs, a few times a year.</p><div class="fnews"><label class="f" style="flex:1"><span class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email</span><input name="email" type="email" required placeholder="Your email" autocomplete="email" style="border-radius:999px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff;min-height:48px"></label><button class="btn sun sm" type="submit" style="min-height:48px">Subscribe</button></div><p class="done" role="status" style="color:var(--ink)"></p></form>
+</div>
+<div class="legal"><span>© 2026 Rise Forward Youth Collective. Working name. Tax-exempt status and EIN to be added once confirmed.</span><span>Photos are licensed stock placeholders until program photos are taken with consent.</span></div>
+</div></footer>
+
+<a class="concept" href="https://sitemind.dev/work/" aria-label="Design in progress by Sitemind. This is a concept, not a live organization."><i aria-hidden="true"></i><span><b>Design in progress</b> · by Sitemind</span></a>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+<div class="scrim" data-close></div>
+<aside role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+<header><h3 id="cartTitle">Your cart</h3><button class="x" type="button" data-close aria-label="Close cart">×</button></header>
+<div class="citems" id="cartItems"></div>
+<footer><div class="sum" id="cartSum"></div><a class="btn ink wide" href="#checkout" id="toCheckout" style="margin-top:16px">Checkout</a></footer>
+</aside>
+</div>
+
+<script>
+{
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=n=>'$'+n.toFixed(2);
+const ARROW='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg>';
+
+/* ---------- programs ---------- */
+const PROGRAMS=[
+{id:'launch',name:'Launch',group:'Leaving foster care',img:'launch.jpg',pos:'52% 40%',alt:'A graduate smiling as she walks down a campus path',short:'From care to a first home: transition coaching, documents, move-in kits and a mentor.',who:'Young people ages 16 to 24 aging out of foster care.',intro:'Leaving care often means leaving with very little: no lease, no documents, no one to call. Launch starts before the exit and stays through the first year on their own.',goals:['A housing plan in place before leaving care','State ID, birth certificate, Social Security card and a bank account','A school or career step chosen and started'],res:['Transition coach from age 16','Mentor match','Move-in kits for a first apartment','Help getting vital documents','Life-skills workshops: budgeting, cooking, renting']},
+{id:'second-start',name:'Second Start',group:'Justice-impacted youth',img:'second-start.jpg',pos:'68% 50%',alt:'A teenager talking with a counselor',short:'Reentry mentors, school and job re-engagement, and help understanding record sealing.',who:'Young people coming home from detention or on probation, and those with a record holding them back.',intro:'A record should not be a life sentence. Second Start helps young people reconnect with school, work and community after contact with the justice system.',goals:['A written reentry plan within 30 days','Re-enrollment in school or a job-training program','Clear information on record sealing or expungement'],res:['Reentry mentor','Referrals to free legal clinics','Job readiness and interview practice','Court-date and probation-meeting reminders','Transportation help']},
+{id:'steady-ground',name:'Steady Ground',group:'Poverty and homelessness',img:'steady-ground.jpg',pos:'45% 50%',alt:'Volunteers packing boxes of food and essentials',short:'Housing navigation, emergency essentials and connections to safe shelter.',who:'Young people experiencing homelessness, couch surfing or living in poverty.',intro:'Stability starts with tonight. Steady Ground connects young people to a safe place to stay and then to the steps that lead to housing of their own.',goals:['Safe shelter or housing the same week','Basic needs covered: food, hygiene, a working phone','A path to stable housing within 90 days'],res:['Housing navigation','Emergency essentials and hygiene kits','Shelter and host-home referrals','Food access','Phone and transit support']},
+{id:'navigate',name:'Navigate',group:'Welfare systems',img:'navigate.jpg',pos:'45% 50%',alt:'A young person meeting one-on-one with an advisor',short:'One-on-one help with benefits, paperwork and appointments for youth and families.',who:'Young people and families working through welfare and benefits systems.',intro:'Benefits are supposed to help, but the paperwork can bury people. Navigate gives youth and families a guide through applications, renewals and appointments.',goals:['Benefits applied for and kept active','Fewer missed appointments and lapsed coverage','Families confident handling it on their own'],res:['One-on-one benefits navigation (SNAP, Medicaid, TANF and others)','Help with forms and renewals','Someone to come along to appointments','Family workshops','Advocacy when something goes wrong']}
+];
+$('#homePrograms').innerHTML=PROGRAMS.map((p,i)=>`<a class="pcard" href="#program-${p.id}" data-reveal data-d="${i}"><img src="img/${p.img}" alt="" loading="lazy" style="object-position:${p.pos}"><div class="in"><small>${esc(p.group)}</small><h3>${esc(p.name)}</h3><p>${esc(p.short)}</p><span class="go">Explore ${esc(p.name)} ${ARROW}</span></div></a>`).join('');
+$('#programList').innerHTML=PROGRAMS.map(p=>`<article class="prog" id="program-${p.id}">
+<div class="ph" data-reveal><img src="img/${p.img}" alt="${esc(p.alt)}" loading="lazy" style="object-position:${p.pos}"></div>
+<div data-reveal data-d="1"><span class="status">In development</span><h2>${esc(p.name)}</h2><p class="who">${esc(p.who)}</p><p class="intro lede">${esc(p.intro)}</p>
+<h4>Objectives</h4><ul>${p.goals.map(g=>`<li>${esc(g)}</li>`).join('')}</ul><h4>Resources we're building</h4><ul>${p.res.map(g=>`<li>${esc(g)}</li>`).join('')}</ul>
+<div class="acts"><a class="btn ink sm" href="#get-help">Refer a young person</a><a class="btn line sm" href="#partners">Partner on ${esc(p.name)}</a></div></div>
+</article>`).join('');
+
+/* ---------- donate ---------- */
+const FUNDS={general:['Where it’s needed most','Lets us put your gift where the need is greatest that month, including the staff and operations that keep programs running.'],launch:['Launch','Move-in kits, document fees, transition coaching and mentor training for youth leaving foster care.'],second:['Second Start','Reentry mentors, job-readiness training, transportation and connections to legal help.'],steady:['Steady Ground','Emergency essentials, hygiene kits, phone and transit support, and housing navigation.'],navigate:['Navigate','Benefits navigators, family workshops and help keeping coverage active.']};
+let freq='once',amt=50;
+const drawFund=()=>{const v=$('#fund').value;$('#fundInfo').innerHTML=Object.entries(FUNDS).map(([k,[n,d]])=>`<div class="${k===v?'sel':''}" style="${k===v?'':'opacity:.6'}"><b>${esc(n)}</b><p class="mute" style="margin-top:6px">${esc(d)}</p></div>`).join('')};
+const drawGive=()=>{const c=parseFloat($('[name=custom]').value);const base=c>0?c:amt;const total=$('#fees').checked?base*1.03:base;$('#giveBtn').textContent='Give '+(Number.isInteger(total)?'$'+total:money(total))+(freq==='monthly'?' a month':'')};
+$$('[data-freq]').forEach(b=>b.addEventListener('click',()=>{freq=b.dataset.freq;$$('[data-freq]').forEach(x=>x.setAttribute('aria-pressed',x===b));drawGive()}));
+$$('.amt').forEach(b=>b.addEventListener('click',()=>{amt=+b.dataset.amt;$('[name=custom]').value='';$$('.amt').forEach(x=>x.setAttribute('aria-pressed',x===b));drawGive()}));
+$('[name=custom]').addEventListener('input',()=>{$$('.amt').forEach(x=>x.setAttribute('aria-pressed','false'));drawGive()});
+$('#fees').addEventListener('change',drawGive);$('#fund').addEventListener('change',drawFund);
+drawFund();drawGive();
+
+/* ---------- shop ---------- */
+const PRODUCTS=[
+{id:'everyday-tee',name:'Everyday tee',cat:'Apparel',price:28,img:'p-tee.jpg',pos:'50% 50%',sizes:['S','M','L','XL','2XL'],desc:'Heavyweight cotton tee in white with a small embroidered Rise Forward sunrise on the chest.'},
+{id:'everyday-tee-black',name:'Everyday tee, black',cat:'Apparel',price:28,img:'p-tee-black.jpg',pos:'50% 50%',sizes:['S','M','L','XL','2XL'],desc:'The same heavyweight cotton tee in black, with a tonal embroidered mark.'},
+{id:'second-start-hoodie',name:'Second Start hoodie',cat:'Apparel',price:58,img:'p-hoodie.jpg',pos:'50% 50%',sizes:['S','M','L','XL','2XL'],desc:'Midweight fleece hoodie for cold mornings and long days. Available in sand and sage.'},
+{id:'canvas-tote',name:'Canvas tote',cat:'Accessories',price:22,img:'p-tote.jpg',pos:'50% 50%',desc:'Sturdy natural canvas tote, big enough for groceries or books.'},
+{id:'morning-mug',name:'Morning mug',cat:'Accessories',price:18,img:'p-mug.jpg',pos:'50% 50%',desc:'12 oz white ceramic mug with the sunrise mark. Dishwasher safe.'},
+{id:'move-in-kit',name:'Sponsor a move-in kit',cat:'Give a kit',price:45,img:'p-kit.jpg',pos:'50% 35%',desc:'Fund a move-in kit for a young person getting their first place after foster care: bedding, kitchen basics and cleaning supplies. Nothing ships to you; the kit goes to a young person in our Launch program.',gift:true}];
+const img=(p,cls='pimg',alt='')=>`<div class="${cls}"><img src="img/${p.img}" alt="${esc(alt)}" loading="lazy" style="object-position:${p.pos}"></div>`;
+const card=p=>`<a class="prod" href="#product-${p.id}" data-reveal><div class="pimg"><img src="img/${p.img}" alt="" loading="lazy" style="object-position:${p.pos}">${p.gift?'<span class="tag">Gift to a young person</span>':''}</div><h3>${esc(p.name)}</h3><p>${money(p.price)} · ${esc(p.cat)}</p></a>`;
+let cat='All';
+const CATS=['All',...new Set(PRODUCTS.map(p=>p.cat))];
+const drawShop=()=>{$('#cats').innerHTML=CATS.map(c=>`<button type="button" class="chip" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');$('#productGrid').innerHTML=PRODUCTS.filter(p=>cat==='All'||p.cat===cat).map(card).join('');reveal()};
+$('#cats').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;drawShop()});
+$('#homeProducts').innerHTML=[0,2,3,5].map(i=>card(PRODUCTS[i])).join('');
+
+/* cart */
+let cart=[];
+try{cart=JSON.parse(localStorage.getItem('rf-cart')||'[]').filter(i=>PRODUCTS.some(p=>p.id===i.id))}catch(e){cart=[]}
+const save=()=>{try{localStorage.setItem('rf-cart',JSON.stringify(cart))}catch(e){}};
+const find=id=>PRODUCTS.find(p=>p.id===id);
+const subtotal=()=>cart.reduce((s,i)=>s+find(i.id).price*i.q,0);
+const shipping=()=>{const goods=cart.reduce((s,i)=>s+(find(i.id).gift?0:find(i.id).price*i.q),0);return goods===0?0:(goods>=75?0:6)};
+const sumHtml=()=>{const s=subtotal(),ship=shipping();return `<div><span>Subtotal</span><span>${money(s)}</span></div><div><span>Shipping</span><span>${s===0?'—':ship?money(ship):'Free'}</span></div><div><span>Total</span><span>${money(s+ship)}</span></div>`};
+const drawCart=()=>{const n=cart.reduce((s,i)=>s+i.q,0);const c=$('#cartCount');c.textContent=n;c.hidden=!n;
+$('#cartItems').innerHTML=cart.length?cart.map((i,k)=>{const p=find(i.id);return `<div class="citem">${img(p)}<div><b>${esc(p.name)}</b><p class="note">${i.size?esc(i.size)+' · ':''}${money(p.price)}</p><div class="qty" style="margin-top:8px"><button type="button" data-dec="${k}" aria-label="Fewer">−</button><span>${i.q}</span><button type="button" data-inc="${k}" aria-label="More">+</button></div></div><button class="x" type="button" data-rm="${k}" aria-label="Remove ${esc(p.name)}">×</button></div>`}).join(''):'<p class="mute" style="padding:28px 0">Your cart is empty. <a class="tlink" href="#shop">Browse the shop</a></p>';
+$('#cartSum').innerHTML=sumHtml();$('#toCheckout').style.display=cart.length?'':'none';
+$('#checkoutSummary').innerHTML=(cart.length?cart.map(i=>{const p=find(i.id);return `<div class="citem" style="grid-template-columns:64px 1fr auto">${img(p)}<div><b>${esc(p.name)}</b><p class="note">${i.size?esc(i.size)+' · ':''}Qty ${i.q}</p></div><span>${money(p.price*i.q)}</span></div>`}).join(''):'<p class="mute">Your cart is empty.</p>')+`<div class="sum" style="margin-top:12px">${sumHtml()}</div><p class="note" style="margin-top:12px">Free shipping on goods of $75 or more; sponsored kits never ship. Sample rates.</p>`;save()};
+$('#cartItems').addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;if(t.dataset.inc)cart[+t.dataset.inc].q++;if(t.dataset.dec){const k=+t.dataset.dec;if(--cart[k].q<1)cart.splice(k,1)}if(t.dataset.rm)cart.splice(+t.dataset.rm,1);drawCart()});
+const drawer=$('#drawer');let lastFocus=null;
+const openCart=()=>{lastFocus=document.activeElement;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');setTimeout(()=>$('.x',drawer).focus(),50)};
+const closeCart=()=>{drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');if(lastFocus)lastFocus.focus()};
+$('#cartOpen').addEventListener('click',openCart);
+drawer.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeCart()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(drawer.classList.contains('open'))closeCart();if($('#mnav').classList.contains('open'))setMenu(false)}});
+$('#toCheckout').addEventListener('click',closeCart);
+const drawPdp=id=>{const p=find(id);if(!p){location.hash='shop';return}let q=1,size=p.sizes?p.sizes[1]||p.sizes[0]:'';
+$('#pdp').innerHTML=`<p class="small"><a class="tlink" href="#shop">Shop</a> <span class="mute">/ ${esc(p.cat)}</span></p><div class="pdp" style="margin-top:20px">${img(p,'pimg',p.name)}<div style="padding-top:8px"><h1>${esc(p.name)}</h1><p style="font:400 34px/1 var(--serif);margin-top:16px">${money(p.price)}</p><p class="lede" style="margin-top:20px">${esc(p.desc)}</p>
+${p.sizes?`<p style="margin-top:28px;font-weight:600;font-size:14.5px">Size</p><div class="sizes" role="group" aria-label="Size">${p.sizes.map(s=>`<button type="button" data-size="${esc(s)}" aria-pressed="${s===size}">${esc(s)}</button>`).join('')}</div>`:''}
+<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px"><div class="qty"><button type="button" id="qdec" aria-label="Fewer">−</button><span id="qv">1</span><button type="button" id="qinc" aria-label="More">+</button></div><button class="btn ink" type="button" id="add" style="flex:1;min-width:200px">${p.gift?'Add kit to cart':'Add to cart'}</button></div>
+<p class="note" style="margin-top:20px;padding-top:18px;border-top:1px solid var(--line2)">Sample product for the prototype. Photo is a licensed stock placeholder.</p></div></div>
+<div class="head" style="margin-top:clamp(72px,9vw,120px);margin-bottom:32px"><h2>You might also like</h2></div><div class="pgrid">${PRODUCTS.filter(x=>x.id!==id).slice(0,3).map(card).join('')}</div>`;
+$$('[data-size]').forEach(b=>b.onclick=()=>{size=b.dataset.size;$$('[data-size]').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+$('#qdec').onclick=()=>{q=Math.max(1,q-1);$('#qv').textContent=q};$('#qinc').onclick=()=>{q++;$('#qv').textContent=q};
+$('#add').onclick=()=>{const ex=cart.find(i=>i.id===id&&i.size===size);if(ex)ex.q+=q;else cart.push({id,size,q});drawCart();openCart()};reveal()};
+
+/* ---------- forms ---------- */
+const MSG={partner:'Thanks. Your inquiry is in, and we’ll reply within a few business days.',volunteer:'Thanks for signing up. We’ll be in touch with next steps.',contact:'Thanks. Your message is on its way to the right person.',help:'Got it. Someone from our team will reach out the way you asked. If things get urgent, call or text 988.',news:'You’re on the list.'};
+$$('form[data-form]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
+const bad=$$('[required]',f).filter(i=>!i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value)));
+$$('[aria-invalid]',f).forEach(i=>i.removeAttribute('aria-invalid'));
+const done=$('.done',f);
+if(bad.length){bad.forEach(i=>i.setAttribute('aria-invalid','true'));bad[0].focus();if(done){done.textContent='Please fill in the highlighted fields.';done.classList.add('show')}return}
+const k=f.dataset.form;
+if(k==='checkout'){if(!cart.length){done.textContent='Your cart is empty.';done.classList.add('show');return}const n='RF-'+Math.floor(100000+Math.random()*900000);$('#orderMsg').textContent=`Order ${n} is confirmed and a receipt would be emailed to ${f.email.value}. Prototype: no payment was taken and nothing will ship.`;cart=[];drawCart();f.reset();location.hash='order';return}
+if(k==='donate'){done.textContent=`Thank you, ${f.name.value.trim().split(' ')[0]}. ${$('#giveBtn').textContent.replace('Give','Your gift of')} to ${FUNDS[$('#fund').value][0]} would be processed here. Prototype: no payment was taken.`;done.classList.add('show');return}
+done.textContent=MSG[k]+' (Prototype: nothing was sent.)';done.classList.add('show');f.reset()}));
+
+/* ---------- reveal ---------- */
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08}):null;
+function reveal(){$$('[data-reveal]:not(.in)').forEach(el=>io?io.observe(el):el.classList.add('in'))}
+
+/* ---------- header ---------- */
+const top=$('#top');
+const onScroll=()=>top.classList.toggle('solid',scrollY>40);
+addEventListener('scroll',onScroll,{passive:true});
+const setMenu=o=>{$('#mnav').classList.toggle('open',o);$('#menuBtn').setAttribute('aria-expanded',o);$('#menuBtn').setAttribute('aria-label',o?'Close menu':'Open menu');document.body.style.overflow=o?'hidden':'';document.body.classList.toggle('menu-open',o)};
+$('#menuBtn').addEventListener('click',()=>setMenu(!$('#mnav').classList.contains('open')));
+
+/* ---------- router ---------- */
+const PAGES=['home','about','programs','partners','get-involved','donate','shop','product','checkout','order','contact','get-help'];
+const TITLES={home:'',about:'About',programs:'Programs',partners:'Partnerships','get-involved':'Get involved',donate:'Donate',shop:'Shop',product:'Shop',checkout:'Checkout',order:'Order confirmed',contact:'Contact','get-help':'Get help'};
+const route=()=>{let h=decodeURIComponent((location.hash||'#home').slice(1));let page=h,anchor=null;
+if(h==='main')return;
+if(h.startsWith('product-')){page='product';drawPdp(h.slice(8))}
+else if(h.startsWith('program-')){page='programs';anchor=h}
+else if(h==='partner-form'){page='partners';anchor=h}
+else if(!PAGES.includes(h))page='home';
+let cur;$$('[data-page]').forEach(s=>{const on=s.dataset.page===page;s.classList.toggle('on',on);if(on)cur=s});
+document.body.classList.toggle('over',cur.hasAttribute('data-over'));
+document.title=(TITLES[page]?TITLES[page]+' · ':'')+'Rise Forward Youth Collective';
+const navKey=page==='product'||page==='checkout'||page==='order'?'shop':page;
+$$('.links a,.mnav a').forEach(a=>{if(a.getAttribute('href')==='#'+navKey)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+setMenu(false);
+if(page==='shop')drawShop();
+reveal();
+if(anchor){const el=document.getElementById(anchor);if(el){requestAnimationFrame(()=>el.scrollIntoView());return}}
+window.scrollTo(0,0);onScroll()};
+addEventListener('hashchange',route);
+drawCart();drawShop();route();
+}
+</script>
+</body>
+</html>
