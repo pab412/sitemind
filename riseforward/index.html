@@ -21,7 +21,7 @@
 @font-face{font-family:"Instrument Serif";src:url(fonts/instrument-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"Hanken Grotesk";src:url(fonts/hanken.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 :root{
---ink:#1d2024;--ink2:#2b2f34;--slate:#50565e;--mute:#6a7078;--line:#dcd9d3;--line2:#cfcbc4;
+--ink:#1d2024;--ink2:#2b2f34;--slate:#454b53;--mute:#5f656d;--line:#dcd9d3;--line2:#cfcbc4;
 --paper:#f6f5f2;--stone:#ebe8e3;--white:#fff;--sun:#f3b23c;--sun2:#ffc65c;--sun-ink:#2a1c00;
 --dline:rgba(255,255,255,.14);--dmute:#aeb3ba;
 --serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -371,6 +371,7 @@ body{font-size:16.5px}
 .cards4{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);scrollbar-width:none;padding-bottom:4px}
 .cards4::-webkit-scrollbar{display:none}
 .cards4 .pcard{flex:0 0 80%;scroll-snap-align:start;scroll-margin-left:var(--pad)}
+.cards4.simple{display:grid;grid-template-columns:1fr;overflow:visible;margin-inline:0;padding-inline:0;gap:40px}
 .stats{grid-template-columns:1fr}
 .stat,.stat+.stat{padding:28px 0;border-left:0}
 .stat+.stat{border-top:1px solid var(--dline)}
@@ -396,6 +397,25 @@ body{font-size:16.5px}
 .hero .bg{transform:none}.rise{opacity:1;transform:none}
 .js [data-reveal]{opacity:1;transform:none}
 }
+
+/* readable, structured cards (home) */
+.scard{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.scard .ph{aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#d8d5cf}
+.scard .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.scard:hover .ph img{transform:scale(1.04)}
+.scard small{display:block;margin-top:20px;font-size:15px;font-weight:600;color:var(--slate)}
+.scard h3{font:400 32px/1.1 var(--serif);margin-top:6px}
+.scard p{margin-top:10px;color:var(--ink2)}
+.more{display:inline-block;margin-top:16px;font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.scard:hover .more,.way:hover .more{color:#000;text-decoration-thickness:2.5px}
+a.way{display:block;text-decoration:none;color:inherit}
+.cards4.simple{gap:clamp(20px,2.4vw,32px)}
+/* larger, calmer reading on the home page */
+[data-page=home] .lede{font-size:clamp(19px,1.6vw,22px)}
+[data-page=home] p{font-size:18px}
+[data-page=home] .stat p{font-size:19px}
+[data-page=home] .note{font-size:15px}
+.links a{font-size:16px}
 .concept{position:fixed;left:16px;bottom:16px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 14px;border-radius:999px;background:rgba(21,23,26,.92);color:#fff;font:500 13.5px/1.2 var(--sans);text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
 .concept i{width:8px;height:8px;border-radius:50%;background:var(--sun);flex:none;box-shadow:0 0 0 4px rgba(243,178,60,.22)}
 .concept b{font-weight:600}
@@ -439,9 +459,8 @@ body{font-size:16.5px}
 <div class="wrap on-photo">
 <p class="kicker rise">Youth nonprofit, Northwest Arkansas</p>
 <h1 class="rise d1" style="margin-top:20px">Where you start shouldn't decide where you go.</h1>
-<p class="lede rise d2">We stand with young people who have been through foster care, the justice system, poverty, welfare systems or homelessness, with mentors, resources and real opportunities to build the life they choose.</p>
-<div class="ctas rise d3"><a class="btn sun" href="#donate">Donate</a><a class="btn glass" href="#get-involved">Volunteer</a><a class="btn glass" href="#partners">Become a partner</a></div>
-<div class="hero-foot rise d4"><span>Are you a young person looking for support?</span><a class="arrow" href="#get-help">Start here <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div>
+<p class="lede rise d2">We support young people who have been through foster care, the justice system, poverty, welfare systems or homelessness.</p>
+<div class="ctas rise d3"><a class="btn sun" href="#donate">Donate</a><a class="btn glass" href="#get-involved">Get involved</a></div>
 </div>
 </div>
 
@@ -449,60 +468,39 @@ body{font-size:16.5px}
 <div class="ph" data-reveal><img src="img/friends.jpg" alt="Young friends laughing together on outdoor steps" width="1600" height="901" loading="lazy"></div>
 <div data-reveal data-d="1">
 <p class="kicker">Our mission</p>
-<p class="big" style="margin-top:22px">We walk alongside young people until they're standing on their own: connecting them to the people, resources and opportunities they need to build stable, self-directed lives.</p>
-<div class="vision">
-<div><h3>Our vision</h3><p>A future where a young person's starting point never decides where they can go.</p></div>
-<div><h3>Who we serve</h3><p>Young people, roughly ages 14 to 24, whose path has been shaped by systems they didn't choose.</p></div>
-</div>
-<p class="note" style="margin-top:22px">Draft mission and vision. Final wording to be set by the founder and board.</p>
-<p style="margin-top:26px"><a class="arrow" href="#about">Read our story <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></p>
+<p class="big" style="margin-top:22px">We walk alongside young people until they're standing on their own, connecting them to the people, resources and opportunities they need to build stable lives.</p>
+<p class="note" style="margin-top:22px">Placeholder. The final mission statement is being written by the founder.</p>
 </div>
 </div></div>
 
 <div class="sec white"><div class="wrap">
-<div class="head"><div><p class="kicker">Who we serve, and how</p><h2>A program for every starting point.</h2></div><p class="lede">Four programs in development, each built around a different transition, with youth who have lived it helping shape the work.</p></div>
-<div class="cards4" id="homePrograms"></div>
+<div class="head"><div><p class="kicker">Who we serve</p><h2>Four programs, one goal.</h2></div><p class="lede">Each program supports young people, ages 14 to 24, through a different life transition.</p></div>
+<div class="cards4 simple" id="homePrograms"></div>
 </div></div>
 
 <div class="sec dark"><div class="wrap">
-<div class="head"><div><p class="kicker">Why this work matters</p><h2>The need is real, and it's measurable.</h2></div><p class="lede">National figures that show why we start at the moments young people most often fall through the gaps.</p></div>
+<div class="head"><div><p class="kicker">Why this work matters</p><h2>We are the hope of change.</h2></div><p class="lede">Behind every number is a young person whose voice matters. When we invest in them, our whole community grows stronger.</p></div>
 <div class="stats" data-reveal>
-<div class="stat"><b>15,379</b><p>young people aged out of U.S. foster care in fiscal year 2024 without a permanent family.</p><a href="https://adoptioncouncil.org/article/foster-care-and-adoption-statistics">National Council for Adoption, from federal AFCARS data</a></div>
-<div class="stat"><b>4.2M</b><p>U.S. youth and young adults, ages 13 to 25, experience some form of homelessness in a year.</p><a href="https://huduser.gov/portal/node/9693">Chapin Hall, Voices of Youth Count, via HUD</a></div>
-<div class="stat"><b>1 in 10</b><p>young adults ages 18 to 25 experience homelessness over a year, and at least 1 in 30 teens ages 13 to 17.</p><a href="https://www.chapinhall.org/news/ahead-of-congressional-reauthorization-new-study-shows-greater-reform-is-needed-in-runaway-and-homeless-youth-act/">Chapin Hall</a></div>
+<div class="stat"><b>15,379</b><p>young people aged out of U.S. foster care in 2024 without a permanent family.</p><a href="https://adoptioncouncil.org/article/foster-care-and-adoption-statistics">Source: National Council for Adoption</a></div>
+<div class="stat"><b>4.2M</b><p>U.S. youth and young adults, ages 13 to 25, experience homelessness in a year.</p><a href="https://huduser.gov/portal/node/9693">Source: Chapin Hall, via HUD</a></div>
+<div class="stat"><b>1 in 10</b><p>young adults ages 18 to 25 experience homelessness over a year.</p><a href="https://www.chapinhall.org/news/ahead-of-congressional-reauthorization-new-study-shows-greater-reform-is-needed-in-runaway-and-homeless-youth-act/">Source: Chapin Hall</a></div>
 </div>
 </div></div>
 
 <div class="sec"><div class="wrap">
-<div class="head"><div><p class="kicker">Get involved</p><h2>There's a place for you in this work.</h2></div><p class="lede">Give, show up or bring your organization to the table. Every role is about being consistent for young people.</p></div>
+<div class="head"><div><p class="kicker">How you can help</p><h2>There's a place for you.</h2></div></div>
 <div class="ways">
-<div class="way" data-reveal><div class="ph"><img src="img/give.jpg" alt="A smiling volunteer holding a box of fresh groceries" width="1400" height="2100" loading="lazy" style="object-position:50% 18%"></div><h3>Give</h3><p>One-time or monthly gifts fund programs directly. You choose where your gift goes.</p><a class="btn sun sm" href="#donate">Donate</a></div>
-<div class="way" data-reveal data-d="1"><div class="ph"><img src="img/volunteer.jpg" alt="A volunteer carrying a donation box" width="1600" height="1067" loading="lazy"></div><h3>Volunteer or mentor</h3><p>Share your time, skills or experience with a young person building their next step.</p><a class="btn ink sm" href="#get-involved">Get involved</a></div>
-<div class="way" data-reveal data-d="2"><div class="ph"><img src="img/partners.jpg" alt="A group of young adults talking and laughing outdoors" width="1600" height="1066" loading="lazy"></div><h3>Partner with us</h3><p>Service providers, employers, funders and community groups: let's build this together.</p><a class="btn line sm" href="#partners">Explore partnerships</a></div>
+<a class="way" href="#donate" data-reveal><div class="ph"><img src="img/give.jpg" alt="A smiling volunteer holding a box of fresh groceries" width="1400" height="2100" loading="lazy" style="object-position:50% 18%"></div><h3>Give</h3><p>One-time or monthly gifts fund our programs directly.</p><span class="more">Donate</span></a>
+<a class="way" href="#get-involved" data-reveal data-d="1"><div class="ph"><img src="img/volunteer.jpg" alt="A volunteer carrying a donation box" width="1600" height="1067" loading="lazy"></div><h3>Volunteer or mentor</h3><p>Share your time, skills or experience with a young person.</p><span class="more">Volunteer</span></a>
+<a class="way" href="#partners" data-reveal data-d="2"><div class="ph"><img src="img/partners.jpg" alt="A group of young adults talking and laughing outdoors" width="1600" height="1066" loading="lazy"></div><h3>Partner with us</h3><p>Organizations, employers and funders working with us.</p><span class="more">Partner with us</span></a>
 </div>
-</div></div>
-
-<div class="sec stone"><div class="wrap feature">
-<div class="ph" data-reveal><img src="img/graduate.jpg" alt="A smiling graduate in cap and gown" width="1400" height="2114" loading="lazy" style="object-position:50% 25%"></div>
-<div data-reveal data-d="1">
-<p class="kicker">Where we're headed</p>
-<h2>A plan, a person and a place for every young person.</h2>
-<p class="lede">In our first years we're building four core programs, forming partnerships with local providers and employers, and recruiting our first mentors. Long term, every young person leaving a system in our community should have someone in their corner.</p>
-<div class="ctas"><a class="btn ink" href="#programs">See our programs</a><a class="btn line" href="#about">About us</a></div>
-</div>
-</div></div>
-
-<div class="sec white"><div class="wrap">
-<div class="head"><div><p class="kicker">Shop</p><h2>Wear what you stand for.</h2></div><div><p class="lede">Apparel and goods from Rise Forward, plus move-in kits you can sponsor for a young person's first home.</p><p style="margin-top:20px"><a class="arrow" href="#shop">Visit the shop <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></p></div></div>
-<div class="pgrid four" id="homeProducts"></div>
 </div></div>
 
 <div class="band-photo">
 <img src="img/together.jpg" alt="" width="1600" height="1128" loading="lazy">
 <div class="wrap">
-<p class="kicker" style="color:#e6e8eb">Make the next step possible</p>
-<h2 style="margin-top:18px">Help a young person take the next step.</h2>
-<div class="ctas"><a class="btn sun" href="#donate">Donate today</a><a class="btn glass" href="#get-involved">Volunteer</a></div>
+<h2>Help a young person take the next step.</h2>
+<div class="ctas"><a class="btn sun" href="#donate">Donate</a></div>
 </div>
 </div>
 </section>
@@ -529,7 +527,7 @@ body{font-size:16.5px}
 </div>
 </div></div>
 <div class="sec dark"><div class="wrap">
-<div class="head"><div><p class="kicker">The challenges young people face</p><h2>The gaps are where young people fall.</h2></div><p class="lede">Leaving care, coming home from detention, losing housing, or getting lost in benefits paperwork: each transition can undo years of progress without the right support.</p></div>
+<div class="head"><div><p class="kicker">The challenges young people face</p><h2>Their voices matter. So does our community.</h2></div><p class="lede">Leaving care, coming home from detention, losing housing or getting lost in paperwork can set a young person back. With the right support, each of these moments can become a fresh start, and a stronger community for all of us.</p></div>
 <div class="stats" data-reveal>
 <div class="stat"><b>15,379</b><p>young people aged out of U.S. foster care in fiscal year 2024 without a permanent family.</p><a href="https://adoptioncouncil.org/article/foster-care-and-adoption-statistics">National Council for Adoption, from federal AFCARS data</a></div>
 <div class="stat"><b>4.2M</b><p>U.S. youth and young adults, ages 13 to 25, experience some form of homelessness in a year.</p><a href="https://huduser.gov/portal/node/9693">Chapin Hall, Voices of Youth Count, via HUD</a></div>
@@ -740,7 +738,7 @@ body{font-size:16.5px}
 </main>
 
 <footer class="site"><div class="wrap">
-<div class="fbig"><h2>Every young person deserves someone in their corner.</h2><a class="btn sun" href="#donate">Donate</a></div>
+<div class="fbig"><h2>Every young person deserves someone in their corner.</h2></div>
 <div class="fcols">
 <div><p style="font:400 26px/1.1 var(--serif);color:#fff">Rise Forward Youth Collective</p><p style="margin-top:12px;max-width:24em">Supporting young people impacted by foster care, the justice system, poverty, welfare systems and homelessness.</p><p style="margin-top:14px">Need help now? Call or text <a class="tlink" href="tel:988" style="color:#fff">988</a>.</p></div>
 <nav aria-label="Organization"><b>Organization</b><a href="#about">About</a><a href="#programs">Programs</a><a href="#partners">Partnerships</a><a href="#get-involved">Get involved</a></nav>
@@ -775,7 +773,7 @@ const PROGRAMS=[
 {id:'steady-ground',name:'Steady Ground',group:'Poverty and homelessness',img:'steady-ground.jpg',pos:'45% 50%',alt:'Volunteers packing boxes of food and essentials',short:'Housing navigation, emergency essentials and connections to safe shelter.',who:'Young people experiencing homelessness, couch surfing or living in poverty.',intro:'Stability starts with tonight. Steady Ground connects young people to a safe place to stay and then to the steps that lead to housing of their own.',goals:['Safe shelter or housing the same week','Basic needs covered: food, hygiene, a working phone','A path to stable housing within 90 days'],res:['Housing navigation','Emergency essentials and hygiene kits','Shelter and host-home referrals','Food access','Phone and transit support']},
 {id:'navigate',name:'Navigate',group:'Welfare systems',img:'navigate.jpg',pos:'45% 50%',alt:'A young person meeting one-on-one with an advisor',short:'One-on-one help with benefits, paperwork and appointments for youth and families.',who:'Young people and families working through welfare and benefits systems.',intro:'Benefits are supposed to help, but the paperwork can bury people. Navigate gives youth and families a guide through applications, renewals and appointments.',goals:['Benefits applied for and kept active','Fewer missed appointments and lapsed coverage','Families confident handling it on their own'],res:['One-on-one benefits navigation (SNAP, Medicaid, TANF and others)','Help with forms and renewals','Someone to come along to appointments','Family workshops','Advocacy when something goes wrong']}
 ];
-$('#homePrograms').innerHTML=PROGRAMS.map((p,i)=>`<a class="pcard" href="#program-${p.id}" data-reveal data-d="${i}"><img src="img/${p.img}" alt="" loading="lazy" style="object-position:${p.pos}"><div class="in"><small>${esc(p.group)}</small><h3>${esc(p.name)}</h3><p>${esc(p.short)}</p><span class="go">Explore ${esc(p.name)} ${ARROW}</span></div></a>`).join('');
+$('#homePrograms').innerHTML=PROGRAMS.map((p,i)=>`<a class="scard" href="#program-${p.id}" data-reveal data-d="${i}"><div class="ph"><img src="img/${p.img}" alt="" loading="lazy" style="object-position:${p.pos}"></div><small>${esc(p.group)}</small><h3>${esc(p.name)}</h3><p>${esc(p.short)}</p><span class="more">Learn more</span></a>`).join('');
 $('#programList').innerHTML=PROGRAMS.map(p=>`<article class="prog" id="program-${p.id}">
 <div class="ph" data-reveal><img src="img/${p.img}" alt="${esc(p.alt)}" loading="lazy" style="object-position:${p.pos}"></div>
 <div data-reveal data-d="1"><span class="status">In development</span><h2>${esc(p.name)}</h2><p class="who">${esc(p.who)}</p><p class="intro lede">${esc(p.intro)}</p>
@@ -808,7 +806,7 @@ let cat='All';
 const CATS=['All',...new Set(PRODUCTS.map(p=>p.cat))];
 const drawShop=()=>{$('#cats').innerHTML=CATS.map(c=>`<button type="button" class="chip" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');$('#productGrid').innerHTML=PRODUCTS.filter(p=>cat==='All'||p.cat===cat).map(card).join('');reveal()};
 $('#cats').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;drawShop()});
-$('#homeProducts').innerHTML=[0,2,3,5].map(i=>card(PRODUCTS[i])).join('');
+
 
 /* cart */
 let cart=[];
