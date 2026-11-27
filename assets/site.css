@@ -138,7 +138,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 --d-press:120ms;--d-quick:200ms;--d-base:320ms;--d-reveal:700ms;--d-rise:900ms;
 --stg:70ms;--stg-w:45ms;
 --e-out:cubic-bezier(.16,1,.3,1);--e-io:cubic-bezier(.65,0,.35,1);
---rv:24px;--open-from:.94;--read-from:.2
+--rv:24px;--open-from:.94;--read-from:.4
 }
 @media (max-width:760px){:root{--rv:12px;--stg:50ms;--stg-w:30ms;--open-from:.97;--d-rise:700ms}}
 
@@ -171,7 +171,7 @@ details summary::after{transition:transform var(--d-base) var(--e-out)}
 .mo [role=tabpanel],.mo .step,.mo details[open]>p{animation:mo-in var(--d-base) var(--e-out)}
 
 /* 2. Open and 3. Read: scroll-driven where the browser supports it */
-@keyframes mo-open{from{opacity:.55;transform:scale(var(--open-from))}to{opacity:1;transform:none}}
+@keyframes mo-open{from{transform:scale(var(--open-from))}to{transform:none}}
 @keyframes mo-read{from{opacity:var(--read-from)}to{opacity:1}}
 @supports (animation-timeline: view()){
 .mo [data-open]{animation:mo-open linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
@@ -179,8 +179,8 @@ details summary::after{transition:transform var(--d-base) var(--e-out)}
 .mo [data-read] .rw{animation:mo-read linear both;animation-timeline:--read;animation-range:cover calc(16% + var(--i) * var(--st)) cover calc(22% + var(--i) * var(--st))}
 }
 /* browsers without scroll-driven animation: Open becomes a one-shot settle, Read stays still */
-.mo.no-sd [data-open]{opacity:.55;transform:scale(var(--open-from));transition:opacity var(--d-reveal) var(--e-out),transform var(--d-reveal) var(--e-out)}
-.mo.no-sd [data-open].in{opacity:1;transform:none}
+.mo.no-sd [data-open]{transform:scale(var(--open-from));transition:transform var(--d-reveal) var(--e-out)}
+.mo.no-sd [data-open].in{transform:none}
 
 /* phones: simpler */
 @media (max-width:760px){
