@@ -121,3 +121,57 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .step{display:grid;gap:14px;margin-top:28px}
 .bars span{flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.12);transition:background .3s}
 .bars span.on{background:#c9b98f}
+
+:root{
+--d-press:120ms;--d-quick:200ms;--d-base:320ms;--d-reveal:700ms;--d-rise:900ms;
+--stg:70ms;--stg-w:45ms;
+--e-out:cubic-bezier(.16,1,.3,1);--e-io:cubic-bezier(.65,0,.35,1);
+--rv:24px;--open-from:.94;--read-from:.2
+}
+@media (max-width:760px){:root{--rv:12px;--stg:50ms;--stg-w:30ms;--open-from:.97;--d-rise:700ms}}
+
+/* strict: interactive states animate transform/opacity only */
+.btn{transition:transform var(--d-quick) var(--e-out)}
+.links a,.tl,.seg,.opt,input,select,textarea,.svc .t2,.cat,.foot a{transition:none}
+.links a::after{transition:transform var(--d-base) var(--e-out)}
+.tl .ar{transition:transform var(--d-quick) var(--e-out)}
+.zoom img{transition:transform var(--d-reveal) var(--e-out)}
+details summary::after{transition:transform var(--d-base) var(--e-out)}
+.bars span,.bars span.on{position:relative;overflow:hidden;background:rgba(255,255,255,.12);transition:none}
+.bars span::after{content:"";position:absolute;inset:0;background:#c9b98f;transform:scaleX(0);transform-origin:left;transition:transform var(--d-base) var(--e-out)}
+.bars span.on::after{transform:none}
+.flowline{position:relative;overflow:hidden;background:none;animation:none}
+.flowline::before{content:"";position:absolute;left:0;top:0;width:calc(100% + 16px);height:1px;background:repeating-linear-gradient(90deg,#c9b98f 0 8px,transparent 8px 16px);animation:mo-flow 1.6s linear infinite}
+@keyframes mo-flow{to{transform:translateX(-16px)}}
+
+/* 1. Rise: word masks */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.14em .1em .16em;margin:-.14em -.1em -.16em}
+.w>span{display:inline-block}
+.mo [data-rise] .w>span{transform:translate3d(0,115%,0);transition:transform var(--d-rise) var(--e-out);transition-delay:calc(var(--i) * var(--stg-w))}
+.mo [data-rise].in .w>span{transform:none}
+
+/* one-shot reveals for rows */
+.mo [data-reveal]{opacity:0;transform:translate3d(0,var(--rv),0);transition:opacity var(--d-reveal) var(--e-out),transform var(--d-reveal) var(--e-out);transition-delay:calc(var(--i,0) * var(--stg))}
+.mo [data-reveal].in{opacity:1;transform:none}
+
+/* component changes: a panel that appears settles in */
+@keyframes mo-in{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:none}}
+.mo [role=tabpanel],.mo .step,.mo details[open]>p{animation:mo-in var(--d-base) var(--e-out)}
+
+/* 2. Open and 3. Read: scroll-driven where the browser supports it */
+@keyframes mo-open{from{opacity:.55;transform:scale(var(--open-from))}to{opacity:1;transform:none}}
+@keyframes mo-read{from{opacity:var(--read-from)}to{opacity:1}}
+@supports (animation-timeline: view()){
+.mo [data-open]{animation:mo-open linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+.mo [data-read]{view-timeline-name:--read}
+.mo [data-read] .rw{animation:mo-read linear both;animation-timeline:--read;animation-range:cover calc(16% + var(--i) * var(--st)) cover calc(22% + var(--i) * var(--st))}
+}
+/* browsers without scroll-driven animation: Open becomes a one-shot settle, Read stays still */
+.mo.no-sd [data-open]{opacity:.55;transform:scale(var(--open-from));transition:opacity var(--d-reveal) var(--e-out),transform var(--d-reveal) var(--e-out)}
+.mo.no-sd [data-open].in{opacity:1;transform:none}
+
+/* phones: simpler */
+@media (max-width:760px){
+.mo [data-read] .rw{animation:none;opacity:1}
+.atmo{animation:none}
+}
